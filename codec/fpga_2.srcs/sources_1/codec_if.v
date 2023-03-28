@@ -36,87 +36,87 @@ assign codec_mdiv1   = 1'b1;
 assign codec_mdiv2   = 1'b1;
 
 
-// free running main counter
+
+// main counter
 reg [19:0] div_cntr;
+// LRCK: clk/512
+// startup wait: 2048
 
-always @(posedge clk) begin
-   if (rst)
-      div_cntr <= 20'b0;
-   else
-      div_cntr <= div_cntr - 1;
-end
+// reset for the CODEC
+reg rst_ff;
 
-
-// clock generation based on main counter
-assign codec_lrclk = div_cntr[8];
-assign codec_sclk  = div_cntr[2];
-assign codec_mclk  = div_cntr[0];
+// intial wait period done
+reg init_done_ff;
 
 // clock falling & rising edge signals
-wire sclk_fall = (div_cntr[2:0] == 3'b111);
-wire sclk_rise = (div_cntr[2:0] == 3'b011);
+wire lrclk_fall;
+wire lrclk_rise;
+wire sclk_fall;
+wire sclk_rise;
+
+// bit counter within half period of LRCLK
+wire [ 4:0] bit_cntr;
+
+// receive and transmit shift register
+reg  [23:0] shr_rx;
+reg  [23:0] shr_tx;
+
+// free running main counter
+always @ (posedge clk)
+if (rst==1)
+  div_cntr <= 0;
+else
+  div_cntr <= div_cntr + 1;
+
+// clock generation based on main counter
+assign codec_lrclk  = div_cntr[8];
+assign codec_sclk   = div_cntr[2];
+assign codec_mclk   = div_cntr[0];
+
+// sclk edge detection
+assign sclk_fall    = (div_cntr[2:0]==3'b111);
+assign sclk_rise    = (div_cntr[2:0]==3'b011);
 
 // "virtual" bit counter
-wire [ 4:0] bit_cntr;
-assign bit_cntr = div_cntr[7:3];
+assign bit_cntr     = div_cntr[7:3];
 
 
 // reset during the first ~8 LRCLK periods
-reg rst_ff;
-
-always @(posedge clk) begin
-   if (rst)
-      rst_ff <= 1'b0;
-   else if (div_cntr[12])
-      rst_ff <= 1'b1;
-end
-
-
+always @ (posedge clk)
+if (rst==1)
+   rst_ff <= 1'b0;
+else if (div_cntr[19:9]==7)
+   rst_ff <= 1'b1;
+      
 assign codec_rstn = rst_ff;
 
 // initializatin done after ~1045+8 LRLCK periods
-reg init_done_ff;
-
-always @(posedge clk) begin
-   if (rst)
-      init_done_ff <= 1'b0;
-   else if (div_cntr[19:9] == (1045+8))
-      init_done_ff <= 1'b1;
-end
+always @ (posedge clk)
+if (rst==1)
+   init_done_ff <= 1'b0;
+else if (div_cntr[19:9]==1200)
+   init_done_ff <= 1'b1;
 
 
 // receive shift register 
-reg  [23:0] shr_rx;
-
-always @(posedge clk) begin
-   if (rst)
-      shr_rx <= 24'b0;
-   else
-      shr_rx <= {shr_rx[22:1], codec_sdout};
-end
+always @ (posedge clk)
+if (sclk_rise==1)
+   shr_rx <= {shr_rx[22:0], codec_sdout};
 
 
-
-// parallel rx data valid: aud_dout_vld
+// parallel rx data valid
 //   0 during initialization
-//   1 clock cycle pulse when the channel data is valid
+always @ (posedge clk)
+if (div_cntr[8]==0 & bit_cntr==23 & sclk_rise==1 & init_done_ff==1)
+   aud_dout_vld[0] <= 1'b1;
+else
+   aud_dout_vld[0] <= 1'b0;
 
-always @(posedge clk ) begin
-   if (rst)
-      aud_dout_vld <= 2'b00;
-   else if (init_done_ff)
-      if (sclk_rise == 1'b1  bit_cntr == 23 && codec_lrclk == 1'b0)
-         aud_dout_vld[0] <= 1'b1;
-      else
-         aud_dout_vld[0] <= 1'b0;
+always @ (posedge clk)
+   if (div_cntr[8]==1 & bit_cntr==23 & sclk_rise==1 & init_done_ff==1)
+      aud_dout_vld[1] <= 1'b1;
    else
-      if (sclk_rise == 1'b1  bit_cntr == 23 && codec_lrclk == 1'b1)
-         aud_dout_vld[1] <= 1'b1;
-      else
-         aud_dout_vld[1] <= 1'b0;
-end
-
-
+      aud_dout_vld[1] <= 1'b0;
 
 
 // parallel output data = rx shift register
@@ -128,32 +128,39 @@ assign aud_dout1 = shr_rx;
 //    - 0 during initialization
 //    - loads parallel data
 //    - then shifst parallel data
-reg  [23:0] shr_tx;
-
-always @(posedge clk ) begin
-   if (init_done_ff == 1'b1)
-      if (sclk_fall == 1'b1)
-         if (bit_cntr==31)
-            if (codec_lrck == 1'b0)
-               shr_tx <= aud_din1;
-            else
-               shr_tx <= aud_din0;
-         else
-            shr_tx <= {shr_tx[22:0], 1'b0};
-end
-
-
-
+always @ (posedge clk)
+if (init_done_ff==0)
+   shr_tx <= 0;
+else if (div_cntr[8]==0 & bit_cntr==31 & sclk_fall==1)
+   if (aud_din_vld[0])
+      shr_tx <= aud_din0;
+   else
+      shr_tx <= 24'b0;
+else if (div_cntr[8]==1 & bit_cntr==31 & sclk_fall==1)
+   if (aud_din_vld[1])
+      shr_tx <= aud_din1;
+   else
+      shr_tx <= 24'b0;
+else if (sclk_fall==1)
+   shr_tx <= {shr_tx[22:0], 1'b0};
 
 // serial output -> MSB of the tx shift register
-assign codec_sdin = ;
+assign codec_sdin = shr_tx[23];
 
 
-// data acnowledge: aud_din_ack
-//   1 clock cycle pulse when parallel data is written into the transmit shift register
-
-
-
+// data acnowledge
+//   when parallel data is written into the shift register
+always @ (posedge clk)
+if (div_cntr[8]==0 & bit_cntr==31 & sclk_fall==1 & aud_din_vld[1]==1'b1)
+   aud_din_ack[0] <= 1'b1;
+else
+   aud_din_ack[0] <= 1'b0;
+   
+always @ (posedge clk)
+if (div_cntr[8]==1 & bit_cntr==31 & sclk_fall==1 & aud_din_vld[0]==1'b1)
+   aud_din_ack[1] <= 1'b1;
+else
+   aud_din_ack[1] <= 1'b0;
  
 
 endmodule
