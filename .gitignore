@@ -1,0 +1,6 @@
+HF/hdmi_tx.sv
+HF/oserdes_10to1.sv
+HF/tmds_encoder.sv
+HF/tmds_transmitter.sv
+HF/top.sv
+HF/hdmi_loopback.srcs/sources_1/new/timing.sv
