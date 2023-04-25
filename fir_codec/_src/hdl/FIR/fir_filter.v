@@ -11,55 +11,69 @@ module fir_filter(
       output [23:0] dout
 );
 
-// vezérlõ állapot (-> memória címek érvényesek):
-//  0: nincs szûrés
-//  1: aktív szûrés
+// vezÃ©rlÅ‘ Ã¡llapot (-> memÃ³ria cÃ­mek Ã©rvÃ©nyesek):
+//  0: nincs szÅ±rÃ©s
+//  1: aktÃ­v szÅ±rÃ©s
+// egyÃ¼tthatÃ³ cÃ­mszÃ¡mlÃ¡lÃ³
+//  255...0 kÃ¶zÃ¶tt szÃ¡mol, konvolÃºciÃ³ kezdetekor 255-re Ã¡llÃ­tjuk
 reg state;
-// együttható címszámláló
-//  255...0 között számol, konvolúció kezdetekor 255-re állítjuk
 reg [7:0] coeff_addr_reg;
+always @ (posedge clk)
+    if (rst)
+        state <= 1'b0;
+    else if (din_valid)
+        state <= 1'b1;
+    else if (coeff_addr_reg == 0)
+        state <= 1'b0;
 
-
-
-// feldolgozás alatt álló csatorna
-// konvolúció kezdetekor elmentjük, hogy melyik bemenet volt érvényes
+// feldolgozÃ¡s alatt Ã¡llÃ³ csatorna
+// konvolÃºciÃ³ kezdetekor elmentjÃ¼k, hogy melyik bemenet volt Ã©rvÃ©nyes
 reg ch_act;
+always @(posedge clk)
+    if (din_valid)
+        ch_act <= din_valid[1];
 
-
-
-// aktív szûrés (state) késleltetése
+// aktÃ­v szÅ±rÃ©s (state) kÃ©sleltetÃ©se
 reg [7:0] state_dl;
+always @ (posedge clk)
+    state_dl <= {state_dl[6:0], state};
 
-
-// együttható ROM cím:
-//   {aktív csatorna, együttható címszámláló}
+// egyÃ¼tthatÃ³ ROM cÃ­m:
+//   {aktÃ­v csatorna, egyÃ¼tthatÃ³ cÃ­mszÃ¡mlÃ¡lÃ³}
 wire [8:0] coeff_addr;
+assign coeff_addr = {ch_act, coeff_addr_reg};
 
 
-// minta írási címszámláló
-//   din_valid[1]-re inkrementál
-reg [7:0] smpl_wr_addr_reg;
+// minta Ã­rÃ¡si cÃ­mszÃ¡mlÃ¡lÃ³
+//   din_valid[1]-re inkrementÃ¡l
+reg [7:0] smpl_wr_addr_reg = 0;
+always @ (posedge clk)
+    if (din_valid[1])
+        smpl_wr_addr_reg <= smpl_wr_addr_reg + 1'b1;
 
 
-
-// minta írási cím
-//   {input valid, címszámláló}
+// minta Ã­rÃ¡si cÃ­m
+//   {input valid, cÃ­mszÃ¡mlÃ¡lÃ³}
 wire [8:0] smpl_wr_addr;
+assign smpl_wr_addr = {din_valid[1], smpl_wr_addr_reg};
 
-
-// olvasási címszámláló
-// smpl_wr_addr_reg_rõl indul új minta érkezésekor, dekrementálódik
+// olvasÃ¡si cÃ­mszÃ¡mlÃ¡lÃ³
+// smpl_wr_addr_reg_rÅ‘l indul Ãºj minta Ã©rkezÃ©sekor, dekrementÃ¡lÃ³dik
 reg [7:0] smpl_rd_addr_reg;
+always @ (posedge clk)
+    if (din_valid)
+        smpl_rd_addr_reg <= smpl_wr_addr_reg;
+    else
+        smpl_rd_addr_reg <= smpl_rd_addr_reg - 1'b1;
 
 
-
-// olvasási cím: {aktív csatorna, címszámláló}
+// olvasÃ¡si cÃ­m: {aktÃ­v csatorna, cÃ­mszÃ¡mlÃ¡lÃ³}
 wire [8:0] smpl_rd_addr;
+assign smpl_rd_addr = {ch_act, smpl_rd_addr_reg};
 
 
-
-// Mintatár (24 bit széles)
-// bementi minták: s.23
+// MintatÃ¡r (24 bit szÃ©les)
+// bementi mintÃ¡k: s.23
 wire [23:0] smpl_ram_dout;
 ram #(
    .DATA_W(24),
@@ -78,8 +92,8 @@ smpl_ram(
    .dout_b (smpl_ram_dout)
 );
 
-// Együttható ROM
-// együtthatók: s.3.31
+// EgyÃ¼tthatÃ³ ROM
+// egyÃ¼tthatÃ³k: s.3.31
 wire [34:0] coeff_rom_dout;
 rom_512x35 coeff_rom(
    .clk  (clk),
@@ -87,7 +101,7 @@ rom_512x35 coeff_rom(
    .dout (coeff_rom_dout)
 );
 
-// részszorzat érdekes része:
+// rÃ©szszorzat Ã©rdekes rÃ©sze:
 // minta: 24 bit
 // coeff: 35 bit
 //    azaz:  59 bit
@@ -100,27 +114,27 @@ mul_24x35 mul_fir(
       .m    (mul_res)
 );
 
-// Accu reset: az els? érvényes bemenet alatt
-// Engedélyezés: amikor érvényes a bemenete (state[1] késleltetve pipeline latency-vel)
+// Accu reset: az els? Ã©rvÃ©nyes bemenet alatt
+// EngedÃ©lyezÃ©s: amikor Ã©rvÃ©nyes a bemenete (state[1] kÃ©sleltetve pipeline latency-vel)
 wire accu_rst;
 wire accu_en;
 
 
 
-// Reset: az érvényes bemenetet írjuk be akkumulálás nélkül
-// 256 db s.4.54 összege --> s.12.54 --> 67 bit
+// Reset: az Ã©rvÃ©nyes bemenetet Ã­rjuk be akkumulÃ¡lÃ¡s nÃ©lkÃ¼l
+// 256 db s.4.54 Ã¶sszege --> s.12.54 --> 67 bit
 reg signed [66:0] accu;
 
 
 
 
-// kimeneti formátum: s.23,
-//  accu eredmény-bõl levágjuk az alsó 31 bitet, az ezt követõ 24 bit az érvényes kimenet
-//  kivéve ha túlcsordulás van, ekkor szaturáció:
-//    - pozitív: +0.999999 --> h7fffff
-//    - negatív: -1        --> h800000
+// kimeneti formÃ¡tum: s.23,
+//  accu eredmÃ©ny-bÅ‘l levÃ¡gjuk az alsÃ³ 31 bitet, az ezt kÃ¶vetÅ‘ 24 bit az Ã©rvÃ©nyes kimenet
+//  kivÃ©ve ha tÃºlcsordulÃ¡s van, ekkor szaturÃ¡ciÃ³:
+//    - pozitÃ­v: +0.999999 --> h7fffff
+//    - negatÃ­v: -1        --> h800000
 
-//  Kimenet érvényes: csatorna + accu_en lefutó él
+//  Kimenet Ã©rvÃ©nyes: csatorna + accu_en lefutÃ³ Ã©l
 reg [23:0] dout_reg;
 reg  [1:0] dout_valid_reg;
 
