@@ -11,11 +11,11 @@ module fir_filter(
       output [23:0] dout
 );
 
-// vezérlő állapot (-> memória címek érvényesek):
-//  0: nincs szűrés
-//  1: aktív szűrés
-// együttható címszámláló
-//  255...0 között számol, konvolúció kezdetekor 255-re állítjuk
+// vezerlo allapot (-> memoria cimek ervenyesek):
+//  0: nincs szures
+//  1: aktiv szures
+// egyutthato cimszamlalo
+//  255...0 kozott szamol, konvolucio kezdetekor 255-re allitjuk
 reg state;
 reg [7:0] coeff_addr_reg;
 always @ (posedge clk)
@@ -26,39 +26,39 @@ always @ (posedge clk)
     else if (coeff_addr_reg == 0)
         state <= 1'b0;
 
-// feldolgozás alatt álló csatorna
-// konvolúció kezdetekor elmentjük, hogy melyik bemenet volt érvényes
+// feldolgozas alatt allo csatorna
+// konvolucio kezdetekor elmentjuk, hogy melyik bemenet volt ervenyes
 reg ch_act;
 always @(posedge clk)
     if (din_valid)
         ch_act <= din_valid[1];
 
-// aktív szűrés (state) késleltetése
+// aktiv szures (state) kesleltetese
 reg [7:0] state_dl;
 always @ (posedge clk)
     state_dl <= {state_dl[6:0], state};
 
-// együttható ROM cím:
-//   {aktív csatorna, együttható címszámláló}
+// egyutthato ROM cim:
+//   {aktiv csatorna, egyutthato cimszamlalo}
 wire [8:0] coeff_addr;
 assign coeff_addr = {ch_act, coeff_addr_reg};
 
 
-// minta írási címszámláló
-//   din_valid[1]-re inkrementál
+// minta irasi cimszamlalo
+//   din_valid[1]-re inkremental
 reg [7:0] smpl_wr_addr_reg = 0;
 always @ (posedge clk)
     if (din_valid[1])
         smpl_wr_addr_reg <= smpl_wr_addr_reg + 1'b1;
 
 
-// minta írási cím
-//   {input valid, címszámláló}
+// minta irasi cim
+//   {input valid, cimszamlalo}
 wire [8:0] smpl_wr_addr;
 assign smpl_wr_addr = {din_valid[1], smpl_wr_addr_reg};
 
-// olvasási címszámláló
-// smpl_wr_addr_reg_ről indul új minta érkezésekor, dekrementálódik
+// olvasasi cimszamlalo
+// smpl_wr_addr_reg_rol indul uj minta erkezesekor, dekrementalodik
 reg [7:0] smpl_rd_addr_reg;
 always @ (posedge clk)
     if (din_valid)
@@ -67,13 +67,13 @@ always @ (posedge clk)
         smpl_rd_addr_reg <= smpl_rd_addr_reg - 1'b1;
 
 
-// olvasási cím: {aktív csatorna, címszámláló}
+// olvasasi cim: {aktiv csatorna, cimszamlalo}
 wire [8:0] smpl_rd_addr;
 assign smpl_rd_addr = {ch_act, smpl_rd_addr_reg};
 
 
-// Mintatár (24 bit széles)
-// bementi minták: s.23
+// Mintatar (24 bit szeles)
+// bementi mintak: s.23
 wire [23:0] smpl_ram_dout;
 ram #(
    .DATA_W(24),
@@ -92,8 +92,8 @@ smpl_ram(
    .dout_b (smpl_ram_dout)
 );
 
-// Együttható ROM
-// együtthatók: s.3.31
+// Egyutthato ROM
+// egyutthatok: s.3.31
 wire [34:0] coeff_rom_dout;
 rom_512x35 coeff_rom(
    .clk  (clk),
@@ -101,7 +101,7 @@ rom_512x35 coeff_rom(
    .dout (coeff_rom_dout)
 );
 
-// részszorzat érdekes része:
+// reszszorzat erdekes resze:
 // minta: 24 bit
 // coeff: 35 bit
 //    azaz:  59 bit
@@ -114,8 +114,8 @@ mul_24x35 mul_fir(
       .m    (mul_res)
 );
 
-// Accu reset: az elso érvényes bemenet alatt
-// Engedélyezés: amikor érvényes a bemenete (state[1] késleltetve pipeline latency-vel)
+// Accu reset: az elso ervenyes bemenet alatt
+// Engedelyezes: amikor ervenyes a bemenete (state[1] kesleltetve pipeline latency-vel)
 wire accu_rst;
 assign accu_rst = ~state_dl[4] & state_dl[5];
 wire accu_en;
@@ -123,8 +123,8 @@ assign accu_en = state_dl[4];
 
 
 
-// Reset: az érvényes bemenetet írjuk be akkumulálás nélkül
-// 256 db s.4.54 összege --> s.12.54 --> 67 bit
+// Reset: az ervenyes bemenetet irjuk be akkumulalas nelkul
+// 256 db s.4.54 osszege --> s.12.54 --> 67 bit
 reg signed [66:0] accu;
 
 always @(posedge clk ) begin
@@ -137,13 +137,13 @@ end
 
 
 
-// kimeneti formátum: s.23,
-//  accu eredmény-ből levágjuk az alsó 31 bitet, az ezt követő 24 bit az érvényes kimenet
-//  kivéve ha túlcsordulás van, ekkor szaturáció:
-//    - pozitív: +0.999999 --> h7fffff
-//    - negatív: -1        --> h800000
+// kimeneti formatum: s.23,
+//  accu eredmeny-bol levagjuk az also 31 bitet, az ezt koveto 24 bit az ervenyes kimenet
+//  kiveve ha tulcsordulas van, ekkor szaturacio:
+//    - pozitiv: +0.999999 --> h7fffff
+//    - negativ: -1        --> h800000
 
-//  Kimenet érvényes: csatorna + accu_en lefutó él
+//  Kimenet ervenyes: csatorna + accu_en lefuto el
 reg [23:0] dout_reg;
 reg  [1:0] dout_valid_reg;
 
