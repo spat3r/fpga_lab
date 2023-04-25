@@ -114,10 +114,12 @@ mul_24x35 mul_fir(
       .m    (mul_res)
 );
 
-// Accu reset: az els? érvényes bemenet alatt
+// Accu reset: az elso érvényes bemenet alatt
 // Engedélyezés: amikor érvényes a bemenete (state[1] késleltetve pipeline latency-vel)
 wire accu_rst;
+assign accu_rst = ~state_dl[4] & state_dl[5];
 wire accu_en;
+assign accu_en = state_dl[4];
 
 
 
@@ -125,6 +127,13 @@ wire accu_en;
 // 256 db s.4.54 összege --> s.12.54 --> 67 bit
 reg signed [66:0] accu;
 
+always @(posedge clk ) begin
+   if (accu_rst) begin
+      accu <= mul_res;
+   end else if (accu_en) begin
+      accu <= accu + mul_res;
+   end
+end
 
 
 
@@ -138,6 +147,17 @@ reg signed [66:0] accu;
 reg [23:0] dout_reg;
 reg  [1:0] dout_valid_reg;
 
+always @( posedge clk ) begin
+   dout_valid_reg[0] <= (ch_act==0 & state_dl[5:4]==2'b1);
+   dout_valid_reg[1] <= (ch_act==1 & state_dl[5:4]==2'b1);
+   if (!accu[66] & (|accu[65:54])) begin  // opcio (accu[66] == 0)  & (accu[65:54] != 0)
+      dout_reg <= 'h7fffff;
+   end else if (accu[66] & (&accu[65:53])) begin  // opcio (accu[66] != 0)  & (accu[65:54] == 0)
+      dout_reg <= 'h800000;
+   end else begin
+      dout_reg <= {accu[66], accu[53:30]};
+   end
+end
 
 
 
