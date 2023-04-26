@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module dsp_25x18 (
+module dsp_25x18_presub (
     input  logic               clk,
     input  logic signed [24:0] a,
     input  logic signed [29:0] d,
