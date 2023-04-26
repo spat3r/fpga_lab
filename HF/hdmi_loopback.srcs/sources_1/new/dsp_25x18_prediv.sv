@@ -18,41 +18,45 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module dsp_25x18
-#(
-   parameter A_REG = 2,
-   parameter B_REG = 2
-)(
-   input                clk,
-   input  signed [24:0] a,
-   input  signed [29:0] d,
-   input  signed [17:0] b,
-   input  signed [47:0] pci, 
-   output signed [47:0] p
-);
+module dsp_25x18 (
+    input  logic               clk,
+    input  logic signed [24:0] a,
+    input  logic signed [29:0] d,
+    input  logic signed [17:0] b,
+    input  logic signed [47:0] pci, 
+    output logic signed [47:0] p
+    );
 
-reg signed [24:0] a_reg;
-reg signed [29:0] d_reg;
-reg signed [24:0] ad_reg;
-reg signed [17:0] b_reg[1:0];
-reg signed [42:0] m_reg;
-reg signed [47:0] p_reg;
+    logic signed [24:0] ad_d;
+    logic signed [42:0] m_d;
+    logic signed [47:0] p_d;
+
+    logic signed [24:0] a_q;
+    logic signed [29:0] d_q;
+    logic signed [24:0] ad_q;
+    logic signed [17:0] b_q [1:0];
+    logic signed [42:0] m_q;
+    logic signed [47:0] p_q;
 
 
-always @ (posedge clk) begin
-   a_reg <= a;
-   d_reg <= d;
-   b_reg[0] <= b;
-   b_reg[1] <= b_reg[0];
-end
+    always_ff @ (posedge clk) begin
+        a_q <= a;
+        d_q <= d;
+        b_q[0] <= b;
+        b_q[1] <= b_q[0];
+    end
 
-always @ (posedge clk)
-begin
-   ad_reg <= a_reg-d_reg;
-   m_reg <= ad_reg*b_reg;
-   p_reg <= m_reg+pci;
-end
+    assign ad_d = a_q - d_q;
+    assign m_d = ad_q * b_q[1];
+    assign p_d = m_q  + pci;
 
-assign p = p_reg;
+
+    always_ff @ (posedge clk) begin
+        ad_q <= ad_d;
+        m_q <= m_d;
+        p_q <= p_d;
+    end
+
+    assign p = p_q;
 
 endmodule
