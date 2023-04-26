@@ -26,6 +26,13 @@ always @ (posedge clk)
     else if (coeff_addr_reg == 0)
         state <= 1'b0;
 
+always @(posedge clk) begin
+   if (din_valid!=0)
+      coeff_addr_reg <= 255;
+   else if(state)
+      coeff_addr_reg <= coeff_addr_reg -1;
+end
+
 // feldolgozas alatt allo csatorna
 // konvolucio kezdetekor elmentjuk, hogy melyik bemenet volt ervenyes
 reg ch_act;
