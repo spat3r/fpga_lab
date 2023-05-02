@@ -21,45 +21,45 @@
 
 
 module hdmi_top(
-   input  wire       clk100M,
-   input  wire       rstbt,
-   output wire [7:0] led_r,
-   input  wire [7:0] sw,
-   inout  wire [3:0] bt,
+   input  logic       clk100M,
+   input  logic       rstbt,
+   output logic [7:0] led_r,
+   input  logic [7:0] sw,
+   inout  logic [3:0] bt,
    
-   input  wire       hdmi_rx_d0_p,
-   input  wire       hdmi_rx_d0_n,
-   input  wire       hdmi_rx_d1_p,
-   input  wire       hdmi_rx_d1_n,
-   input  wire       hdmi_rx_d2_p,
-   input  wire       hdmi_rx_d2_n,
-   input  wire       hdmi_rx_clk_p,
-   input  wire       hdmi_rx_clk_n,
-   input  wire       hdmi_rx_cec,
-   output wire       hdmi_rx_hpd,
-   input  wire       hdmi_rx_scl,
-   inout  wire       hdmi_rx_sda,
+   input  logic       hdmi_rx_d0_p,
+   input  logic       hdmi_rx_d0_n,
+   input  logic       hdmi_rx_d1_p,
+   input  logic       hdmi_rx_d1_n,
+   input  logic       hdmi_rx_d2_p,
+   input  logic       hdmi_rx_d2_n,
+   input  logic       hdmi_rx_clk_p,
+   input  logic       hdmi_rx_clk_n,
+   input  logic       hdmi_rx_cec,
+   output logic       hdmi_rx_hpd,
+   input  logic       hdmi_rx_scl,
+   inout  logic       hdmi_rx_sda,
    
-   output wire       hdmi_tx_d0_p,
-   output wire       hdmi_tx_d0_n,
-   output wire       hdmi_tx_d1_p,
-   output wire       hdmi_tx_d1_n,
-   output wire       hdmi_tx_d2_p,
-   output wire       hdmi_tx_d2_n,
-   output wire       hdmi_tx_clk_p,
-   output wire       hdmi_tx_clk_n,
-   input  wire       hdmi_tx_cec,
-   input  wire       hdmi_tx_hpdn,
-   input  wire       hdmi_tx_scl,
-   input  wire       hdmi_tx_sda
+   output logic       hdmi_tx_d0_p,
+   output logic       hdmi_tx_d0_n,
+   output logic       hdmi_tx_d1_p,
+   output logic       hdmi_tx_d1_n,
+   output logic       hdmi_tx_d2_p,
+   output logic       hdmi_tx_d2_n,
+   output logic       hdmi_tx_clk_p,
+   output logic       hdmi_tx_clk_n,
+   input  logic       hdmi_tx_cec,
+   input  logic       hdmi_tx_hpdn,
+   input  logic       hdmi_tx_scl,
+   input  logic       hdmi_tx_sda
 );
 
 //******************************************************************************
 //* Generating the 200 MHz reference clock for the IDELAYCTRL.                 *
 //******************************************************************************
-wire clk200M;
-wire pll_clkfb;
-wire pll_locked;
+logic clk200M;
+logic pll_clkfb;
+logic pll_locked;
 
 PLLE2_BASE #(
    .BANDWIDTH("OPTIMIZED"),         // OPTIMIZED, HIGH, LOW
@@ -87,7 +87,7 @@ PLLE2_BASE #(
    .DIVCLK_DIVIDE(1),               // Master division value, (1-56)
    .REF_JITTER1(0.0),               // Reference input jitter in UI, (0.000-0.999).
    .STARTUP_WAIT("FALSE")           // Delay DONE until PLL Locks, ("TRUE"/"FALSE")
-) clk_generator1 (
+   ) clk_generator1 (
    .CLKOUT0(clk200M),               // 1-bit output: CLKOUT0
    .CLKOUT1(),                      // 1-bit output: CLKOUT1
    .CLKOUT2(),                      // 1-bit output: CLKOUT2
@@ -102,10 +102,10 @@ PLLE2_BASE #(
    .CLKFBIN(pll_clkfb)              // 1-bit input: Feedback clock
 );
 
-wire rst;
+logic rst;
 assign rst = ~pll_locked;
 
-wire clk_200M;
+logic clk_200M;
 BUFG BUFG_200M (
    .O(clk_200M),
    .I(clk200M)
@@ -113,10 +113,24 @@ BUFG BUFG_200M (
 
 
 
-wire rx_clk, rx_clk_5x;
-wire [7:0] rx_red, rx_green, rx_blue;
-wire rx_dv, rx_hs, rx_vs;
-wire [5:0] rx_status;
+logic rx_clk, rx_clk_5x;
+logic [5:0] rx_status;
+logic [7:0] rx_red, rx_green, rx_blue;
+logic [7:0] tx_red, tx_green, tx_blue;
+logic [7:0] red_o, green_o, blue_o;
+logic rx_dv, rx_hs, rx_vs;
+logic tx_dv, tx_hs, tx_vs;
+logic dv_y, hs_y, vs_y;
+logic dv_gb, hs_gb, vs_gb;
+logic dv_bb, hs_bb, vs_bb;
+logic dv_cnv, hs_cnv, vs_cnv;
+logic dv_blur, hs_blur, vs_blur;
+logic line_end_gb, line_end_blur;
+logic [23:0] rgb_i;
+logic [7:0] gamma_o;
+
+assign rgb_i = { rx_red, rx_green, rx_blue};
+
 hdmi_rx hdmi_rx_0(
    .clk_200M(clk_200M),
    .rst(rst),
@@ -144,18 +158,71 @@ hdmi_rx hdmi_rx_0(
 );
 
 // loopback
-reg [7:0] tx_red, tx_green, tx_blue;
-reg tx_dv, tx_hs, tx_vs;
-always @ ( * )
-begin
-   tx_dv    <= rx_dv;
-   tx_hs    <= rx_hs;
-   tx_vs    <= rx_vs;
-   tx_red   <= rx_red;
-   tx_green <= rx_green;
-   tx_blue  <= rx_blue;
+
+always_comb begin
+   tx_dv    <= dv_gb;
+   tx_hs    <= hs_gb;
+   tx_vs    <= vs_gb;
+   tx_red   <= gamma_o;
+   tx_green <= gamma_o;
+   tx_blue  <= gamma_o;
 end
- 
+
+
+
+// logic dv_rgb_o;
+// logic line_end_gb;
+// logic line_end_blur;
+// logic [7:0] gb_line_o [2:0];
+
+rgb2y_3 #(
+    .COLORDEPTH(8)
+    ) rgb2y_inst (
+    .clk            (clk),
+    .rst            (rst),
+    .rgb_i          (rgb_i),
+    .gamma_o        (gamma_o),
+    .dv_i           (rx_dv),
+    .hs_i           (rx_hs),
+    .vs_i           (rx_vs),
+    .dv_o           (dv_y),
+    .hs_o           (hs_y),
+    .vs_o           (vs_y),
+    .line_end_o     (line_end_gb)
+);
+
+// buffer #(
+//     .COLORDEPTH(8)
+//    ) gray_buff_inst (
+//     .clk            (clk),
+//     .rst            (rst),
+//     .data_i         (data_i),
+//     .dv_i           (dv_y),
+//     .hs_i           (hs_y),
+//     .vs_i           (vs_y),
+//     .dv_o           (dv_gb),
+//     .hs_o           (hs_gb),
+//     .vs_o           (vs_gb),
+//     .line_end_i     (line_end_gb),
+//     .buff_o         (gb_line_o)
+// );
+
+// convolution #(
+//     .COLORDEPTH(8)
+// ) blur_inst (
+//     .clk            (clk),
+//     .rst            (rst),
+//     .vect_in        (gb_line_o),
+//     .conv_o         (conv_o),
+//     .dv_i           (dv_gb),
+//     .hs_i           (hs_gb),
+//     .vs_i           (vs_gb),
+//     .dv_o           (dv_blur),
+//     .hs_o           (hs_blur),
+//     .vs_o           (vs_blur),
+//     .line_end_o     (line_end_blur)
+// );
+
 
 hdmi_tx hdmi_tx_0(
    .tx_clk(rx_clk),
