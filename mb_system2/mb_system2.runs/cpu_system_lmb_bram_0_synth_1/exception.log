@@ -1,0 +1,4 @@
+ERROR: Exception caught trying to open file E:\Egyetem\fpga_alapu_rendszerek\mb_system2\mb_system2.runs\cpu_system_lmb_bram_0_synth_1/runme.log
+	Exception name: Error
+	Exception error code: 70
+	Exception message: Engedély megtagadva

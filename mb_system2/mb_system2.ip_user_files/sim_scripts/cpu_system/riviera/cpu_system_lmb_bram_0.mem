@@ -1,0 +1,16 @@
+// Mem file initialization records.
+//
+// SW Build 3719031 on Thu Dec  8 18:35:04 MST 2022
+// Vivado v2022.2.1 (64-bit)
+// Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+// Created on Tuesday May 16, 2023 - 12:07:41 am, from:
+//
+//     Map file     - e:\Egyetem\fpga_alapu_rendszerek\mb_system2\mb_system2.gen\sources_1\bd\cpu_system\cpu_system.bmm
+//     Data file(s) - e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.gen/sources_1/bd/cpu_system/ip/cpu_system_microblaze_0_0/data/mb_bootloop_le.elf
+//
+// Address space 'cpu_system_i_microblaze_0.cpu_system_i_microblaze_0_local_memory_lmb_bram_ADDR_SPACE', bit lane [31:0].
+//
+// Bus width = 32 bits, number of bus blocks = 1.
+
+@00000000
+    B8000000

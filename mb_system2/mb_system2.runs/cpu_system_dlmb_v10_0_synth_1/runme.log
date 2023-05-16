@@ -1,0 +1,294 @@
+
+*** Running vivado
+    with args -log cpu_system_dlmb_v10_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu_system_dlmb_v10_0.tcl
+
+
+
+****** Vivado v2022.2.1 (64-bit)
+  **** SW Build 3719031 on Thu Dec  8 18:35:04 MST 2022
+  **** IP Build 3718410 on Thu Dec  8 22:11:41 MST 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source cpu_system_dlmb_v10_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 389.098 ; gain = 72.234
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: cpu_system_dlmb_v10_0
+Command: synth_design -top cpu_system_dlmb_v10_0 -part xc7k70tfbg676-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Device 21-403] Loading part xc7k70tfbg676-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 12136
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1207.926 ; gain = 408.188
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'cpu_system_dlmb_v10_0' [e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.gen/sources_1/bd/cpu_system/ip/cpu_system_dlmb_v10_0/synth/cpu_system_dlmb_v10_0.vhd:89]
+	Parameter C_LMB_NUM_SLAVES bound to: 1 - type: integer 
+	Parameter C_LMB_DWIDTH bound to: 32 - type: integer 
+	Parameter C_LMB_AWIDTH bound to: 32 - type: integer 
+	Parameter C_LMB_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_EXT_RESET_HIGH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'lmb_v10' declared at 'e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.gen/sources_1/bd/cpu_system/ipshared/cd1d/hdl/lmb_v10_v3_0_vh_rfs.vhd:92' bound to instance 'U0' of component 'lmb_v10' [e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.gen/sources_1/bd/cpu_system/ip/cpu_system_dlmb_v10_0/synth/cpu_system_dlmb_v10_0.vhd:165]
+INFO: [Synth 8-638] synthesizing module 'lmb_v10' [e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.gen/sources_1/bd/cpu_system/ipshared/cd1d/hdl/lmb_v10_v3_0_vh_rfs.vhd:141]
+INFO: [Synth 8-3491] module 'FDS' declared at 'C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:38831' bound to instance 'POR_FF_I' of component 'FDS' [e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.gen/sources_1/bd/cpu_system/ipshared/cd1d/hdl/lmb_v10_v3_0_vh_rfs.vhd:171]
+INFO: [Synth 8-6157] synthesizing module 'FDS' [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:38831]
+INFO: [Synth 8-6155] done synthesizing module 'FDS' (0#1) [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:38831]
+INFO: [Synth 8-256] done synthesizing module 'lmb_v10' (0#1) [e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.gen/sources_1/bd/cpu_system/ipshared/cd1d/hdl/lmb_v10_v3_0_vh_rfs.vhd:141]
+INFO: [Synth 8-256] done synthesizing module 'cpu_system_dlmb_v10_0' (0#1) [e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.gen/sources_1/bd/cpu_system/ip/cpu_system_dlmb_v10_0/synth/cpu_system_dlmb_v10_0.vhd:89]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1302.066 ; gain = 502.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1302.066 ; gain = 502.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1302.066 ; gain = 502.328
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1303.988 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.gen/sources_1/bd/cpu_system/ip/cpu_system_dlmb_v10_0/cpu_system_dlmb_v10_0_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.gen/sources_1/bd/cpu_system/ip/cpu_system_dlmb_v10_0/cpu_system_dlmb_v10_0_ooc.xdc] for cell 'U0'
+Parsing XDC File [E:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.runs/cpu_system_dlmb_v10_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [E:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.runs/cpu_system_dlmb_v10_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1325.734 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  FDS => FDSE: 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 1325.738 ; gain = 0.004
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+
+*** Running vivado
+    with args -log cpu_system_dlmb_v10_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu_system_dlmb_v10_0.tcl
+
+
+
+****** Vivado v2022.2.1 (64-bit)
+  **** SW Build 3719031 on Thu Dec  8 18:35:04 MST 2022
+  **** IP Build 3718410 on Thu Dec  8 22:11:41 MST 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source cpu_system_dlmb_v10_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 388.234 ; gain = 68.496
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: cpu_system_dlmb_v10_0
+Command: synth_design -top cpu_system_dlmb_v10_0 -part xc7k70tfbg676-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Device 21-403] Loading part xc7k70tfbg676-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 14916
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 1206.598 ; gain = 408.340
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'cpu_system_dlmb_v10_0' [e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.gen/sources_1/bd/cpu_system/ip/cpu_system_dlmb_v10_0/synth/cpu_system_dlmb_v10_0.vhd:89]
+	Parameter C_LMB_NUM_SLAVES bound to: 1 - type: integer 
+	Parameter C_LMB_DWIDTH bound to: 32 - type: integer 
+	Parameter C_LMB_AWIDTH bound to: 32 - type: integer 
+	Parameter C_LMB_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_EXT_RESET_HIGH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'lmb_v10' declared at 'e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.gen/sources_1/bd/cpu_system/ipshared/cd1d/hdl/lmb_v10_v3_0_vh_rfs.vhd:92' bound to instance 'U0' of component 'lmb_v10' [e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.gen/sources_1/bd/cpu_system/ip/cpu_system_dlmb_v10_0/synth/cpu_system_dlmb_v10_0.vhd:165]
+INFO: [Synth 8-638] synthesizing module 'lmb_v10' [e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.gen/sources_1/bd/cpu_system/ipshared/cd1d/hdl/lmb_v10_v3_0_vh_rfs.vhd:141]
+INFO: [Synth 8-3491] module 'FDS' declared at 'C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:38831' bound to instance 'POR_FF_I' of component 'FDS' [e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.gen/sources_1/bd/cpu_system/ipshared/cd1d/hdl/lmb_v10_v3_0_vh_rfs.vhd:171]
+INFO: [Synth 8-6157] synthesizing module 'FDS' [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:38831]
+INFO: [Synth 8-6155] done synthesizing module 'FDS' (0#1) [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:38831]
+INFO: [Synth 8-256] done synthesizing module 'lmb_v10' (0#1) [e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.gen/sources_1/bd/cpu_system/ipshared/cd1d/hdl/lmb_v10_v3_0_vh_rfs.vhd:141]
+INFO: [Synth 8-256] done synthesizing module 'cpu_system_dlmb_v10_0' (0#1) [e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.gen/sources_1/bd/cpu_system/ip/cpu_system_dlmb_v10_0/synth/cpu_system_dlmb_v10_0.vhd:89]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 1300.609 ; gain = 502.352
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 1300.609 ; gain = 502.352
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 1300.609 ; gain = 502.352
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1300.609 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.gen/sources_1/bd/cpu_system/ip/cpu_system_dlmb_v10_0/cpu_system_dlmb_v10_0_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.gen/sources_1/bd/cpu_system/ip/cpu_system_dlmb_v10_0/cpu_system_dlmb_v10_0_ooc.xdc] for cell 'U0'
+Parsing XDC File [E:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.runs/cpu_system_dlmb_v10_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [E:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.runs/cpu_system_dlmb_v10_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1311.082 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  FDS => FDSE: 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.052 . Memory (MB): peak = 1311.082 ; gain = 0.000
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:40 ; elapsed = 00:00:51 . Memory (MB): peak = 1311.082 ; gain = 512.824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k70tfbg676-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:40 ; elapsed = 00:00:51 . Memory (MB): peak = 1311.082 ; gain = 512.824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for U0. (constraint file  E:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.runs/cpu_system_dlmb_v10_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:51 . Memory (MB): peak = 1311.082 ; gain = 512.824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:40 ; elapsed = 00:00:52 . Memory (MB): peak = 1311.082 ; gain = 512.824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:00:59 . Memory (MB): peak = 1311.082 ; gain = 512.824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:02 ; elapsed = 00:01:16 . Memory (MB): peak = 1311.082 ; gain = 512.824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:02 ; elapsed = 00:01:16 . Memory (MB): peak = 1311.082 ; gain = 512.824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:02 ; elapsed = 00:01:16 . Memory (MB): peak = 1311.082 ; gain = 512.824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:17 ; elapsed = 00:01:32 . Memory (MB): peak = 1311.082 ; gain = 512.824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:17 ; elapsed = 00:01:32 . Memory (MB): peak = 1311.082 ; gain = 512.824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:17 ; elapsed = 00:01:32 . Memory (MB): peak = 1311.082 ; gain = 512.824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:17 ; elapsed = 00:01:32 . Memory (MB): peak = 1311.082 ; gain = 512.824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:17 ; elapsed = 00:01:32 . Memory (MB): peak = 1311.082 ; gain = 512.824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:17 ; elapsed = 00:01:32 . Memory (MB): peak = 1311.082 ; gain = 512.824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |FDS  |     1|
++------+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:17 ; elapsed = 00:01:32 . Memory (MB): peak = 1311.082 ; gain = 512.824
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:53 ; elapsed = 00:01:26 . Memory (MB): peak = 1311.082 ; gain = 502.352
+Synthesis Optimization Complete : Time (s): cpu = 00:01:17 ; elapsed = 00:01:32 . Memory (MB): peak = 1311.082 ; gain = 512.824
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1311.082 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1313.887 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  FDS => FDSE: 1 instance 
+
+Synth Design complete, checksum: d0c58821
+INFO: [Common 17-83] Releasing license: Synthesis
+28 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:28 ; elapsed = 00:01:56 . Memory (MB): peak = 1313.887 ; gain = 891.133
+INFO: [Common 17-1381] The checkpoint 'E:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.runs/cpu_system_dlmb_v10_0_synth_1/cpu_system_dlmb_v10_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'E:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.runs/cpu_system_dlmb_v10_0_synth_1/cpu_system_dlmb_v10_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file cpu_system_dlmb_v10_0_utilization_synth.rpt -pb cpu_system_dlmb_v10_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue May 16 00:11:09 2023...

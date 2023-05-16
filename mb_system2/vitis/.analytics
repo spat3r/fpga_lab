@@ -1,0 +1,13 @@
+timestamp=[2023-05-16 12:38:46], mode=WORKBENCH_START, duration=0:00:07.252, duration_ms=7252, data={}
+timestamp=[2023-05-16 12:38:46], mode=WORKBENCH_UI_INIT, duration=0:00:00.655, duration_ms=655, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2023-05-16 12:38:47], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.058, duration_ms=58, data={}
+timestamp=[2023-05-16 12:39:49], mode=PLATFORM_CREATION, duration=0:00:03.711, duration_ms=3711, data={platform_source=dsa, os=standalone, processor=microblaze, platform=null}
+timestamp=[2023-05-16 12:41:20], mode=PLATFORM_GENERATION, duration=0:00:07.393, duration_ms=7393, data={name=mb_platform}
+timestamp=[2023-05-16 12:42:03], mode=APP_CREATION, duration=0:00:01.577, duration_ms=1577, data={name=sw_led_1, project_type=sdk, os=standalone, processor=microblaze_0, runtime=C/C++, platform=mb_platform, application_type=application}
+timestamp=[2023-05-16 12:44:42], mode=BUILD, duration=0:00:01.016, duration_ms=1016, data={name=sw_led_1, configuration=Debug, clean_build=false}
+timestamp=[2023-05-16 12:45:05], mode=APP_CREATION, duration=0:00:00.815, duration_ms=815, data={name=sw_led_2, project_type=sdk, os=standalone, processor=microblaze_0, runtime=C/C++, platform=mb_platform, application_type=application}
+timestamp=[2023-05-16 12:48:29], mode=BUILD, duration=0:00:00.624, duration_ms=624, data={name=sw_led_2, configuration=Debug, clean_build=false}
+timestamp=[2023-05-16 12:48:58], mode=APP_CREATION, duration=0:00:00.679, duration_ms=679, data={name=sw_led_3, project_type=sdk, os=standalone, processor=microblaze_0, runtime=C/C++, platform=mb_platform, application_type=application}
+timestamp=[2023-05-16 12:55:06], mode=BUILD, duration=0:00:00.630, duration_ms=630, data={name=sw_led_3, configuration=Debug, clean_build=false}
+timestamp=[2023-05-16 12:55:06], mode=BUILD, duration=0:00:00.131, duration_ms=131, data={name=sw_led_3_system, configuration=Debug, clean_build=false}
+timestamp=[2023-05-16 12:55:19], mode=BUILD, duration=0:00:00.128, duration_ms=128, data={name=sw_led_3, configuration=Debug, clean_build=false}

@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# Vivado v2022.2.1 (64-bit)
+# SW Build 3719031 on Thu Dec  8 18:35:04 MST 2022
+# IP Build 3718410 on Thu Dec  8 22:11:41 MST 2022
+# Start of session at: Tue May 16 00:14:12 2023
+# Process ID: 15004
+# Current directory: E:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.runs/cpu_system_axi_timer_0_0_synth_1
+# Command line: vivado.exe -log cpu_system_axi_timer_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu_system_axi_timer_0_0.tcl
+# Log file: E:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.runs/cpu_system_axi_timer_0_0_synth_1/cpu_system_axi_timer_0_0.vds
+# Journal file: E:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.runs/cpu_system_axi_timer_0_0_synth_1\vivado.jou
+# Running On: rtlaptop, OS: Windows, CPU Frequency: 2112 MHz, CPU Physical cores: 4, Host memory: 16985 MB
+#-----------------------------------------------------------
+source cpu_system_axi_timer_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 388.578 ; gain = 68.949
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: cpu_system_axi_timer_0_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry e549f3f10ef88a60 to dir: E:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.runs/cpu_system_axi_timer_0_0_synth_1
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.cache/ip/2022.2.1/e/5/e549f3f10ef88a60/cpu_system_axi_timer_0_0.dcp to E:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.runs/cpu_system_axi_timer_0_0_synth_1/cpu_system_axi_timer_0_0.dcp.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.cache/ip/2022.2.1/e/5/e549f3f10ef88a60/cpu_system_axi_timer_0_0_sim_netlist.v to E:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.runs/cpu_system_axi_timer_0_0_synth_1/cpu_system_axi_timer_0_0_sim_netlist.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.cache/ip/2022.2.1/e/5/e549f3f10ef88a60/cpu_system_axi_timer_0_0_sim_netlist.vhdl to E:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.runs/cpu_system_axi_timer_0_0_synth_1/cpu_system_axi_timer_0_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.cache/ip/2022.2.1/e/5/e549f3f10ef88a60/cpu_system_axi_timer_0_0_stub.v to E:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.runs/cpu_system_axi_timer_0_0_synth_1/cpu_system_axi_timer_0_0_stub.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file e:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.cache/ip/2022.2.1/e/5/e549f3f10ef88a60/cpu_system_axi_timer_0_0_stub.vhdl to E:/Egyetem/fpga_alapu_rendszerek/mb_system2/mb_system2.runs/cpu_system_axi_timer_0_0_synth_1/cpu_system_axi_timer_0_0_stub.vhdl.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP cpu_system_axi_timer_0_0, cache-ID = e549f3f10ef88a60.
+INFO: [Common 17-206] Exiting Vivado at Tue May 16 00:14:28 2023...

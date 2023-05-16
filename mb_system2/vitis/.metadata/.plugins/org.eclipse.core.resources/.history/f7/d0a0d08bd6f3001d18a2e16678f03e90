@@ -1,0 +1,21 @@
+#include <xparameters.h>
+
+#define MEM32(addr) (*(volatile unsigned long *)(addr))
+
+#define GPIO_DATA1 0x00
+#define GPIO_DATA2 0x08
+
+int main()
+{
+	unsigned long data;
+
+	for (;;)
+	{
+		//A kapcsolók állapotának beolvasása...
+		data = MEM32(XPAR_GPIO_SW_BTN_BASEADDR + GPIO_DATA1);
+		//...és megjelenítése a piros LED-eken.
+		MEM32(XPAR_GPIO_LED_DISP_BASEADDR + GPIO_DATA1) = data;
+	}
+
+	return 0;
+}

@@ -159,7 +159,7 @@ always @( posedge clk ) begin
    dout_valid_reg[1] <= (ch_act==1 & state_dl[5:4]==2'b1);
    if (!accu[66] & (|accu[65:54])) begin  // opcio (accu[66] == 0)  & (accu[65:54] != 0)
       dout_reg <= 'h7fffff;
-   end else if (accu[66] & (&accu[65:53])) begin  // opcio (accu[66] != 0)  & (accu[65:54] == 0)
+   end else if (accu[66] & !(&accu[65:53])) begin  // opcio (accu[66] != 0)  & (accu[65:54] == 0)
       dout_reg <= 'h800000;
    end else begin
       dout_reg <= {accu[66], accu[53:30]};
