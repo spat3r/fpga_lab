@@ -70,30 +70,48 @@ begin
     else
         case (wr_state)
             //Váraozás az írási címre.
-            WR_ADDR_WAIT: 
-            
+            WR_ADDR_WAIT:
+            if (s_axi_awvalid) begin
+                wr_addr <= s_axi_awaddr[3:0];
+                wr_state <= WR_DATA_WAIT;
+            end else begin
+                wr_state <= WR_ADDR_WAIT;
+            end
+
             //Várakozás az írási adatra.                
-            WR_DATA_WAIT: 
-            
+            WR_DATA_WAIT:
+            if (s_axi_wvalid) begin
+                wr_data <= s_axi_wdata;
+                wr_strb <= s_axi_wstrb;
+                wr_state <= WR_EXECUTE;
+            end else begin
+                wr_state <= WR_DATA_WAIT;
+            end
             //Az írási mûvelet végrehajtása.
-            WR_EXECUTE  : 
-            
+            WR_EXECUTE  :
+            if (wr_ack)
+                wr_state <= WR_RESPONSE;
+            else begin
+                wr_state <= WR_EXECUTE;
+            end
             //A nyugtázás elküldése.
             WR_RESPONSE : 
+            if ( s_axi_bready) wr_state <= WR_ADDR_WAIT;
+            else wr_state <= WR_RESPONSE;
         endcase
 end
 
 //Az írási cím csatorna READY jelzésének elõállítása.
-assign s_axi_awready = ;
+assign s_axi_awready = (wr_state == WR_ADDR_WAIT);
 //Az írási adat csatorna READY jelzésének elõállítása.
-assign s_axi_wready  = ;
+assign s_axi_wready  = (wr_state == WR_DATA_WAIT);
 //Az írási válasz csatorna VALID jelzésének elõállítása.
-assign s_axi_bvalid  = ;
+assign s_axi_bvalid  = (wr_state == WR_RESPONSE);
 //Mindog OKAY (00) nyugtát küldünk.
-assign s_axi_bresp   = ;
+assign s_axi_bresp   = 2'b00;
 
 //A regiszerek írás engedélyezõ jelének elõállítása.
-assign wr_en = ;
+assign wr_en = (wr_state == WR_EXECUTE);
 
 
 //******************************************************************************
@@ -112,13 +130,22 @@ begin
     else
         case (rd_state)
             //Váraozás az olvasási címre.
-            RD_ADDR_WAIT: 
+            RD_ADDR_WAIT: if (s_axi_arvalid) begin
+                rd_addr <= s_axi_araddr[3:0];
+                rd_state <= RD_EXECUTE;
+            end else rd_state <= RD_ADDR_WAIT;
             
             //Az olvasási mûvelet végrehajtása.
-            RD_EXECUTE  : 
+            RD_EXECUTE  : if (rd_ack) begin
+                s_axi_rdata <= rd_data;
+                rd_state <= RD_SEND_DATA;
+            end else rd_state <= RD_EXECUTE;
             
             //A beolvasott adat elküldése.
-            RD_SEND_DATA: 
+            RD_SEND_DATA: if (s_axi_rready) begin
+                s_axi_rdata <= 0;
+                rd_state <= RD_ADDR_WAIT;
+            end else rd_state <= RD_SEND_DATA;
             
             //Érvénytelen állapotok.
             default     : rd_state <= RD_ADDR_WAIT;
@@ -126,14 +153,14 @@ begin
 end
 
 //Az olvasási cím csatorna READY jelzésének elõállítása.
-assign s_axi_arready = ;
+assign s_axi_arready = (rd_state == RD_ADDR_WAIT);
 //Az olvasási adat csatorna VALID jelzésének elõállítása.
-assign s_axi_rvalid  = ;
+assign s_axi_rvalid  = (rd_state == RD_SEND_DATA);
 //Mindog OKAY (00) nyugtát küldünk.
-assign s_axi_rresp   = ;
+assign s_axi_rresp   = 2'b00;
 
 //A regiszerek olvasás engedélyezõ jelének elõállítása.
-assign rd_en = ;
+assign rd_en = (rd_state==RD_EXECUTE);
 
 endmodule
 
