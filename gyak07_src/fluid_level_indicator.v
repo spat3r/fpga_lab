@@ -164,7 +164,7 @@ reg [1:0] err_samples;
 always @(posedge clk)
     if (rst) begin
         lvl8_samples <= 2'b11;
-        lvl0_samples <= 2'b11;
+        lvl0_samples <= 2'b11; 
         err_samples <= 2'b11;
     end else begin
         lvl8_samples <= {lvl8_samples [0], (fluid_level == 4'd8)};
