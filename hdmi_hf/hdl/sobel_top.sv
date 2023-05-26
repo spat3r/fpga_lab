@@ -14,6 +14,8 @@ module sobel_top (
     output logic        dv_o,
     output logic        hs_o,
     output logic        vs_o
+
+    // TODO: update port for axi
 );
 
 logic dv_y, hs_y, vs_y;
@@ -26,6 +28,7 @@ logic [7:0] gamma_o, blur_o, sob_o;
 logic [7:0] gb_line_o [2:0];
 logic [7:0] bb_line_o [2:0];
 
+//TODO: add fsm for filling axi rd wr
 
 rgb2y #(
     .COLORDEPTH(8)

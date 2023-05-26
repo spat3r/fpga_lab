@@ -52,6 +52,8 @@ module hdmi_top(
    input  logic       hdmi_tx_hpdn,
    input  logic       hdmi_tx_scl,
    input  logic       hdmi_tx_sda
+
+   // TODO: add ports for axi registers
 );
 
 //******************************************************************************
@@ -166,6 +168,8 @@ sobel_top #(
         .dv_o(tx_dv),
         .hs_o(tx_hs),
         .vs_o(tx_vs)
+
+        // TODO: add ports for axi registers
     );
 
 hdmi_tx hdmi_tx_0(
