@@ -1,6 +1,5 @@
 module gauss_blr_conv #(
     parameter COLORDEPTH = 8,
-
     parameter M_WIDTH = 3,
     parameter M_DEPTH = 3
     ) (
@@ -20,7 +19,6 @@ module gauss_blr_conv #(
     // matrix elements
     logic [7:0] px_d [8:0];
     logic [7:0] px_q [8:0];
-    //TODO: kideríteni hogy az shiftelésnél okosabb e az SV mint én xd
     // matrix row-sum
     logic [10:0] gx_d [2:0];
     // matrix column-sum
@@ -30,11 +28,12 @@ module gauss_blr_conv #(
     logic [11:0] res_q;
     logic [7:0]  conv_d;
 
+    logic [3:0] hs_cnt;
     genvar k;
 generate
     for (k = 0; k < M_DEPTH*M_WIDTH; k = k + 1) begin
         assign px_d[k] = ((k % M_DEPTH) == 0) ? vect_in[k/M_DEPTH] : px_q[k-1];
-        always_ff @( posedge clk ) px_q[k] <= px_d[k];
+        always_ff @( posedge clk ) px_q[k] <= ( hs_cnt[1:0] >= (k/M_DEPTH)) ? px_d[k] : 0;
     end
 endgenerate
 
@@ -42,9 +41,9 @@ endgenerate
     //      | -1 0 1 |    |  px_r0_c0  px_r0_c-1  px_r0_c-2 |
     // Gx = | -2 0 2 | .* | px_r-1_c0 px_r-1_c-1 px_r-1_c-2 |
     //      | -1 0 1 |    | px_r-2_c0 px_r-2_c-1 px_r-2_c-2 |
-    assign gx_d [0] =   (1*px_q[0]) + (2*px_q[1]) + (1*px_q[2]) ;
-    assign gx_d [1] =   (2*px_q[3]) + (4*px_q[4]) + (2*px_q[5]) ;
-    assign gx_d [2] =   (1*px_q[6]) + (2*px_q[7]) + (1*px_q[8]) ;
+    assign gx_d [0] =   (1*px_q[0]) + (1*px_q[1]) + (1*px_q[2]) ;
+    assign gx_d [1] =   (1*px_q[3]) + (2*px_q[4]) + (1*px_q[5]) ;
+    assign gx_d [2] =   (1*px_q[6]) + (1*px_q[7]) + (1*px_q[8]) ;
     
     always_ff @(posedge clk) begin
         gx_q[0] <= gx_d[0];
@@ -69,9 +68,9 @@ endgenerate
 
     always_ff @(posedge clk) conv_o <= conv_d;
 
-    logic [2:0] dv_shr;
-    logic [2:0] hs_shr;
-    logic [2:0] vs_shr;
+    logic [5:0] dv_shr;
+    logic [5:0] hs_shr;
+    logic [5:0] vs_shr;
     wire  line_end_d = dv_shr[2] & ~dv_shr[1];
 
 
@@ -80,10 +79,14 @@ endgenerate
             dv_shr <= 0; dv_o <= 0;
             hs_shr <= 0; hs_o <= 0;
             vs_shr <= 0; vs_o <= 0;
+            hs_cnt <= 0;
         end else begin
-            dv_shr <= {dv_shr[1:0],dv_i};
-            hs_shr <= {hs_shr[1:0],hs_i};
-            vs_shr <= {vs_shr[1:0],vs_i};
+            if (line_end_o & !hs_cnt[1]) hs_cnt <= hs_cnt + 1;
+            else if (vs_i)               hs_cnt <= 0;
+
+            dv_shr <= {dv_shr[5:0],dv_i};
+            if ( ~hs_o & hs_i)  vs_shr <= {vs_shr[5:0],vs_i};
+            hs_shr <= {hs_shr[5:0],hs_i};
             line_end_o <= line_end_d;
             dv_o <= dv_shr[2];
             hs_o <= hs_shr[2];

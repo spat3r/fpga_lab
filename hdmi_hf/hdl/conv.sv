@@ -1,7 +1,6 @@
 module convolution #(
     parameter COLORDEPTH = 8,
     parameter SCREENWIDTH = 1600,
-    parameter LINE_END = 2048,
 
     parameter M_WIDTH = 3,
     parameter M_DEPTH = 3
@@ -24,6 +23,7 @@ module convolution #(
     localparam VECLENGTH = COLORDEPTH+1;
     logic [VECLENGTH-1:0] coeff_reg [8:0] = '{{9'd0},  {9'd0},  {9'd0}, {-9'd0},  {9'd1},  {9'd0}, {9'd0}, { 9'd0},  {9'd0}};
     logic [$rtoi($ceil($clog2(VECLENGTH))):0] addr;
+    logic [5:0] hs_cnt;
 
     always_ff @ (posedge clk) begin
         if (rst || ~vs_i) addr <= 0;
@@ -60,7 +60,7 @@ generate
 
         assign px_d[k] = ((k % M_DEPTH) == 0) ? {1'b0,vect_in[k/M_DEPTH]} : px_q[k-1];
 
-        always_ff @( posedge clk ) px_q[k] <= px_d[k];
+        always_ff @( posedge clk ) px_q[k] <= ( hs_cnt[5:0] >= (k/M_DEPTH)) ? px_d[k] : 0;
 
         dsp_25x18 #(
                 .A_REG(1),
@@ -89,13 +89,19 @@ endgenerate
             dv_shr <= 0; dv_o <= 0;
             hs_shr <= 0; hs_o <= 0;
             vs_shr <= 0; vs_o <= 0;
+            hs_cnt <= 0;
         end else begin
+            // TODO: itt meg kell határozni, hogy mennyi a késleltetés
+            // educated guess: M_DEPTH
+            if (line_end_o & !hs_cnt[1]) hs_cnt <= hs_cnt + 1;
+            else if (vs_i)               hs_cnt <= 0;
             dv_shr <= {dv_shr[13:0],dv_i};
             hs_shr <= {hs_shr[13:0],hs_i};
-            vs_shr <= {vs_shr[13:0],vs_i};
+            if ( ~hs_o & hs_i)  vs_shr <= {vs_shr[13:0],vs_i};
             line_end_o <= line_end_d;
             dv_o <= dv_shr[12];
             hs_o <= hs_shr[12];
+            // TODO: átgondolni ez itt M_DEPTH-e
             vs_o <= vs_shr[12];
         end
     end

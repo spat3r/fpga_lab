@@ -20,9 +20,10 @@ module rgb2y #(
     logic[7:0] r_mul_d, g_mul_d, b_mul_d;
     logic[7:0] r_mul_q, g_mul_q, b_mul_q;
 
-    assign r_mul_d = (red_i   >> 2) + (red_i   >> 5);
-    assign g_mul_d = (green_i >> 1) + (green_i >> 4);
-    assign b_mul_d = (blue_i  >> 4) + (blue_i  >> 5);// + (blue_i >> 6) + (blue_i >> 7);
+    assign r_mul_d = (red_i   >> 2) + (red_i   >> 5);//72/256
+    assign g_mul_d = (green_i >> 1) + (green_i >> 4);//144
+    assign b_mul_d = (blue_i  >> 4) + (blue_i  >> 5);//24
+    // + (blue_i >> 6) + (blue_i >> 7);
     
     always @(posedge clk ) begin
         if (rst) begin

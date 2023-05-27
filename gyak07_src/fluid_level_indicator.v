@@ -2,11 +2,11 @@
 `default_nettype none
 
 //******************************************************************************
-//* Folyadékszint jelzõ periféria.                                             *
+//* folyadekszint jelz_ perif_ria.                                             *
 //*                                                                            *
 //*  ------------     ----                                                     *
 //* |          O-|-->|    |                                                    *
-//* |          O-|-->|    | folyadékszint                                      *
+//* |          O-|-->|    | folyadekszint                                      *
 //* |          O-|-->|    |     (0-8)       ------------                       *
 //* |~~~~~~~~~~O-|-->|    |/--------------\| MicroBlaze |                      *
 //* |~~~~~~~~~~O-|-->|    |\--------------/| CPU        |                      *
@@ -14,34 +14,34 @@
 //* |~~~~~~~~~~O-|-->|    |                                                    *
 //* |~~~~~~~~~~O-|-->|    |                                                    *
 //*  ------------     ----                                                     *
-//*    tartály      periféria                                                  *
+//*    tartaly      perif_ria                                                  *
 //******************************************************************************
 module fluid_level_indicator(
-    //Órajel és reset.
-    input  wire        clk,         //100 MHz rendszerórajel
-    input  wire        rst,         //Aktív magas szinkron reset
+    //_rajel _s reset.
+    input  wire        clk,         //100 MHz rendszer_rajel
+    input  wire        rst,         //Akt_v magas szinkron reset
     
-    //Regiszter írási interfész.
-    input  wire [3:0]  wr_addr,     //Írási cím
-    input  wire        wr_en,       //Írás engedélyezõ jel
-    input  wire [31:0] wr_data,     //Írási adat
-    input  wire [3:0]  wr_strb,     //Bájt engedélyezõ jelek
+    //Regiszter _r_si interf_sz.
+    input  wire [3:0]  wr_addr,     //_r_si c_m
+    input  wire        wr_en,       //_r_s enged_lyez_ jel
+    input  wire [31:0] wr_data,     //_r_si adat
+    input  wire [3:0]  wr_strb,     //B_jt enged_lyez_ jelek
     
-    //Regiszter olvasási interfész.
-    input  wire [3:0]  rd_addr,     //Olvasási cím
-    input  wire        rd_en,       //Olvasás engedélyezõ jel
-    output reg  [31:0] rd_data,     //Olvasási adat      
+    //Regiszter olvas_si interf_sz.
+    input  wire [3:0]  rd_addr,     //Olvas_si c_m
+    input  wire        rd_en,       //Olvas_s enged_lyez_ jel
+    output reg  [31:0] rd_data,     //Olvas_si adat      
     
-    //Adat a folyadék érzékelõktõl.
+    //Adat a folyad_k _rz_kel_kt_l.
     input  wire [7:0]  sensor_in,
     
-    //Megszakításkérõ kimenet.
+    //Megszak_t_sk_r_ kimenet.
     output wire        irq
 );
 
 //******************************************************************************
-//* A szenzor bemeneteket 10 Hz frekvenciával mintavételezzük. Az ütemezõ jel  *
-//* egy 24 bites számlálóval állítható elõ (9999999 - 0 => 24 bit).            *
+//* A szenzor bemeneteket 10 Hz frekvenci_val mintav_telezz_k. Az _temez_ jel  *
+//* egy 24 bites sz_ml_l_val _ll_that_ el_ (9999999 - 0 => 24 bit).            *
 //******************************************************************************
 reg  [23:0] clk_div;
 wire        clk_div_tc = (clk_div == 24'd0);
@@ -60,9 +60,9 @@ always @(posedge clk) begin
 end
 
 //******************************************************************************
-//* A szenzor bemenet alapján a folyadékszintet egy prioritás enkóderrel       *
-//* állíthatjuk elõ. A legnagyobb sorszámú aktív bit határozza meg a           *
-//* folyadékszint értékét.                                                     *
+//* A szenzor bemenet alapj_n a folyadekszintet egy priorit_s enk_derrel       *
+//* _ll_thatjuk el_. A legnagyobb sorsz_m_ akt_v bit hat_rozza meg a           *
+//* folyadekszint _rt_k_t.                                                     *
 //******************************************************************************
 reg [3:0] fluid_level;
 
@@ -80,8 +80,8 @@ always @(posedge clk)
     endcase
 
 //******************************************************************************
-//* A hibajelzés elõállítása. Érvényes a szenzor bemeneten lévõ adat, ha       *
-//* a legnagyobb sorszámú aktív bemeneti bit alatti összes bit is aktív.       *
+//* A hibajelz_s el__ll_t_sa. _rv_nyes a szenzor bemeneten l_v_ adat, ha       *
+//* a legnagyobb sorsz_m_ akt_v bemeneti bit alatti _sszes bit is akt_v.       *
 //******************************************************************************
 reg error;
 
@@ -100,29 +100,29 @@ case (sensor_reg)
 endcase
 
 //******************************************************************************
-//* A regiszterek írási és olvasási engedélyezõ jeleinek elõállítása.          *
+//* A regiszterek _r_si _s olvas_si enged_lyez_ jeleinek el__ll_t_sa.          *
 //*                                                                            *
-//* Folyadékszint regiszter     : BASEADDR+0x00, 32 bites, RD                  *
-//* Megszakítás engedélyezõ reg.: BASEADDR+0x04, 32 bites, R/W                 *
-//* Megszakítás flag regiszter  : BASEADDR+0x08, 32 bites, R/W1C               *
+//* folyadekszint regiszter     : BASEADDR+0x00, 32 bites, RD                  *
+//* Megszak_t_s enged_lyez_ reg.: BASEADDR+0x04, 32 bites, R/W                 *
+//* Megszak_t_s flag regiszter  : BASEADDR+0x08, 32 bites, R/W1C               *
 //******************************************************************************
-//A folyadékszint regiszter olvasás engedélyezõ jele.
+//A folyadekszint regiszter olvas_s enged_lyez_ jele.
 wire lvl_rd = rd_en & (rd_addr[3:2]==2'd0);
 
-//A megszakítás engedélyezõ regiszter írás és olvasás engedélyezõ jele.
+//A megszak_t_s enged_lyez_ regiszter _r_s _s olvas_s enged_lyez_ jele.
 wire ier_wr = wr_en & (wr_addr[3:2]==2'd1) & (wr_strb == 4'hF);
 wire ier_rd = rd_en & (rd_addr[3:2]==2'd1);
 
-//A megszakítás flag regiszter írás és olvasás engedélyezõ jele.
+//A megszak_t_s flag regiszter _r_s _s olvas_s enged_lyez_ jele.
 wire ifr_wr = wr_en & (wr_addr[3:2]==2'd2) & (wr_strb == 4'hF);
 wire ifr_rd = rd_en & (rd_addr[3:2]==2'd2);
 
 //******************************************************************************
-//* Folyadékszint regiszter: BASEADDR+0x00, 32 bites, csak olvasható           *
+//* folyadekszint regiszter: BASEADDR+0x00, 32 bites, csak olvashat_           *
 //*                                                                            *
 //*    31    30          4     3     2     1     0                             *
 //*  -----------------------------------------------                           *
-//* |ERROR|  0   ....    0  |  folyadékszint (0-8)  |                          *
+//* |ERROR|  0   ....    0  |  folyadekszint (0-8)  |                          *
 //*  -----------------------------------------------                           * 
 //******************************************************************************
 wire [31:0] lvl;
@@ -132,7 +132,7 @@ assign lvl[30:4] = 27'b0;
 assign lvl[31]   = error;
 
 //******************************************************************************
-//* Megszakítás engedélyezõ reg.: BASEADDR+0x04, 32 bites, írható/olvasható    *
+//* Megszak_t_s enged_lyez_ reg.: BASEADDR+0x04, 32 bites, _rhat_/olvashat_    *
 //*                                                                            *
 //*    31          5     4     3     2     1     0                             *
 //*  -----------------------------------------------                           *
@@ -148,15 +148,15 @@ always @(posedge clk)
         ier <= wr_data[2:0];
 
 //******************************************************************************
-//* Megszakítás flag regiszter: BASEADDR+0x08, 32 bites, olvasható és a jelzés *
-//*                             '1' beírásával törölhetõ                       *
+//* Megszak_t_s flag regiszter: BASEADDR+0x08, 32 bites, olvashat_ _s a jelz_s *
+//*                             '1' be_r_s_val t_r_lhet_                       *
 //*                                                                            *
 //*    31          5     4     3     2     1     0                             *
 //*  -----------------------------------------------                           *
 //* |  x    ....   x     x    x   |ERROR|EMPTY| FULL|                          *
 //*  -----------------------------------------------                           *
 //******************************************************************************
-//Mintavételezés a felfutó él detektálásához.
+//Mintav_telez_s a felfut_ _l detekt_l_s_hoz.
 reg [1:0] lvl8_samples;
 reg [1:0] lvl0_samples;
 reg [1:0] err_samples;
@@ -175,18 +175,18 @@ always @(posedge clk)
 reg  [2:0] ifr;
 wire [2:0] ifr_set;
 
-//A tartály éppen megtelt (FULL): a folyadékszint 8-ra vált -> felfutó él detektálás.
+//A tartaly _ppen megtelt (FULL): a folyadekszint 8-ra valt -> felfut_ _l detekt_l_s.
 assign ifr_set[0] = (lvl8_samples == 2'b01);
-//A tartály éppen kiürült (EMPTY): a folyadékszint 0-ra vált -> felfutó él detektálás.
+//A tartaly _ppen kiurult (EMPTY): a folyadekszint 0-ra valt -> felfut_ _l detekt_l_s.
 assign ifr_set[1] = (lvl0_samples == 2'b01);
-//Hiba történt (ERROR): felfutó él a hibajelzésen.
+//Hiba t_rt_nt (ERROR): felfut_ _l a hibajelz_sen.
 assign ifr_set[2] = (err_samples == 2'b01) ;
 
 integer i;
 
-//A megszakítás flag regisztert egyetlen always blokkban írjuk le, FOR
-//ciklussal indexelve a biteket. A bitek beállítása nagyobb prioritású
-//az '1' beírásának hatására megtörténõ törlésnél.
+//A megszak_t_s flag regisztert egyetlen always blokkban _rjuk le, FOR
+//ciklussal indexelve a biteket. A bitek be_ll_t_sa nagyobb priorit_s_
+//az '1' be_r_s_nak hat_s_ra megt_rt_n_ t_rl_sn_l.
 always @(posedge clk)
     for (i = 0; i<3; i=i+1) begin
         if (rst) ifr[i] <= 1'b0;
@@ -194,11 +194,11 @@ always @(posedge clk)
         else if (ifr_wr & wr_data[i]) ifr[i] <= 1'b0;
     end
 
-//Jelezzük a megszakításkérést, ha van aktív esemény, amely engedélyezett is.
+//jelezzuk a megszakitasokat, ha van aktiv esemeny, amely engedelyezett is.
 assign irq = |(ier&ifr) ;
 
 //******************************************************************************
-//* Az olvasási adatbusz meghajtása.                                           *
+//* Az olvasasi adatbusz meghajtasa.                                         *
 //******************************************************************************
 always @(*)
 begin
