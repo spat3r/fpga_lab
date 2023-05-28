@@ -96,6 +96,7 @@ module hdmi_fir_IP #(
     wire hist_bin_ready;
     reg [15:0] fir_coef_data, hist_bin_data;
 
+//TODO: a top modulben az infók átadásánál metastabil szűrés és handshake kell.
     always @(posedge clk) begin
         if (rst) begin
             addr <= 0;
@@ -111,6 +112,7 @@ module hdmi_fir_IP #(
 
 
     // TODO: Instanuciate hdmi_top.sv
+//FIXME: a pixel órajel miatt a microblaze másik órajeltartományban lesz.
 hdmi_top hdmi_top_inst(
    .clk100M        ( s_axi_aclk    ),
    .rstbt          ( ~s_axi_aresetn),

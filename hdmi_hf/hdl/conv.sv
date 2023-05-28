@@ -20,6 +20,7 @@ module convolution #(
         
     );
 
+// TODO: Ellenőrízni kell hogy a conv module alkalmas-e a paraméterek fogadására.
     localparam VECLENGTH = COLORDEPTH+1;
     logic [VECLENGTH-1:0] coeff_reg [8:0] = '{{9'd0},  {9'd0},  {9'd0}, {-9'd0},  {9'd1},  {9'd0}, {9'd0}, { 9'd0},  {9'd0}};
     logic [$rtoi($ceil($clog2(VECLENGTH))):0] addr;
@@ -32,6 +33,7 @@ module convolution #(
             else               addr <= addr + 1;
     end
 
+// FIXME: A conv modul elvileg úgy fogadná az új paramétereket, hogy a VSYNC jelváltásnál 25 órajelciklus alatt végigprget egy [33:0] [24:0] regisztertömböt és feltölti az együtthatókkal
     always_ff @(posedge clk) begin
         if (vs_i) coeff_reg[addr] <= coeff_i;
     end
@@ -62,6 +64,7 @@ generate
 
         always_ff @( posedge clk ) px_q[k] <= ( hs_cnt[5:0] >= (k/M_DEPTH)) ? px_d[k] : 0;
 
+// TODO: Le kell ellenőrízni, hogy a conv blokk jól számol-e.
         dsp_25x18 #(
                 .A_REG(1),
                 .B_REG(k+1)
