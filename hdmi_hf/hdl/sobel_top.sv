@@ -18,7 +18,14 @@ module sobel_top #(
     output logic  [7:0] blue_o,
     output logic        dv_o,
     output logic        hs_o,
-    output logic        vs_o
+    output logic        vs_o,
+
+    input  logic        fir_coef_write,
+    input  logic [15:0] fir_coef_data,
+    
+    output logic [15:0] hist_bin_data,
+    input  logic        hist_bin_saved,
+    output logic        hist_bin_ready
 
     // TODO: update port for axi
 );
@@ -38,7 +45,8 @@ logic line_end_gb, line_end_bb;
 logic [7:0] gamma_o, blur_o, sob_o;
 logic [7:0] gb_line_o [2:0];
 logic [7:0] bb_line_o [2:0];
-
+logic [15:0] fir_filter_coef [24:0];
+logic [15:0] hist_bin [255:0];
 //TODO: add fsm for filling axi rd wr
 
 rgb2y #(
@@ -59,6 +67,11 @@ rgb2y #(
     .line_end_o     (line_end_gb)
 );
 
+always_ff @(posedge clk) begin
+    if (dv_i)
+
+end
+
 buffer #(
     .COLORDEPTH(COLORDEPTH),
     .SCREENWIDTH(SCREENWIDTH),
@@ -77,6 +90,7 @@ buffer #(
     .buff_o         (gb_line_o)
 );
 
+// TODO: bekotni a coef reget.
 // gauss_blr_conv #(
 convolution #(
     .COLORDEPTH(COLORDEPTH),
