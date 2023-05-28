@@ -23,10 +23,13 @@
 module hdmi_top(
    input  logic       clk100M,
    input  logic       rstbt,
-   output logic [7:0] led_r,
+   output logic [23:0] led_r,
    input  logic [7:0] sw,
    inout  logic [3:0] bt,
-   
+   input logic [11:0] disp,
+   input logic        uart_rxd,
+   output logic        uart_txd,
+
    input  logic       hdmi_rx_d0_p,
    input  logic       hdmi_rx_d0_n,
    input  logic       hdmi_rx_d1_p,
@@ -122,6 +125,12 @@ logic [7:0] tx_red, tx_green, tx_blue;
 logic rx_dv, rx_hs, rx_vs;
 logic tx_dv, tx_hs, tx_vs;
 
+logic        irq;
+logic        fir_coef_write;
+logic [15:0] fir_coef_data;
+logic [15:0] hist_bin_data;
+logic        hist_bin_saved;
+logic        hist_bin_ready;
 
 hdmi_rx hdmi_rx_0(
    .clk_200M(clk_200M),
@@ -149,27 +158,61 @@ hdmi_rx hdmi_rx_0(
    .rx_status(rx_status)
 );
 
+cpu_system_wrapper cpu_inst(
+   .btn_tri_i        ( bt             ),
+   .clk_in           ( clk100M        ),
+   .disp             ( disp           ),
+   .led_tri_o        ( led_r          ),
+   .rstbt            ( rstbt          ),
+   .sw               ( sw             ),
+   .uart_rxd         ( uart_rxd       ),
+   .uart_txd         ( uart_txd       ),
+   .fir_coef_write_0 ( fir_coef_write ),
+   .fir_coef_data_0  ( fir_coef_data  ),
+   .hist_bin_data_0  ( hist_bin_data  ),
+   .hist_bin_saved_0 ( hist_bin_saved ),
+   .hist_bin_ready_0 ( hist_bin_ready )
+);
 
+
+
+    // TODO: Instanciate fir_axi_if.sv
+
+
+    // TODO: Instanuciate hdmi_top.sv
+//FIXME: a pixel órajel miatt a microblaze másik órajeltartományban lesz.
+
+    // TODO: reading histogram bins
+
+
+    // TODO: writing fir parameters
+
+    // TODO: szerintem az axi regiszterek itt legyenek implementálva és az almodulok csak hozzáférnek vezetékeken keresztül
+                // biztosan egy vezetékezési kín lesz de nem tudom hogy lehet optimálisan megoldani
 
 sobel_top #(
     ) sobel_top_inst (
-        .clk(rx_clk),
-        .rst(rst),
-        .sw(sw),
-        .red_i(rx_red),
-        .green_i(rx_green),
-        .blue_i(rx_blue),
-        .red_o(tx_red),
-        .green_o(tx_green),
-        .blue_o(tx_blue),
-        .dv_i(rx_dv),
-        .hs_i(rx_hs),
-        .vs_i(rx_vs),
-        .dv_o(tx_dv),
-        .hs_o(tx_hs),
-        .vs_o(tx_vs)
-
-        // TODO: add ports for axi registers
+         .clk(rx_clk),
+         .rst(rst),
+         .sw(sw),
+         .red_i(rx_red),
+         .green_i(rx_green),
+         .blue_i(rx_blue),
+         .red_o(tx_red),
+         .green_o(tx_green),
+         .blue_o(tx_blue),
+         .dv_i(rx_dv),
+         .hs_i(rx_hs),
+         .vs_i(rx_vs),
+         .dv_o(tx_dv),
+         .hs_o(tx_hs),
+         .vs_o(tx_vs),
+         .fir_coef_write ( fir_coef_write ),
+         .fir_coef_data  ( fir_coef_data  ),
+         .hist_bin_data  ( hist_bin_data  ),
+         .hist_bin_saved ( hist_bin_saved ),
+         .hist_bin_ready ( hist_bin_ready )
+         // TODO: add ports for axi registers
     );
 
 hdmi_tx hdmi_tx_0(

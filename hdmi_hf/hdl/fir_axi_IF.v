@@ -1,8 +1,8 @@
-module hdmi_fir_IP #(
+module fir_axi_if #(
     // AXI interface parameters
-    parameter C_S_AXI_DATA_WIDTH = 16,
+    parameter C_S_AXI_DATA_WIDTH = 32,
     parameter C_S_AXI_ADDR_WIDTH = 8
-    ) (
+ ) (
     //AXI clock and reset signals.
     (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 s_axi_aclk CLK" *)
     (* X_INTERFACE_PARAMETER = "ASSOCIATED_BUSIF S_AXI, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 100000000" *)
@@ -59,46 +59,22 @@ module hdmi_fir_IP #(
     //Interrupt request.
     (* X_INTERFACE_INFO = "xilinx.com:signal:interrupt:1.0 irq INTR" *)
     (* X_INTERFACE_PARAMETER = "SENSITIVITY LEVEL_HIGH" *)
-    output wire                              irq,
-
-    // HDMI inputs and outputs.
-    input  wire       hdmi_rx_d0_p,
-    input  wire       hdmi_rx_d0_n,
-    input  wire       hdmi_rx_d1_p,
-    input  wire       hdmi_rx_d1_n,
-    input  wire       hdmi_rx_d2_p,
-    input  wire       hdmi_rx_d2_n,
-    input  wire       hdmi_rx_clk_p,
-    input  wire       hdmi_rx_clk_n,
-    input  wire       hdmi_rx_cec,
-    output reg        hdmi_rx_hpd,
-    input  wire       hdmi_rx_scl,
-    inout  wire       hdmi_rx_sda,
-
-    output reg        hdmi_tx_d0_p,
-    output reg        hdmi_tx_d0_n,
-    output reg        hdmi_tx_d1_p,
-    output reg        hdmi_tx_d1_n,
-    output reg        hdmi_tx_d2_p,
-    output reg        hdmi_tx_d2_n,
-    output reg        hdmi_tx_clk_p,
-    output reg        hdmi_tx_clk_n,
-    input  wire       hdmi_tx_cec,
-    input  wire       hdmi_tx_hpdn,
-    input  wire       hdmi_tx_scl,
-    input  wire       hdmi_tx_sda
+    output reg                              irq,
+    output reg                              fir_coef_write,
+    output reg [15:0]                       fir_coef_data,
+    input wire [15:0]                       hist_bin_data,
+    output reg                              hist_bin_saved,
+    input wire                              hist_bin_ready
 );
+
     reg [15:0] fir_filter_coef [24:0];
     reg [15:0] hist_bin [255:0];
     reg [7:0]  addr;
     reg [1:0] hist_bin_ready_shr;
-    reg fir_coef_write, hist_bin_saved;
-    wire hist_bin_ready;
-    reg [15:0] fir_coef_data, hist_bin_data;
 
 //TODO: a top modulben az infók átadásánál metastabil szűrés és handshake kell.
-    always @(posedge clk) begin
-        if (rst) begin
+    always @(posedge s_axi_aclk) begin
+        if (s_axi_aresetn) begin
             addr <= 0;
         end else if (hist_bin_ready) begin
             hist_bin_saved <= 1;
@@ -107,54 +83,7 @@ module hdmi_fir_IP #(
             hist_bin_saved <= 0;
         end
     end
+    //TODO: implement fsm
 
-    // TODO: Instanciate fir_axi_if.sv
-
-
-    // TODO: Instanuciate hdmi_top.sv
-//FIXME: a pixel órajel miatt a microblaze másik órajeltartományban lesz.
-hdmi_top hdmi_top_inst(
-   .clk100M        ( s_axi_aclk    ),
-   .rstbt          ( ~s_axi_aresetn),
-   .led_r          ( led_r         ),
-   .sw             ( 4'h3          ),
-   .bt             ( 4'h3          ),   
-   .hdmi_rx_d0_p   ( hdmi_rx_d0_p  ),
-   .hdmi_rx_d0_n   ( hdmi_rx_d0_n  ),
-   .hdmi_rx_d1_p   ( hdmi_rx_d1_p  ),
-   .hdmi_rx_d1_n   ( hdmi_rx_d1_n  ),
-   .hdmi_rx_d2_p   ( hdmi_rx_d2_p  ),
-   .hdmi_rx_d2_n   ( hdmi_rx_d2_n  ),
-   .hdmi_rx_clk_p  ( hdmi_rx_clk_p ),
-   .hdmi_rx_clk_n  ( hdmi_rx_clk_n ),
-   .hdmi_rx_cec    ( hdmi_rx_cec   ),
-   .hdmi_rx_hpd    ( hdmi_rx_hpd   ),
-   .hdmi_rx_scl    ( hdmi_rx_scl   ),
-   .hdmi_rx_sda    ( hdmi_rx_sda   ),   
-   .hdmi_tx_d0_p   ( hdmi_tx_d0_p  ),
-   .hdmi_tx_d0_n   ( hdmi_tx_d0_n  ),
-   .hdmi_tx_d1_p   ( hdmi_tx_d1_p  ),
-   .hdmi_tx_d1_n   ( hdmi_tx_d1_n  ),
-   .hdmi_tx_d2_p   ( hdmi_tx_d2_p  ),
-   .hdmi_tx_d2_n   ( hdmi_tx_d2_n  ),
-   .hdmi_tx_clk_p  ( hdmi_tx_clk_p ),
-   .hdmi_tx_clk_n  ( hdmi_tx_clk_n ),
-   .hdmi_tx_cec    ( hdmi_tx_cec   ),
-   .hdmi_tx_hpdn   ( hdmi_tx_hpdn  ),
-   .hdmi_tx_scl    ( hdmi_tx_scl   ),
-   .hdmi_tx_sda    ( hdmi_tx_sda   ),
-   .fir_coef_write(fir_coef_write   ),
-   .fir_coef_data(fir_coef_data     ),
-   .hist_bin_data(hist_bin_data     ),
-   .hist_bin_saved(hist_bin_saved   ),
-   .hist_bin_ready(hist_bin_ready   )
-);
-
-    // TODO: reading histogram bins
-
-
-    // TODO: writing fir parameters
-
-    // TODO: szerintem az axi regiszterek itt legyenek implementálva és az almodulok csak hozzáférnek vezetékeken keresztül
-                // biztosan egy vezetékezési kín lesz de nem tudom hogy lehet optimálisan megoldani
+    //TODO implement fir writing, bin reading
 endmodule

@@ -67,10 +67,6 @@ rgb2y #(
     .line_end_o     (line_end_gb)
 );
 
-always_ff @(posedge clk) begin
-    if (dv_i)
-
-end
 
 buffer #(
     .COLORDEPTH(COLORDEPTH),
