@@ -60,6 +60,7 @@ module fir_axi_if #(
     (* X_INTERFACE_INFO = "xilinx.com:signal:interrupt:1.0 irq INTR" *)
     (* X_INTERFACE_PARAMETER = "SENSITIVITY LEVEL_HIGH" *)
     output reg                              irq,
+    
     output reg                              fir_coef_write,
     output reg [15:0]                       fir_coef_data,
     input wire [15:0]                       hist_bin_data,
