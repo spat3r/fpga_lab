@@ -96,12 +96,13 @@ module fir_axi_if #(
     end
 
 //TODO: implement fsm
+//TODO: comment states
 
 
 localparam IDLE = 0,
 AXI_WRITE_ESTABLISH = 1,
 WAIT_ON_WRITE_ENABLE = 2,
-AXI_WRITE = 3,          //FIR adatok másolása
+AXI_WRITE = 3,   
 FIR_2_COEFF_R = 4,
 HIST_READ = 5,
 AXI_READ_ESTABLISH = 6,
