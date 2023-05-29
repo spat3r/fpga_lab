@@ -48,7 +48,7 @@ module convolution #(
     //*                        *
     //**************************
     wire  [47:0] pi [8:0];
-    reg   [47:0] po [8:0];
+    wire  [47:0] po [8:0];
     wire  [VECLENGTH-1:0] px_d [8:0];
     reg   [VECLENGTH-1:0] px_q [8:0];
 
@@ -60,7 +60,7 @@ end
     genvar k;
 generate
     for (k = 0; k < M_DEPTH*M_WIDTH; k = k + 1) begin
-        // az elsĹ‘ oszlopot nem szĂĽksĂ©ges eltĂˇrolni, mivel a buffer nem hoz be
+        // az elsĹ' oszlopot nem szĂĽksĂ©ges eltĂˇrolni, mivel a buffer nem hoz be
         // oszlopkĂ©sleltetĂ©st, ergo, ha engedi a kĂ©sleltetĂ©s:
         // d_in -> szorzĂˇs -> tĂˇrolĂˇs -> Ă¶sszeadĂˇsok -> tĂˇrolĂˇs -> d_out
         // d_in -> szorzĂˇs -> tĂˇrolĂˇs -> soron belĂĽl -> tĂˇrolĂˇs 

@@ -39,18 +39,18 @@ module hdmi_top(
    input  wire        hdmi_rx_clk_p,
    input  wire        hdmi_rx_clk_n,
    input  wire        hdmi_rx_cec,
-   output reg         hdmi_rx_hpd,
+   output wire        hdmi_rx_hpd,
    input  wire        hdmi_rx_scl,
-   inout  wire       hdmi_rx_sda,
+   inout  wire        hdmi_rx_sda,
    
-   output reg         hdmi_tx_d0_p,
-   output reg         hdmi_tx_d0_n,
-   output reg         hdmi_tx_d1_p,
-   output reg         hdmi_tx_d1_n,
-   output reg         hdmi_tx_d2_p,
-   output reg         hdmi_tx_d2_n,
-   output reg         hdmi_tx_clk_p,
-   output reg         hdmi_tx_clk_n,
+   output wire         hdmi_tx_d0_p,
+   output wire         hdmi_tx_d0_n,
+   output wire         hdmi_tx_d1_p,
+   output wire         hdmi_tx_d1_n,
+   output wire         hdmi_tx_d2_p,
+   output wire         hdmi_tx_d2_n,
+   output wire         hdmi_tx_clk_p,
+   output wire         hdmi_tx_clk_n,
    input  wire        hdmi_tx_cec,
    input  wire        hdmi_tx_hpdn,
    input  wire        hdmi_tx_scl,
@@ -121,9 +121,9 @@ BUFG BUFG_200M (
 wire  rx_clk, rx_clk_5x;
 wire  [5:0] rx_status;
 wire  [7:0] rx_red, rx_green, rx_blue;
-reg   [7:0] tx_red, tx_green, tx_blue;
+wire  [7:0] tx_red, tx_green, tx_blue;
 wire rx_dv, rx_hs, rx_vs;
-reg  tx_dv, tx_hs, tx_vs;
+wire tx_dv, tx_hs, tx_vs;
 
 wire         fir_coef_write;
 wire  [15:0] fir_coef_data;
@@ -157,21 +157,21 @@ hdmi_rx hdmi_rx_0(
    .rx_status(rx_status)
 );
 
-cpu_system_wrapper cpu_inst(
-   .btn_tri_i        ( bt             ),
-   .clk_in           ( clk100M        ),
-   .disp             ( disp           ),
-   .led_tri_o        ( led_r          ),
-   .rstbt            ( rstbt          ),
-   .sw               ( sw             ),
-   .uart_rxd         ( uart_rxd       ),
-   .uart_txd         ( uart_txd       ),
-   .fir_coef_write_0 ( fir_coef_write ),
-   .fir_coef_data_0  ( fir_coef_data  ),
-   .hist_bin_data_0  ( hist_bin_data  ),
-   .hist_bin_saved_0 ( hist_bin_saved ),
-   .hist_bin_ready_0 ( hist_bin_ready )
-);
+//cpu_system_wrapper cpu_inst(
+//   .btn_tri_i        ( bt             ),
+//   .clk_in           ( clk100M        ),
+//   .disp             ( disp           ),
+//   .led_tri_o        ( led_r          ),
+//   .rstbt            ( rstbt          ),
+//   .sw               ( sw             ),
+//   .uart_rxd         ( uart_rxd       ),
+//   .uart_txd         ( uart_txd       ),
+//   .fir_coef_write_0 ( fir_coef_write ),
+//   .fir_coef_data_0  ( fir_coef_data  ),
+//   .hist_bin_data_0  ( hist_bin_data  ),
+//   .hist_bin_saved_0 ( hist_bin_saved ),
+//   .hist_bin_ready_0 ( hist_bin_ready )
+//);
 
 
 
@@ -234,6 +234,6 @@ hdmi_tx hdmi_tx_0(
    .hdmi_tx_d2_n(hdmi_tx_d2_n)
 );
 
-assign led_r = {pll_locked, 1'b0, rx_status};
+assign led_r = {16'b0, pll_locked, 1'b0, rx_status};
 
 endmodule
