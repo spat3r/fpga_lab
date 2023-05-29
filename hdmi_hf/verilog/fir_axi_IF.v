@@ -97,13 +97,13 @@ module fir_axi_if #(
 
 
 localparam IDLE = 0,
-AXI_WRITE_OK = 1,
-AXI_WRITE_DUMMY = 2,
+AXI_WRITE_ESTABLISH = 1,
+WAIT_ON_WRITE_ENABLE = 2,
 AXI_WRITE = 3,          //FIR adatok másolása
 FIR_2_COEFF_R = 4,
 HIST_READ = 5,
-PRE_READ1 = 6,
-PRE_READ2 = 7,
+AXI_READ_ESTABLISH = 6,
+WAIT_ON_READ_ENABLE = 7,
 AXI_READ = 8;
 
 reg state;
@@ -116,15 +116,15 @@ begin
 
          IDLE :
             if(axi_write_rdy)
-                state <= AXI_WRITE_OK;
+                state <= AXI_WRITE_ESTABLISH;
             if(axi_read_rdy)
-                state <= PRE_READ1;
+                state <= AXI_READ_ESTABLISH;
 
-         AXI_WRITE_OK :
+         AXI_WRITE_ESTABLISH :
             if(!dv_i_rdy)
-               state <= AXI_WRITE_DUMMY;
+               state <= WAIT_ON_WRITE_ENABLE;
 
-         AXI_WRITE_DUMMY :
+         WAIT_ON_WRITE_ENABLE :
             if(!dv_i_rdy)
                state <= AXI_WRITE;
 
@@ -143,12 +143,12 @@ begin
             else
                 state <= IDLE;
 
-         PRE_READ1 :
+         AXI_READ_ESTABLISH :
             vs_delay <= vs_i;
             if(vs_delay & ~vs_i)
-                state <= PRE_READ2;
+                state <= WAIT_ON_READ_ENABLE;
 
-         PRE_READ2 :
+         WAIT_ON_READ_ENABLE :
             vs_delay <= vs_i;
             if(~vs_delay & vs_i)
                 state <= HIST_READ;
