@@ -67,21 +67,37 @@ module fir_axi_if #(
     output reg                              hist_bin_saved,
     input wire                              hist_bin_ready,
 
-   
+    input wire hdmi_vs,
+    input wire hdmi_dv
 );
     //State variables
 
-    input wire hdmi_vs,
-    input wire hdmi_dv,
-    input wire axi_write_rdy,
-    input wire axi_write_ack,
-    input wire axi_read_rdy,
-    input wire axi_read_ack
+   
+    wire axi_write_rdy;
+    wire axi_write_ack;
+    wire axi_read_rdy;
+    wire axi_read_ack;
 
     reg [15:0] fir_filter_coef [24:0];
     reg [15:0] hist_bin [255:0];
     reg [7:0]  addr;
     reg [1:0]  hist_bin_ready_shr;
+
+    reg hdmi_vs_delayed;
+    reg hdmi_vs_stable;
+
+    reg hdmi_dv_delayed;
+    reg hdmi_dv_stable;
+
+always @ (posedge s_axi_aclk)
+begin
+    hdmi_vs_delayed <= hdmi_vs;
+    hdmi_vs_stable <= hdmi_vs_delayed;
+
+    hdmi_dv_delayed <= hdmi_dv;
+    hdmi_dv_stable <= hdmi_dv_delayed;
+end
+
 
 //TODO: a top modulben az infók átadásánál metastabil szűrés és handshake kell.
     always @(posedge s_axi_aclk) begin
@@ -111,7 +127,7 @@ AXI_READ = 8;
 
 reg state;
 
-reg vs_delay;
+reg hdmi_vs_stable_delayed;
 
 always @ (posedge s_axi_aclk)
 begin
@@ -124,11 +140,11 @@ begin
                 state <= AXI_READ_ESTABLISH;
 
          AXI_WRITE_ESTABLISH :
-            if(!hdmi_dv)
+            if(!hdmi_dv_stable)
                state <= WAIT_ON_WRITE_ENABLE;
 
          WAIT_ON_WRITE_ENABLE :
-            if(hdmi_dv)
+            if(hdmi_dv_stable)
                state <= AXI_WRITE;
 
          AXI_WRITE : 
@@ -136,8 +152,8 @@ begin
                 state <= FIR_2_COEFF_R;
 
          FIR_2_COEFF_R :  
-            vs_delay <= hdmi_vs;
-            if(~vs_delay & hdmi_vs)
+            hdmi_vs_stable_delayed <= hdmi_vs_stable;
+            if(~hdmi_vs_stable_delayed & hdmi_vs_stable)
                state <= HIST_READ;
 
          HIST_READ :
@@ -147,13 +163,13 @@ begin
                 state <= IDLE;
 
          AXI_READ_ESTABLISH :
-            vs_delay <= hdmi_vs;
-            if(vs_delay & ~hdmi_vs)
+            hdmi_vs_stable_delayed <= hdmi_vs_stable;
+            if(hdmi_vs_stable_delayed & ~hdmi_vs_stable)
                 state <= WAIT_ON_READ_ENABLE;
 
          WAIT_ON_READ_ENABLE :
-            vs_delay <= hdmi_vs;
-            if(~vs_delay & hdmi_vs)
+            hdmi_vs_stable_delayed <= hdmi_vs_stable;
+            if(~hdmi_vs_stable_delayed & hdmi_vs_stable)
                 state <= HIST_READ;
 
          AXI_READ :
