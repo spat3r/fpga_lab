@@ -67,14 +67,16 @@ module fir_axi_if #(
     output reg                              hist_bin_saved,
     input wire                              hist_bin_ready,
 
-    //Állapotjelző változók
+   
+);
+    //State variables
 
-    input wire dv_i_rdy,
+    input wire hdmi_vs,
+    input wire hdmi_dv,
     input wire axi_write_rdy,
     input wire axi_write_ack,
     input wire axi_read_rdy,
     input wire axi_read_ack
-);
 
     reg [15:0] fir_filter_coef [24:0];
     reg [15:0] hist_bin [255:0];
@@ -121,11 +123,11 @@ begin
                 state <= AXI_READ_ESTABLISH;
 
          AXI_WRITE_ESTABLISH :
-            if(!dv_i_rdy)
+            if(!hdmi_dv)
                state <= WAIT_ON_WRITE_ENABLE;
 
          WAIT_ON_WRITE_ENABLE :
-            if(!dv_i_rdy)
+            if(hdmi_dv)
                state <= AXI_WRITE;
 
          AXI_WRITE : 
@@ -133,8 +135,8 @@ begin
                 state <= FIR_2_COEFF_R;
 
          FIR_2_COEFF_R :  
-            vs_delay <= vs_i;
-            if(~vs_delay & vs_i)
+            vs_delay <= hdmi_vs;
+            if(~vs_delay & hdmi_vs)
                state <= HIST_READ;
 
          HIST_READ :
@@ -144,13 +146,13 @@ begin
                 state <= IDLE;
 
          AXI_READ_ESTABLISH :
-            vs_delay <= vs_i;
-            if(vs_delay & ~vs_i)
+            vs_delay <= hdmi_vs;
+            if(vs_delay & ~hdmi_vs)
                 state <= WAIT_ON_READ_ENABLE;
 
          WAIT_ON_READ_ENABLE :
-            vs_delay <= vs_i;
-            if(~vs_delay & vs_i)
+            vs_delay <= hdmi_vs;
+            if(~vs_delay & hdmi_vs)
                 state <= HIST_READ;
 
          AXI_READ :
