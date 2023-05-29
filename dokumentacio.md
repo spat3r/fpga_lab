@@ -12,3 +12,14 @@
 // lehet plusz karaktert használni, ezt is dokumentálni kell
 
 // lehet használni az orai megoldásokat is nyugodtan
+
+
+
+Járhat e a cpu is a pixelórajelről, akkor nem kellene metastabil szűrés és hasonlók
+
+> :memo: note: ha a fir2coeff_r jönne de még nem fejeződött be az axi írás, hibát dobunk
+
+Közönbös-e hogy a berkezést követő képkocka histje kerül-e ki vagy
+ - lehet e esetleg az, hogy csak a legutóbbi kerül ki
+ - lehet e az hogy ha a látható kép után jön be a jel, akkor csak a kettővel későbbi képet tesszük ki
+ - lehet e hogy inkozisztens, hogy pontosan melyik kép kerül ki 
