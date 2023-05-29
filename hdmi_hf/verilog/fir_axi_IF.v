@@ -65,13 +65,21 @@ module fir_axi_if #(
     output reg [15:0]                       fir_coef_data,
     input wire [15:0]                       hist_bin_data,
     output reg                              hist_bin_saved,
-    input wire                              hist_bin_ready
+    input wire                              hist_bin_ready,
+
+    //Állapotjelző változók
+
+    input wire dv_i_rdy,
+    input wire axi_write_rdy,
+    input wire axi_write_ack,
+    input wire axi_read_rdy,
+    input wire axi_read_ack
 );
 
     reg [15:0] fir_filter_coef [24:0];
     reg [15:0] hist_bin [255:0];
     reg [7:0]  addr;
-    reg [1:0] hist_bin_ready_shr;
+    reg [1:0]  hist_bin_ready_shr;
 
 //TODO: a top modulben az infók átadásánál metastabil szűrés és handshake kell.
     always @(posedge s_axi_aclk) begin
@@ -84,7 +92,78 @@ module fir_axi_if #(
             hist_bin_saved <= 0;
         end
     end
-    //TODO: implement fsm
+
+//TODO: implement fsm
+
+
+localparam IDLE = 0,
+AXI_WRITE_OK = 1,
+AXI_WRITE_DUMMY = 2,
+AXI_WRITE = 3,          //FIR adatok másolása
+FIR_2_COEFF_R = 4,
+HIST_READ = 5,
+PRE_READ1 = 6,
+PRE_READ2 = 7,
+AXI_READ = 8;
+
+reg state;
+
+reg vs_delay;
+
+always @ (posedge s_axi_aclk)
+begin
+      case (state)
+
+         IDLE :
+            if(axi_write_rdy)
+                state <= AXI_WRITE_OK;
+            if(axi_read_rdy)
+                state <= PRE_READ1;
+
+         AXI_WRITE_OK :
+            if(!dv_i_rdy)
+               state <= AXI_WRITE_DUMMY;
+
+         AXI_WRITE_DUMMY :
+            if(!dv_i_rdy)
+               state <= AXI_WRITE;
+
+         AXI_WRITE : 
+            if(axi_write_ack)
+                state <= FIR_2_COEFF_R;
+
+         FIR_2_COEFF_R :  
+            vs_delay <= vs_i;
+            if(~vs_delay & vs_i)
+               state <= HIST_READ;
+
+         HIST_READ :
+            if(axi_read_rdy)
+                state <= AXI_READ;
+            else
+                state <= IDLE;
+
+         PRE_READ1 :
+            vs_delay <= vs_i;
+            if(vs_delay & ~vs_i)
+                state <= PRE_READ2;
+
+         PRE_READ2 :
+            vs_delay <= vs_i;
+            if(~vs_delay & vs_i)
+                state <= HIST_READ;
+
+         AXI_READ :
+            if(axi_read_ack)
+                state <= IDLE;
+
+         default : IDLE;
+         
+      endcase
+
+end
+
+
 
     //TODO implement fir writing, bin reading
 endmodule
