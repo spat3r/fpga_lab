@@ -221,47 +221,47 @@ convolution #(
     .line_end_o     (line_end_bb)
 );
 
-buffer #(
-    .COLORDEPTH(COLORDEPTH),
-    .SCREENWIDTH(SCREENWIDTH),
-    .BUF_DEPTH(3)
-    ) blr_buff_inst (
-    .clk            (clk),
-    .rst            (rst),
-    .data_i         (blur_o),
-    .dv_i           (dv_blur),
-    .hs_i           (hs_blur),
-    .vs_i           (vs_blur),
-    .dv_o           (dv_bb),
-    .hs_o           (hs_bb),
-    .vs_o           (vs_bb),
-    .line_end_i     (line_end_bb),
-    .buff_o_0       (bb_line_o[0]),
-    .buff_o_1       (bb_line_o[1]),
-    .buff_o_2       (bb_line_o[2])
-);
+// buffer #(
+//     .COLORDEPTH(COLORDEPTH),
+//     .SCREENWIDTH(SCREENWIDTH),
+//     .BUF_DEPTH(3)
+//     ) blr_buff_inst (
+//     .clk            (clk),
+//     .rst            (rst),
+//     .data_i         (blur_o),
+//     .dv_i           (dv_blur),
+//     .hs_i           (hs_blur),
+//     .vs_i           (vs_blur),
+//     .dv_o           (dv_bb),
+//     .hs_o           (hs_bb),
+//     .vs_o           (vs_bb),
+//     .line_end_i     (line_end_bb),
+//     .buff_o_0       (bb_line_o[0]),
+//     .buff_o_1       (bb_line_o[1]),
+//     .buff_o_2       (bb_line_o[2])
+// );
 
-// sobel_conv #(
-convolution #(
-    .COLORDEPTH(COLORDEPTH),
-    .M_WIDTH(3),
-    .M_DEPTH(3)
-    ) sob_inst (
-    .clk            (clk),
-    .rst            (rst),
-    .vect_in_0      (bb_line_o[0]),
-    .vect_in_1      (bb_line_o[1]),
-    .vect_in_2      (bb_line_o[2]),
-    .conv_o         (sob_o),
-    .coeff_i        (8'h1),
-    .dv_i           (dv_bb),
-    .hs_i           (hs_bb),
-    .vs_i           (vs_bb),
-    .dv_o           (dv_sob),
-    .hs_o           (hs_sob),
-    .vs_o           (vs_sob),
-    .line_end_o     ()
-);
+// // sobel_conv #(
+// convolution #(
+//     .COLORDEPTH(COLORDEPTH),
+//     .M_WIDTH(3),
+//     .M_DEPTH(3)
+//     ) sob_inst (
+//     .clk            (clk),
+//     .rst            (rst),
+//     .vect_in_0      (bb_line_o[0]),
+//     .vect_in_1      (bb_line_o[1]),
+//     .vect_in_2      (bb_line_o[2]),
+//     .conv_o         (sob_o),
+//     .coeff_i        (8'h1),
+//     .dv_i           (dv_bb),
+//     .hs_i           (hs_bb),
+//     .vs_i           (vs_bb),
+//     .dv_o           (dv_sob),
+//     .hs_o           (hs_sob),
+//     .vs_o           (vs_sob),
+//     .line_end_o     ()
+// );
 
 always @ ( posedge clk ) begin : output_multiplexer
     case (sw)
