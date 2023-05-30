@@ -69,6 +69,13 @@ module fir_axi_if #(
     input wire axi_rd_ack_i,
     input wire [31:0] hist_bin_to_axi
 );
+    //State variables
+
+   
+    wire axi_write_rdy;
+    wire axi_write_ack;
+    wire axi_read_rdy;
+    wire axi_read_ack;
 
 reg rd_ack_q1, rd_ack_q2, rd_ack_q3;
 reg wr_ack_q1, wr_ack_q2, wr_ack_q3;
@@ -92,6 +99,7 @@ assign axi_wr_ack_d = axi_wr_ack_i ^ axi_write_ack;
 wire axi_read_ack, axi_rd_ack_d;
 assign axi_read_ack = ~rd_ack_q3 & rd_ack_q2;
 assign axi_rd_ack_d = axi_rd_ack_i ^ axi_read_ack;
+//TODO: comment states
 
 //******************************************************************************
 //* irasi allapotgep.                                                          *
