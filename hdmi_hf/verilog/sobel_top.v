@@ -20,14 +20,13 @@ module sobel_top #(
     output reg          hs_o,
     output reg          vs_o,
 
-    input  wire         fir_coef_write,
-    input  wire  [15:0] fir_coef_data,
-    
-    output reg   [15:0] hist_bin_data,
-    input  wire         hist_bin_saved,
-    output reg          hist_bin_ready
-
-    // TODO: update port for axi
+    input wire [7:0] fir_addr_from_axi,
+    input wire [31:0] fir_coeff_from_axi,
+    input wire axi_wr_strobe_i,
+    output reg axi_wr_ack_o,
+    input wire axi_rd_strobe_i,
+    output reg axi_rd_ack_o,
+    output reg [31:0] hist_bin_to_axi
 );
 
 
@@ -45,9 +44,120 @@ wire line_end_gb, line_end_bb;
 wire [7:0] gamma_o, blur_o, sob_o;
 wire [7:0] gb_line_o [2:0];
 wire [7:0] bb_line_o [2:0];
-wire [15:0] fir_filter_coef [24:0];
-wire [15:0] hist_bin [255:0];
-//TODO: add fsm for filling axi rd wr
+
+reg rd_strobe_q1, rd_strobe_q2, rd_strobe_q3;
+reg wr_strobe_q1, wr_strobe_q2, wr_strobe_q3;
+
+reg [15:0] fir_filter_coef [5:0];
+reg [31:0] hist_bin [8:0];
+
+reg [15:0] coeff_input;
+reg [8:0] fir_addr, hist_addr;
+
+always @(posedge clk ) begin : fir_axi_metastable_filt
+    if (rst) begin
+        wr_strobe_q1 <= 0; wr_strobe_q2 <= 0; wr_strobe_q3 <= 0;
+        rd_strobe_q1 <= 0; rd_strobe_q2 <= 0; rd_strobe_q3 <= 0;
+    end else begin
+        rd_strobe_q1 <= axi_rd_strobe_i;
+        rd_strobe_q2 <= rd_strobe_q1;
+        rd_strobe_q3 <= rd_strobe_q2;
+        wr_strobe_q1 <= axi_wr_strobe_i;
+        wr_strobe_q2 <= wr_strobe_q1;
+        wr_strobe_q3 <= wr_strobe_q2;
+    end
+end
+
+wire axi_write_strobe, axi_wr_ack_d;
+assign axi_write_strobe = ~wr_strobe_q3 & wr_strobe_q2;
+assign axi_wr_ack_d = axi_wr_ack_o ^ axi_write_strobe;
+
+always @(posedge clk ) begin : read_load_fir_data
+    if (rst) begin
+        fir_addr <= 0;
+        axi_wr_ack_o <= 0;
+    end else if (~vs_blur) begin
+        coeff_input <= fir_filter_coef[fir_addr];
+        if (fir_addr < 25) begin
+            fir_addr <= fir_addr + 1;
+        end else begin
+            fir_addr <= fir_addr;
+        end
+    end else begin
+        axi_wr_ack_o <= axi_wr_ack_d;
+    end
+    
+    if (axi_write_strobe) begin
+        fir_filter_coef[fir_addr_from_axi[7:2]] <= fir_coeff_from_axi[15:0];
+    end
+end
+
+reg  [2:0] state;
+wire axi_read_strobe, axi_rd_ack_d;
+assign axi_read_strobe = ~rd_strobe_q3 & rd_strobe_q2;
+assign axi_rd_ack_d = axi_rd_ack_o ^ axi_read_strobe;
+reg [31:0] hist_bin_previus;
+reg [7:0] gamma_delayed;
+reg dv_y_delayed;
+
+localparam
+    IDLE    = 0
+,   WAIT_ON_VSYNC = 1
+,   WAIT_ON_DV = 2
+,   HIST_COUNTING = 3
+,   HIST_SENDING = 4
+;
+
+always @(posedge clk) begin : read_load_hist_date
+    dv_y_delayed <= dv_y;
+    gamma_delayed <= gamma_o;
+    hist_bin_previus <= hist_bin[gamma_o];
+
+    if (rst) begin
+//TODO: hist_bin bram should be initialised / reseted
+        state <= 0;
+        hist_addr <= 0;
+        axi_rd_ack_o <= 0;
+    end else case (state)
+        IDLE:
+            if (axi_read_strobe)
+                state <= WAIT_ON_VSYNC;
+
+        WAIT_ON_VSYNC: 
+            if (vs_in)
+                state <= WAIT_ON_DV;
+
+        WAIT_ON_DV:
+            if (dv_i)
+                state <= HIST_COUNTING;
+
+        HIST_COUNTING: 
+            if (dv_y_delayed)
+                hist_bin[gamma_delayed] <= hist_bin_previus + 1;
+            else if (vs_in) begin
+                state <= HIST_SENDING;
+                hist_bin_to_axi <= hist_bin[hist_addr];
+                hist_addr <= hist_addr + 1;
+                axi_rd_ack_o <= 1;
+            end
+
+        HIST_SENDING: begin
+            axi_rd_ack_o <= axi_rd_ack_d;
+            if (axi_read_strobe) begin
+                hist_bin_to_axi <= hist_bin[hist_addr];
+                hist_addr <= hist_addr + 1;
+
+        //clear hist_bin out
+        //TODO: check if this is working
+                hist_bin[hist_addr] <= 0;
+
+                if (hist_addr) state <= IDLE;
+            end
+        end
+        default: state <= IDLE;
+    endcase
+end
+
 
 rgb2y_3 #(
     .COLORDEPTH(8)
@@ -101,7 +211,7 @@ convolution #(
     .vect_in_1      (gb_line_o[1]),
     .vect_in_2      (gb_line_o[2]),
     .conv_o         (blur_o),
-    .coeff_i        (8'h1),
+    .coeff_i        (coeff_input),
     .dv_i           (dv_gb),
     .hs_i           (hs_gb),
     .vs_i           (vs_gb),

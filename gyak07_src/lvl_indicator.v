@@ -2,14 +2,14 @@
 `default_nettype none
 
 //******************************************************************************
-//* Folyadékszint jelzõ periféria top-level modulja.                           *
+//* Folyadekszint jelzo periferia top-level modulja.                           *
 //******************************************************************************
 module lvl_indicator #(
-    //AXI interfész paraméterek.
+    //AXI interfesz parameterek.
     parameter C_S_AXI_DATA_WIDTH = 32,
     parameter C_S_AXI_ADDR_WIDTH = 4
 ) (
-    //AXI órajel és reset jel.
+    //AXI orajel es reset jel.
     (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 s_axi_aclk CLK" *)
     (* X_INTERFACE_PARAMETER = "ASSOCIATED_BUSIF S_AXI, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 100000000" *)
     input  wire                              s_axi_aclk,
@@ -17,7 +17,7 @@ module lvl_indicator #(
     (* X_INTERFACE_PARAMETER = "POLARITY ACTIVE_LOW" *)
     input  wire                              s_axi_aresetn,
     
-    //AXI4-Lite írási cím csatorna.
+    //AXI4-Lite irasi cim csatorna.
     (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI AWADDR" *)
     (* X_INTERFACE_PARAMETER = "PROTOCOL AXI4LITE" *)
     input  wire [C_S_AXI_ADDR_WIDTH-1:0]     s_axi_awaddr,
@@ -26,7 +26,7 @@ module lvl_indicator #(
     (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI AWREADY" *)
     output wire                              s_axi_awready,
     
-    //AXI4-Lite írási adat csatorna.
+    //AXI4-Lite irasi adat csatorna.
     (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI WDATA" *)
     input  wire [C_S_AXI_DATA_WIDTH-1:0]     s_axi_wdata,
     (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI WSTRB" *)
@@ -36,7 +36,7 @@ module lvl_indicator #(
     (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI WREADY" *)
     output wire                              s_axi_wready,
     
-    //AXI4-Lite írási válasz csatorna.
+    //AXI4-Lite irasi valasz csatorna.
     (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI BRESP" *)
     output wire [1:0]                        s_axi_bresp,
     (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI BVALID" *)
@@ -44,7 +44,7 @@ module lvl_indicator #(
     (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI BREADY" *)
     input  wire                              s_axi_bready,
     
-    //AXI4-Lite olvasási cím csatorna.
+    //AXI4-Lite olvasasi cim csatorna.
     (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI ARADDR" *)
     input  wire [C_S_AXI_ADDR_WIDTH-1:0]     s_axi_araddr,
     (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI ARVALID" *)
@@ -52,7 +52,7 @@ module lvl_indicator #(
     (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI ARREADY" *)
     output wire                              s_axi_arready,
     
-    //AXI4-Lite olvasási adat csatorna.
+    //AXI4-Lite olvasasi adat csatorna.
     (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI RDATA" *)
     output wire [C_S_AXI_DATA_WIDTH-1:0]     s_axi_rdata,
     (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI RRESP" *)
@@ -62,17 +62,17 @@ module lvl_indicator #(
     (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI RREADY" *)
     input  wire                              s_axi_rready,
     
-    //Adat a folyadék érzékelõktõl.
+    //Adat a folyadek erzekeloktol.
     input  wire [7:0]                        sensor_in,
         
-    //Megszakításkérõ kimenet.
+    //Megszakitaskero kimenet.
     (* X_INTERFACE_INFO = "xilinx.com:signal:interrupt:1.0 irq INTR" *)
     (* X_INTERFACE_PARAMETER = "SENSITIVITY LEVEL_HIGH" *)
     output wire                              irq
 );
 
 //******************************************************************************
-//* AXI4-Lite interfész.                                                       *
+//* AXI4-Lite interfesz.                                                       *
 //******************************************************************************
 wire [3:0]  wr_addr;
 wire        wr_en;
@@ -84,77 +84,77 @@ wire        rd_en;
 wire [31:0] rd_data;
 
 axi4_lite_if #(
-    //A használt címbitek száma.
+    //A hasznalt cimbitek szama.
     .ADDR_BITS(C_S_AXI_ADDR_WIDTH)
 ) axi4_lite_if_i (
-    //Órajel és reset.
-    .clk(s_axi_aclk),                   //Rendszerórajel
-    .rst(~s_axi_aresetn),               //Aktív magas szinkron reset
+    //orajel es reset.
+    .clk(s_axi_aclk),                   //Rendszerorajel
+    .rst(~s_axi_aresetn),               //Aktiv magas szinkron reset
     
-    //AXI4-Lite írási cím csatorna.
+    //AXI4-Lite irasi cim csatorna.
     .s_axi_awaddr(s_axi_awaddr),
     .s_axi_awvalid(s_axi_awvalid),
     .s_axi_awready(s_axi_awready),
     
-    //AXI4-Lite írási adat csatorna.
+    //AXI4-Lite irasi adat csatorna.
     .s_axi_wdata(s_axi_wdata),
     .s_axi_wstrb(s_axi_wstrb),
     .s_axi_wvalid(s_axi_wvalid),
     .s_axi_wready(s_axi_wready),
     
-    //AXI4-Lite írási válasz csatorna.
+    //AXI4-Lite irasi valasz csatorna.
     .s_axi_bresp(s_axi_bresp),
     .s_axi_bvalid(s_axi_bvalid),
     .s_axi_bready(s_axi_bready),
     
-    //AXI4-Lite olvasási cím csatorna.
+    //AXI4-Lite olvasasi cim csatorna.
     .s_axi_araddr(s_axi_araddr),
     .s_axi_arvalid(s_axi_arvalid),
     .s_axi_arready(s_axi_arready),
     
-    //AXI4-Lite olvasási adat csatorna.
+    //AXI4-Lite olvasasi adat csatorna.
     .s_axi_rdata(s_axi_rdata),
     .s_axi_rresp(s_axi_rresp),
     .s_axi_rvalid(s_axi_rvalid),
     .s_axi_rready(s_axi_rready),
     
-    //Regiszter írási interfész.
-    .wr_addr(wr_addr),                  //Írási cím
-    .wr_en(wr_en),                      //Írás engedélyezõ jel
-    .wr_data(wr_data),                  //Írási adat
-    .wr_strb(wr_strb),                  //Bájt engedélyezõ jelek
-    .wr_ack(1'b1),                      //Írás nyugtázó jel
+    //Regiszter irasi interfesz.
+    .wr_addr(wr_addr),                  //irasi cim
+    .wr_en(wr_en),                      //iras engedelyezo jel
+    .wr_data(wr_data),                  //irasi adat
+    .wr_strb(wr_strb),                  //Bajt engedelyezo jelek
+    .wr_ack(1'b1),                      //iras nyugtazo jel
     
-    //Regiszter olvasási interfész.
-    .rd_addr(rd_addr),                  //Olvasási cím
-    .rd_en(rd_en),                      //Olvasás engedélyezõ jel
-    .rd_data(rd_data),                  //Olvasási adat
-    .rd_ack(1'b1)                       //Olvasás nyugtázó jel
+    //Regiszter olvasasi interfesz.
+    .rd_addr(rd_addr),                  //Olvasasi cim
+    .rd_en(rd_en),                      //Olvasas engedelyezo jel
+    .rd_data(rd_data),                  //Olvasasi adat
+    .rd_ack(1'b1)                       //Olvasas nyugtazo jel
 );
 
 //******************************************************************************
-//* A periféria funkcióját megvalósító modul.                                  *
+//* A periferia funkciojat megvalosito modul.                                  *
 //******************************************************************************
 fluid_level_indicator fluid_level_indicator_i(
-    //Órajel és reset.
-    .clk(s_axi_aclk),         //100 MHz rendszerórajel
-    .rst(~s_axi_aresetn),         //Aktív magas szinkron reset
+    //orajel es reset.
+    .clk(s_axi_aclk),         //100 MHz rendszerorajel
+    .rst(~s_axi_aresetn),         //Aktiv magas szinkron reset
     
-    //Regiszter írási interfész.
-    .wr_addr(wr_addr),     //Írási cím
-    .wr_en(wr_en),       //Írás engedélyezõ jel
-    .wr_data(wr_data),     //Írási adat
-    .wr_strb(wr_strb),     //Bájt engedélyezõ jelek
+    //Regiszter irasi interfesz.
+    .wr_addr(wr_addr),     //irasi cim
+    .wr_en(wr_en),       //iras engedelyezo jel
+    .wr_data(wr_data),     //irasi adat
+    .wr_strb(wr_strb),     //Bajt engedelyezo jelek
     
-    //Regiszter olvasási interfész.
-    .rd_addr(rd_addr),     //Olvasási cím
-    .rd_en(rd_en),       //Olvasás engedélyezõ jel
-    .rd_data(rd_data),     //Olvasási adat      
+    //Regiszter olvasasi interfesz.
+    .rd_addr(rd_addr),     //Olvasasi cim
+    .rd_en(rd_en),       //Olvasas engedelyezo jel
+    .rd_data(rd_data),     //Olvasasi adat      
     
-    //Adat a folyadék érzékelõktõl.
+    //Adat a folyadek erzekeloktol.
     .sensor_in(sensor_in),
     
-    //Megszakításkérõ kimenet.
+    //Megszakitaskero kimenet.
     .irq(irq)
 );
 

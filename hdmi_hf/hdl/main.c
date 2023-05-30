@@ -90,6 +90,8 @@ void vezerlo (XGpio* led_disp, XGpio* sw_btn) {
 // TODO: A fir paramétereket átt kell alakítani
 // TODO: Az együtthatók s7.8, ennek megfelelően kell trimmelni a DSP kimenetet.
 					switch (i) {
+						//TODO: EA8, 29. oldal: Address[7:0] = XXXXX00, ByteENable[0:3] = 0011, adatok fordított sorrendben
+						//TODO: kideríteni ennek a pontos működését
 						case 0: XGpio_WriteReg(XPAR_GPIO_LED_DISP_BASEADDR, GPIO_DATA2, 0x100 | temp); break;
 						case 1: XGpio_WriteReg(XPAR_GPIO_LED_DISP_BASEADDR, GPIO_DATA2, 0x200 | temp); break;
 						case 2: XGpio_WriteReg(XPAR_GPIO_LED_DISP_BASEADDR, GPIO_DATA2, 0x400 | temp); break;

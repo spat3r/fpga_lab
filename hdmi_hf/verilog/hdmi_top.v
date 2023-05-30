@@ -28,7 +28,7 @@ module hdmi_top(
    inout  wire [3:0] bt,
    output wire [11:0] disp,
    input  wire         uart_rxd,
-   output reg          uart_txd,
+   output wire         uart_txd,
 
    input  wire        hdmi_rx_d0_p,
    input  wire        hdmi_rx_d0_n,
@@ -157,21 +157,23 @@ hdmi_rx hdmi_rx_0(
    .rx_status(rx_status)
 );
 
-//cpu_system_wrapper cpu_inst(
-//   .btn_tri_i        ( bt             ),
-//   .clk_in           ( clk100M        ),
-//   .disp             ( disp           ),
-//   .led_tri_o        ( led_r          ),
-//   .rstbt            ( rstbt          ),
-//   .sw               ( sw             ),
-//   .uart_rxd         ( uart_rxd       ),
-//   .uart_txd         ( uart_txd       ),
-//   .fir_coef_write_0 ( fir_coef_write ),
-//   .fir_coef_data_0  ( fir_coef_data  ),
-//   .hist_bin_data_0  ( hist_bin_data  ),
-//   .hist_bin_saved_0 ( hist_bin_saved ),
-//   .hist_bin_ready_0 ( hist_bin_ready )
-//);
+cpu_system_wrapper cpu_inst(
+   .btn_tri_i        ( bt             ),
+   .clk_in           ( clk100M        ),
+   .disp             ( disp           ),
+   .led_tri_o        ( led_r          ),
+   .rstbt            ( rstbt          ),
+   .sw               ( sw             ),
+   .uart_rxd         ( uart_rxd       ),
+   .uart_txd         ( uart_txd       ),
+   .axi_rd_ack_i_0       ( axi_rd_ack         ),
+   .axi_rd_strobe_o_0    ( axi_rd_strobe      ),
+   .axi_wr_ack_i_0       ( axi_wr_ack         ),
+   .axi_wr_strobe_o_0    ( axi_wr_strobe      ),
+   .fir_addr_from_axi_0  ( fir_addr_from_axi  ),
+   .fir_coeff_from_axi_0 ( fir_coeff_from_axi ),
+   .hist_bin_to_axi_0    ( hist_bin_to_axi    )
+);
 
 
 
@@ -190,7 +192,7 @@ hdmi_rx hdmi_rx_0(
                 // biztosan egy vezetékezési kín lesz de nem tudom hogy lehet optimálisan megoldani
 
 sobel_top #(
-    ) sobel_top_inst (
+   ) sobel_top_inst (
          .clk(rx_clk),
          .rst(rst),
          .sw(sw),
@@ -206,13 +208,15 @@ sobel_top #(
          .dv_o(tx_dv),
          .hs_o(tx_hs),
          .vs_o(tx_vs),
-         .fir_coef_write ( fir_coef_write ),
-         .fir_coef_data  ( fir_coef_data  ),
-         .hist_bin_data  ( hist_bin_data  ),
-         .hist_bin_saved ( hist_bin_saved ),
-         .hist_bin_ready ( hist_bin_ready )
+         .axi_rd_ack_o       ( axi_rd_ack         ),
+         .axi_rd_strobe_i    ( axi_rd_strobe      ),
+         .axi_wr_ack_o       ( axi_wr_ack         ),
+         .axi_wr_strobe_i    ( axi_wr_strobe      ),
+         .fir_addr_from_axi  ( fir_addr_from_axi  ),
+         .fir_coeff_from_axi ( fir_coeff_from_axi ),
+         .hist_bin_to_axi    ( hist_bin_to_axi    )
          // TODO: add ports for axi registers
-    );
+   );
 
 hdmi_tx hdmi_tx_0(
    .tx_clk(rx_clk),
@@ -237,3 +241,5 @@ hdmi_tx hdmi_tx_0(
 assign led_r = {16'b0, pll_locked, 1'b0, rx_status};
 
 endmodule
+
+`default_nettype wire
