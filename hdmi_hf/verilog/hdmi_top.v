@@ -126,11 +126,13 @@ wire  [5:0] rx_status;
  (* MARK_DEBUG *) wire rx_dv, rx_hs, rx_vs;
  (* MARK_DEBUG *) wire tx_dv, tx_hs, tx_vs;
 
- (* MARK_DEBUG *) wire         fir_coef_write;
- (* MARK_DEBUG *) wire  [15:0] fir_coef_data;
- (* MARK_DEBUG *) wire  [15:0] hist_bin_data;
- (* MARK_DEBUG *) wire         hist_bin_saved;
- (* MARK_DEBUG *) wire         hist_bin_ready;
+ (* MARK_DEBUG *) wire         axi_rd_ack;
+ (* MARK_DEBUG *) wire         axi_rd_strobe;
+ (* MARK_DEBUG *) wire         axi_wr_ack;
+ (* MARK_DEBUG *) wire         axi_wr_strobe;
+ (* MARK_DEBUG *) wire  [31:0] fir_addr_from_axi;
+ (* MARK_DEBUG *) wire  [31:0] fir_coeff_from_axi;
+ (* MARK_DEBUG *) wire  [31:0] hist_bin_to_axi;
 
 hdmi_rx hdmi_rx_0(
    .clk_200M(clk_200M),
