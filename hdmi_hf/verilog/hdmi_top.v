@@ -107,8 +107,9 @@ PLLE2_BASE #(
    .CLKFBIN(pll_clkfb)              // 1-bit input: Feedback clock
 );
 
-wire rst;
+wire rst, sobel_rst;
 assign rst = ~pll_locked;
+always @(posedge rx_clk) sobel_rst <= rst;
 
 wire clk_200M;
 BUFG BUFG_200M (
@@ -194,7 +195,7 @@ cpu_system_wrapper cpu_inst(
 sobel_top #(
    ) sobel_top_inst (
          .clk(rx_clk),
-         .rst(rst),
+         .rst(sobel_rst),
          .sw(sw),
          .red_i(rx_red),
          .green_i(rx_green),

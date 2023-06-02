@@ -134,6 +134,7 @@ always @(posedge clk) begin : read_load_hist_date
         HIST_COUNTING: 
             if (dv_y_delayed)
                 hist_bin[gamma_delayed] <= hist_bin_previus + 1;
+                //TODO: chancgethis to vs_y
             else if (vs_in) begin
                 state <= HIST_SENDING;
                 hist_bin_to_axi <= hist_bin[hist_addr];
