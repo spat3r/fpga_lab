@@ -107,7 +107,8 @@ PLLE2_BASE #(
    .CLKFBIN(pll_clkfb)              // 1-bit input: Feedback clock
 );
 
-wire rst, sobel_rst;
+wire rst;
+reg sobel_rst;
 assign rst = ~pll_locked;
 always @(posedge rx_clk) sobel_rst <= rst;
 
