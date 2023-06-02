@@ -121,16 +121,16 @@ BUFG BUFG_200M (
 
 wire  rx_clk, rx_clk_5x;
 wire  [5:0] rx_status;
-wire  [7:0] rx_red, rx_green, rx_blue;
-wire  [7:0] tx_red, tx_green, tx_blue;
-wire rx_dv, rx_hs, rx_vs;
-wire tx_dv, tx_hs, tx_vs;
+ (* MARK_DEBUG *) wire  [7:0] rx_red, rx_green, rx_blue;
+ (* MARK_DEBUG *) wire  [7:0] tx_red, tx_green, tx_blue;
+ (* MARK_DEBUG *) wire rx_dv, rx_hs, rx_vs;
+ (* MARK_DEBUG *) wire tx_dv, tx_hs, tx_vs;
 
-wire         fir_coef_write;
-wire  [15:0] fir_coef_data;
-wire  [15:0] hist_bin_data;
-wire         hist_bin_saved;
-wire         hist_bin_ready;
+ (* MARK_DEBUG *) wire         fir_coef_write;
+ (* MARK_DEBUG *) wire  [15:0] fir_coef_data;
+ (* MARK_DEBUG *) wire  [15:0] hist_bin_data;
+ (* MARK_DEBUG *) wire         hist_bin_saved;
+ (* MARK_DEBUG *) wire         hist_bin_ready;
 
 hdmi_rx hdmi_rx_0(
    .clk_200M(clk_200M),
@@ -162,7 +162,7 @@ cpu_system_wrapper cpu_inst(
    .btn_tri_i        ( bt             ),
    .clk_in           ( clk100M        ),
    .disp             ( disp           ),
-   .led_tri_o        ( led_r          ),
+   // .led_tri_o        ( led_r          ),
    .rstbt            ( rstbt          ),
    .sw               ( sw             ),
    .uart_rxd         ( uart_rxd       ),

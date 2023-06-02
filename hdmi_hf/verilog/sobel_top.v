@@ -35,15 +35,15 @@ assign hs_in = POL_HS ? hs_i : ~hs_i;
 assign vs_in = POL_VS ? vs_i : ~vs_i;
 
 
-wire dv_y, hs_y, vs_y;
-wire dv_gb, hs_gb, vs_gb;
-wire dv_blur, hs_blur, vs_blur;
-wire dv_bb, hs_bb, vs_bb;
-wire dv_sob, hs_sob, vs_sob;
-wire line_end_gb, line_end_bb;
-wire [7:0] gamma_o, blur_o, sob_o;
-wire [7:0] gb_line_o [2:0];
-wire [7:0] bb_line_o [2:0];
+ (* MARK_DEBUG *) wire dv_y, hs_y, vs_y;
+ (* MARK_DEBUG *) wire dv_gb, hs_gb, vs_gb;
+ (* MARK_DEBUG *) wire dv_blur, hs_blur, vs_blur;
+ (* MARK_DEBUG *) wire dv_bb, hs_bb, vs_bb;
+ (* MARK_DEBUG *) wire dv_sob, hs_sob, vs_sob;
+ (* MARK_DEBUG *) wire line_end_gb, line_end_bb;
+ (* MARK_DEBUG *) wire [7:0] gamma_o, blur_o, sob_o;
+ (* MARK_DEBUG *) wire [7:0] gb_line_o [2:0];
+ (* MARK_DEBUG *) wire [7:0] bb_line_o [2:0];
 
 reg rd_strobe_q1, rd_strobe_q2, rd_strobe_q3;
 reg wr_strobe_q1, wr_strobe_q2, wr_strobe_q3;
@@ -68,7 +68,7 @@ always @(posedge clk ) begin : fir_axi_metastable_filt
     end
 end
 
-wire axi_write_strobe, axi_wr_ack_d;
+ (* MARK_DEBUG *) wire axi_write_strobe, axi_wr_ack_d;
 assign axi_write_strobe = ~wr_strobe_q3 & wr_strobe_q2;
 assign axi_wr_ack_d = axi_wr_ack_o ^ axi_write_strobe;
 
@@ -93,11 +93,11 @@ always @(posedge clk ) begin : read_load_fir_data
 end
 
 reg  [2:0] state;
-wire axi_read_strobe, axi_rd_ack_d;
+ (* MARK_DEBUG *) wire axi_read_strobe, axi_rd_ack_d;
 assign axi_read_strobe = ~rd_strobe_q3 & rd_strobe_q2;
 assign axi_rd_ack_d = axi_rd_ack_o ^ axi_read_strobe;
-reg [31:0] hist_bin_previus;
-reg [7:0] gamma_delayed;
+ (* MARK_DEBUG *) reg [31:0] hist_bin_previus;
+ (* MARK_DEBUG *) reg [7:0] gamma_delayed;
 reg dv_y_delayed;
 
 localparam

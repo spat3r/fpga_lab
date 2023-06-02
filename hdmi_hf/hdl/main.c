@@ -46,7 +46,7 @@ void vezerlo (XGpio* led_disp, XGpio* sw_btn) {
 // TODO: A main.c-ben a parancsok jelenjenek a hf specnek megfelelően : H karakter majd (kocsi vissza + új sor) az egyes hisztogram bin-ek értéke vesszővel elválasztva.
 			for(u8 i=0; i<1; i++) {
 				command[i] = getchar(); //XUartLite_RecvByte(UART_BADDR);
-				if ( (command[i] == *LF) || (command[i] == *LF) ) {
+				if ( (command[i] == *LF) || (command[i] == *CR) ) {
 					i--;
 					continue;
 				} else if (command[i] == *(wordHist)){
@@ -83,7 +83,7 @@ void vezerlo (XGpio* led_disp, XGpio* sw_btn) {
 				for(u8 i=0; i<4; i++){
 // TODO: A fir paramétereket háziban leírtak szerint fogadjuk
 					temp = getchar();
-					if ( (temp == *LF) || (temp == *LF) ) {
+					if ( (temp == *LF) || (temp == *CR) ) {
 						i--;
 						continue;
 					}
