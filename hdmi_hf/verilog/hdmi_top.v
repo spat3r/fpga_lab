@@ -122,18 +122,16 @@ BUFG BUFG_200M (
 
 wire  rx_clk, rx_clk_5x;
 wire  [5:0] rx_status;
- (* MARK_DEBUG *) wire  [7:0] rx_red, rx_green, rx_blue;
- (* MARK_DEBUG *) wire  [7:0] tx_red, tx_green, tx_blue;
- (* MARK_DEBUG *) wire rx_dv, rx_hs, rx_vs;
- (* MARK_DEBUG *) wire tx_dv, tx_hs, tx_vs;
+(* mark_debug = "true" *) wire  [7:0] rx_red, rx_green, rx_blue;
+(* mark_debug = "true" *) wire  [7:0] tx_red, tx_green, tx_blue;
+(* mark_debug = "true" *) wire rx_dv, rx_hs, rx_vs;
+(* mark_debug = "true" *) wire tx_dv, tx_hs, tx_vs;
 
- (* MARK_DEBUG *) wire         axi_rd_ack;
- (* MARK_DEBUG *) wire         axi_rd_strobe;
- (* MARK_DEBUG *) wire         axi_wr_ack;
- (* MARK_DEBUG *) wire         axi_wr_strobe;
- (* MARK_DEBUG *) wire  [31:0] fir_addr_from_axi;
- (* MARK_DEBUG *) wire  [31:0] fir_coeff_from_axi;
- (* MARK_DEBUG *) wire  [31:0] hist_bin_to_axi;
+(* mark_debug = "true" *) wire         fir_coef_write;
+(* mark_debug = "true" *) wire  [15:0] fir_coef_data;
+(* mark_debug = "true" *) wire  [15:0] hist_bin_data;
+(* mark_debug = "true" *) wire         hist_bin_saved;
+(* mark_debug = "true" *) wire         hist_bin_ready;
 
 hdmi_rx hdmi_rx_0(
    .clk_200M(clk_200M),

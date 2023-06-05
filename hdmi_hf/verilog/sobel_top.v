@@ -35,15 +35,15 @@ assign hs_in = POL_HS ? hs_i : ~hs_i;
 assign vs_in = POL_VS ? vs_i : ~vs_i;
 
 
- (* MARK_DEBUG *) wire dv_y, hs_y, vs_y;
- (* MARK_DEBUG *) wire dv_gb, hs_gb, vs_gb;
- (* MARK_DEBUG *) wire dv_blur, hs_blur, vs_blur;
- (* MARK_DEBUG *) wire dv_bb, hs_bb, vs_bb;
- (* MARK_DEBUG *) wire dv_sob, hs_sob, vs_sob;
- (* MARK_DEBUG *) wire line_end_gb, line_end_bb;
- (* MARK_DEBUG *) wire [7:0] gamma_o, blur_o, sob_o;
- (* MARK_DEBUG *) wire [7:0] gb_line_o [2:0];
- (* MARK_DEBUG *) wire [7:0] bb_line_o [2:0];
+wire dv_y, hs_y, vs_y;
+wire dv_gb, hs_gb, vs_gb;
+wire dv_blur, hs_blur, vs_blur;
+wire dv_bb, hs_bb, vs_bb;
+wire dv_sob, hs_sob, vs_sob;
+wire line_end_gb, line_end_bb;
+wire [7:0] gamma_o, blur_o, sob_o;
+wire [7:0] gb_line_o [2:0];
+wire [7:0] bb_line_o [2:0];
 
 reg rd_strobe_q1, rd_strobe_q2, rd_strobe_q3;
 reg wr_strobe_q1, wr_strobe_q2, wr_strobe_q3;
@@ -52,7 +52,7 @@ reg [15:0] fir_filter_coef [5:0];
 reg [31:0] hist_bin [8:0];
 
 reg [15:0] coeff_input;
-reg [8:0] fir_addr, hist_addr;
+(* mark_debug = "true" *) reg [8:0] fir_addr, hist_addr;
 
 always @(posedge clk ) begin : fir_axi_metastable_filt
     if (rst) begin
@@ -68,7 +68,7 @@ always @(posedge clk ) begin : fir_axi_metastable_filt
     end
 end
 
- (* MARK_DEBUG *) wire axi_write_strobe, axi_wr_ack_d;
+wire axi_write_strobe, axi_wr_ack_d;
 assign axi_write_strobe = ~wr_strobe_q3 & wr_strobe_q2;
 assign axi_wr_ack_d = axi_wr_ack_o ^ axi_write_strobe;
 
@@ -92,12 +92,12 @@ always @(posedge clk ) begin : read_load_fir_data
     end
 end
 
-reg  [2:0] state;
- (* MARK_DEBUG *) wire axi_read_strobe, axi_rd_ack_d;
+(* mark_debug = "true" *) reg  [2:0] state;
+wire axi_read_strobe, axi_rd_ack_d;
 assign axi_read_strobe = ~rd_strobe_q3 & rd_strobe_q2;
 assign axi_rd_ack_d = axi_rd_ack_o ^ axi_read_strobe;
- (* MARK_DEBUG *) reg [31:0] hist_bin_previus;
- (* MARK_DEBUG *) reg [7:0] gamma_delayed;
+(* mark_debug = "true" *) reg [31:0] hist_bin_previus;
+(* mark_debug = "true" *) reg [7:0] gamma_delayed;
 reg dv_y_delayed;
 
 localparam
@@ -134,8 +134,7 @@ always @(posedge clk) begin : read_load_hist_date
         HIST_COUNTING: 
             if (dv_y_delayed)
                 hist_bin[gamma_delayed] <= hist_bin_previus + 1;
-                //TODO: chancgethis to vs_y
-            else if (vs_in) begin
+            else if (vs_y) begin
                 state <= HIST_SENDING;
                 hist_bin_to_axi <= hist_bin[hist_addr];
                 hist_addr <= hist_addr + 1;

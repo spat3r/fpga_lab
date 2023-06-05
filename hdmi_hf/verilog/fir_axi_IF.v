@@ -129,7 +129,7 @@ begin
             //Varakozas az irasi adatra.                
             WR_DATA_WAIT:
             if (s_axi_wvalid) begin
-                fir_coeff_from_axi <= {s_axi_wdata[31], s_axi_wdata[14:0]};
+                fir_coeff_from_axi <= s_axi_wdata;
                 axi_wr_strobe_o <= 1; 
                 //TODO: validate the constants by the documentation
                 if (s_axi_wstrb == 4'b1111 | fir_addr_from_axi[1:0] == 2'b00) ;
