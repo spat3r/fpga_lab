@@ -23,10 +23,10 @@ module sobel_top #(
     input wire [7:0] fir_addr_from_axi,
     input wire [31:0] fir_coeff_from_axi,
     input wire axi_wr_strobe_i,
-    output reg axi_wr_ack_o,
+    (* mark_debug = "true" *) output reg axi_wr_ack_o,
     input wire axi_rd_strobe_i,
-    output reg axi_rd_ack_o,
-    output reg [31:0] hist_bin_to_axi
+    (* mark_debug = "true" *) output reg axi_rd_ack_o,
+    (* mark_debug = "true" *) output reg [31:0] hist_bin_to_axi
 );
 
 
@@ -48,11 +48,11 @@ wire [7:0] bb_line_o [2:0];
 reg rd_strobe_q1, rd_strobe_q2, rd_strobe_q3;
 reg wr_strobe_q1, wr_strobe_q2, wr_strobe_q3;
 
-reg [15:0] fir_filter_coef [5:0];
-reg [31:0] hist_bin [8:0];
+reg [15:0] fir_filter_coef [4:0];
+reg [31:0] hist_bin [7:0];
 
 reg [15:0] coeff_input;
-(* mark_debug = "true" *) reg [8:0] fir_addr, hist_addr;
+(* mark_debug = "true" *) reg [7:0] fir_addr, hist_addr;
 
 always @(posedge clk ) begin : fir_axi_metastable_filt
     if (rst) begin
@@ -93,9 +93,8 @@ always @(posedge clk ) begin : read_load_fir_data
 end
 
 (* mark_debug = "true" *) reg  [2:0] state;
-wire axi_read_strobe, axi_rd_ack_d;
+wire axi_read_strobe;
 assign axi_read_strobe = ~rd_strobe_q3 & rd_strobe_q2;
-assign axi_rd_ack_d = axi_rd_ack_o ^ axi_read_strobe;
 (* mark_debug = "true" *) reg [31:0] hist_bin_previus;
 (* mark_debug = "true" *) reg [7:0] gamma_delayed;
 reg dv_y_delayed;
@@ -106,6 +105,7 @@ localparam
 ,   WAIT_ON_DV = 2
 ,   HIST_COUNTING = 3
 ,   HIST_SENDING = 4
+,   AXI_PROCESSING = 5
 ;
 
 always @(posedge clk) begin : read_load_hist_date
@@ -135,25 +135,33 @@ always @(posedge clk) begin : read_load_hist_date
             if (dv_y_delayed)
                 hist_bin[gamma_delayed] <= hist_bin_previus + 1;
             else if (vs_y) begin
-                state <= HIST_SENDING;
+                state <= AXI_PROCESSING;
                 hist_bin_to_axi <= hist_bin[hist_addr];
                 hist_addr <= hist_addr + 1;
                 axi_rd_ack_o <= 1;
             end
 
         HIST_SENDING: begin
-            axi_rd_ack_o <= axi_rd_ack_d;
             if (axi_read_strobe) begin
                 hist_bin_to_axi <= hist_bin[hist_addr];
                 hist_addr <= hist_addr + 1;
 
-        //clear hist_bin out
-        //TODO: check if this is working
                 hist_bin[hist_addr] <= 0;
 
-                if (hist_addr) state <= IDLE;
+                if (hist_addr==0) state <= IDLE;
+                else state <= AXI_PROCESSING;
+
+                axi_rd_ack_o <= 1;
+            end else begin
+                axi_rd_ack_o <= 0;
             end
         end
+
+        AXI_PROCESSING: begin
+            if (~axi_read_strobe) state <= HIST_SENDING;
+            else state <= AXI_PROCESSING;
+        end
+
         default: state <= IDLE;
     endcase
 end

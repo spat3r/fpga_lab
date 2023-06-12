@@ -98,6 +98,8 @@ begin
             WR_RESPONSE : 
             if ( s_axi_bready) wr_state <= WR_ADDR_WAIT;
             else wr_state <= WR_RESPONSE;
+
+            default: wr_state <= WR_ADDR_WAIT;
         endcase
 end
 

@@ -61,26 +61,20 @@ module fir_axi_if #(
     (* X_INTERFACE_PARAMETER = "SENSITIVITY LEVEL_HIGH" *)
     output reg                              irq,
     
-    output reg [7:0] fir_addr_from_axi,
-    output reg [31:0] fir_coeff_from_axi,
-    output reg axi_wr_strobe_o,
+    (* mark_debug = "true" *) output reg [7:0] fir_addr_from_axi,
+    (* mark_debug = "true" *) output reg [31:0] fir_coeff_from_axi,
+    (* mark_debug = "true" *) output reg axi_wr_strobe_o,
     input wire axi_wr_ack_i,
-    output reg axi_rd_strobe_o,
+    (* mark_debug = "true" *) output reg axi_rd_strobe_o,
     input wire axi_rd_ack_i,
     input wire [31:0] hist_bin_to_axi
 );
-    //State variables
-
-   
-    wire axi_write_rdy;
-    wire axi_write_ack;
-    wire axi_read_rdy;
-    wire axi_read_ack;
 
 reg rd_ack_q1, rd_ack_q2, rd_ack_q3;
 reg wr_ack_q1, wr_ack_q2, wr_ack_q3;
+
 always @(posedge s_axi_aclk) begin : fir_axi_metastable_filt
-    if (s_axi_aresetn) begin
+    if (~s_axi_aresetn) begin
         wr_ack_q1 <= 0; wr_ack_q2 <= 0; wr_ack_q3 <= 0;
         rd_ack_q1 <= 0; rd_ack_q2 <= 0; rd_ack_q3 <= 0;
     end else begin
@@ -93,12 +87,7 @@ always @(posedge s_axi_aclk) begin : fir_axi_metastable_filt
     end
 end
 
-wire axi_write_ack, axi_wr_ack_d;
-assign axi_write_ack = ~wr_ack_q3 & wr_ack_q2;
-assign axi_wr_ack_d = axi_wr_ack_i ^ axi_write_ack;
-wire axi_read_ack, axi_rd_ack_d;
-assign axi_read_ack = ~rd_ack_q3 & rd_ack_q2;
-assign axi_rd_ack_d = axi_rd_ack_i ^ axi_read_ack;
+
 //TODO: comment states
 
 //******************************************************************************
@@ -109,18 +98,25 @@ localparam WR_DATA_WAIT = 2'd1;
 localparam WR_EXECUTE   = 2'd2;
 localparam WR_RESPONSE  = 2'd3;
 
-reg [1:0] wr_state;
+(* mark_debug = "true" *) reg [1:0] wr_state;
+
+(* mark_debug = "true" *) wire axi_write_ack, axi_wr_ack_d;
+assign axi_write_ack = ~wr_ack_q3 & wr_ack_q2;
+assign axi_wr_ack_d = axi_wr_ack_i ^ axi_write_ack;
 
 always @(posedge s_axi_aclk)
 begin
-    if (s_axi_aresetn)
+    if (~s_axi_aresetn) begin
         wr_state <= WR_ADDR_WAIT;
-    else
+        fir_addr_from_axi <= 0;
+        fir_coeff_from_axi <= 0;
+        axi_wr_strobe_o <= 0;
+    end else begin
         case (wr_state)
             //Varaozas az irasi cimre.
             WR_ADDR_WAIT:
             if (s_axi_awvalid) begin
-                fir_addr_from_axi<= s_axi_awaddr[7:0];
+                fir_addr_from_axi<= s_axi_awaddr;
                 wr_state <= WR_DATA_WAIT;
             end else begin
                 wr_state <= WR_ADDR_WAIT;
@@ -132,7 +128,7 @@ begin
                 fir_coeff_from_axi <= s_axi_wdata;
                 axi_wr_strobe_o <= 1; 
                 //TODO: validate the constants by the documentation
-                if (s_axi_wstrb == 4'b1111 | fir_addr_from_axi[1:0] == 2'b00) ;
+                // if (s_axi_wstrb == 4'b1111 | fir_addr_from_axi[1:0] == 2'b00) ;
                 wr_state <= WR_EXECUTE;
             end else begin
                 wr_state <= WR_DATA_WAIT;
@@ -150,6 +146,7 @@ begin
             if (s_axi_bready) wr_state <= WR_ADDR_WAIT;
             else wr_state <= WR_RESPONSE;
         endcase
+    end
 end
 
 //Az irasi cim csatorna READY jelzesenek eloallitasa.
@@ -172,18 +169,24 @@ localparam RD_ADDR_WAIT = 2'd0;
 localparam RD_EXECUTE   = 2'd1;
 localparam RD_SEND_DATA = 2'd2;
 
-reg [1:0] rd_state;
+(* mark_debug = "true" *) reg [1:0] rd_state;
+
+(* mark_debug = "true" *) wire axi_read_ack;
+assign axi_read_ack = ~rd_ack_q3 & rd_ack_q2;
 
 always @(posedge s_axi_aclk)
 begin
-    if (s_axi_aresetn)
+    if (~s_axi_aresetn) begin
         rd_state <= RD_ADDR_WAIT;
-    else
+        axi_rd_strobe_o <= 0;
+        s_axi_rdata <= 0;
+    end else begin
+
         case (rd_state)
             //Varaozas az olvasasi cimre.
             RD_ADDR_WAIT: if (s_axi_arvalid) begin
-                rd_state <= RD_EXECUTE;
                 axi_rd_strobe_o <= 1;
+                rd_state <= RD_EXECUTE;
             end else rd_state <= RD_ADDR_WAIT;
             
             //Az olvasasi mûvelet vegrehajtasa.
@@ -203,6 +206,7 @@ begin
             //ervenytelen allapotok.
             default     : rd_state <= RD_ADDR_WAIT;
         endcase
+    end
 end
 
 //Az olvasasi cim csatorna READY jelzesenek eloallitasa.

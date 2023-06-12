@@ -1,22 +1,22 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
+// Company:
+// Engineer:
+//
 // Create Date: 04/03/2019 04:56:58 PM
-// Design Name: 
+// Design Name:
 // Module Name: hdmi_top
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
+// Project Name:
+// Target Devices:
+// Tool Versions:
+// Description:
+//
+// Dependencies:
+//
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+//
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -42,7 +42,7 @@ module hdmi_top(
    output wire        hdmi_rx_hpd,
    input  wire        hdmi_rx_scl,
    inout  wire        hdmi_rx_sda,
-   
+
    output wire         hdmi_tx_d0_p,
    output wire         hdmi_tx_d0_n,
    output wire         hdmi_tx_d1_p,
@@ -122,16 +122,17 @@ BUFG BUFG_200M (
 
 wire  rx_clk, rx_clk_5x;
 wire  [5:0] rx_status;
-(* mark_debug = "true" *) wire  [7:0] rx_red, rx_green, rx_blue;
-(* mark_debug = "true" *) wire  [7:0] tx_red, tx_green, tx_blue;
-(* mark_debug = "true" *) wire rx_dv, rx_hs, rx_vs;
-(* mark_debug = "true" *) wire tx_dv, tx_hs, tx_vs;
-
-(* mark_debug = "true" *) wire         fir_coef_write;
-(* mark_debug = "true" *) wire  [15:0] fir_coef_data;
-(* mark_debug = "true" *) wire  [15:0] hist_bin_data;
-(* mark_debug = "true" *) wire         hist_bin_saved;
-(* mark_debug = "true" *) wire         hist_bin_ready;
+wire  [7:0] rx_red, rx_green, rx_blue;
+wire  [7:0] tx_red, tx_green, tx_blue;
+wire rx_dv, rx_hs, rx_vs;
+wire tx_dv, tx_hs, tx_vs;
+wire         axi_rd_ack;
+wire         axi_rd_strobe;
+wire         axi_wr_ack;
+wire         axi_wr_strobe;
+wire  [15:0] fir_addr_from_axi;
+wire  [15:0] fir_coeff_from_axi;
+wire  [15:0] hist_bin_to_axi;
 
 hdmi_rx hdmi_rx_0(
    .clk_200M(clk_200M),
@@ -176,22 +177,6 @@ cpu_system_wrapper cpu_inst(
    .fir_coeff_from_axi_0 ( fir_coeff_from_axi ),
    .hist_bin_to_axi_0    ( hist_bin_to_axi    )
 );
-
-
-
-    // TODO: Instanciate fir_axi_if.sv
-
-
-    // TODO: Instanuciate hdmi_top.sv
-//FIXME: a pixel órajel miatt a microblaze másik órajeltartományban lesz.
-
-    // TODO: reading histogram bins
-
-
-    // TODO: writing fir parameters
-
-    // TODO: szerintem az axi regiszterek itt legyenek implementálva és az almodulok csak hozzáférnek vezetékeken keresztül
-                // biztosan egy vezetékezési kín lesz de nem tudom hogy lehet optimálisan megoldani
 
 sobel_top #(
    ) sobel_top_inst (

@@ -41,10 +41,11 @@
 void hisztogram () {
 	print("Histogram command received.\nFetching data...\n");
 	int temp;
-	for(u8 j=0; j<3; j++){
-
-		temp= MEM32(HIST_ADDR + (j<<2));
-		xil_printf("%d,", temp);
+	for(u32 j=0; j<256; j++){
+		temp= MEM32(HIST_ADDR);
+		if (j!=0) xil_printf(",");
+		xil_printf("%d", temp);
+		xil_printf("\n%d\n", j);
 	}
 	print("\r\nHistogram finished!\n\n");
 }
