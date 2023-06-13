@@ -199,7 +199,7 @@ rgb2y_3 #(
 buffer #(
     .COLORDEPTH(COLORDEPTH),
     .SCREENWIDTH(SCREENWIDTH),
-    .BUF_DEPTH(3)
+    .BUF_DEPTH(5)
    ) gray_buff_inst (
     .clk            (clk),
     .rst            (rst),
@@ -219,8 +219,8 @@ buffer #(
 // gauss_blr_conv #(
 convolution #(
     .COLORDEPTH(COLORDEPTH),
-    .M_WIDTH(3),
-    .M_DEPTH(3)
+    .M_WIDTH(5),
+    .M_DEPTH(5)
     ) blur_inst (
     .clk            (clk),
     .rst            (rst),
