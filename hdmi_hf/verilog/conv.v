@@ -33,14 +33,14 @@ module convolution #(
     assign vect_in[4] = vect_in_4;
 
     localparam VECLENGTH = COLORDEPTH+1;
-    reg   [15:0] coeff_reg [4:0];
-    reg   [4:0] addr;
+    reg   [15:0] coeff_reg [5:0];
+    reg   [5:0] addr;
     reg   [5:0] hs_cnt;
 
     always @ (posedge clk) begin
         if (rst || ~vs_i) addr <= 0;
         else if (vs_i)
-            if (addr == 4'd25) addr <= 4'd25;
+            if (addr == 5'd25) addr <= 5'd25;
             else               addr <= addr + 1;
     end
 
@@ -51,14 +51,14 @@ module convolution #(
     //**************************
     //*                        *
     //**************************
-    wire  [47:0] pi [4:0];
-    wire  [47:0] po [4:0];
-    wire  [17:0] px_d [4:0];
-    reg   [17:0] px_q [4:0];
+    wire  [47:0] pi [5:0];
+    wire  signed [47:0] po [5:0];
+    wire  [17:0] px_d [5:0];
+    reg   [17:0] px_q [5:0];
 
     genvar i;
 for (i = 0; i < 26; i=i+1 ) begin
-    assign pi[i] = i ? {{8{po[i-1][47]}},po[i-1][47:8]} : 47'b0;
+    assign pi[i] = i ? po[i-1]>>8 : 47'b0;
 end
 
     genvar k;
