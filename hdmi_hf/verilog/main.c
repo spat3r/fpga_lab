@@ -46,10 +46,8 @@ void hisztogram () {
 	print("Histogram command received.\nFetching data...\n");
 	int temp;
 	for(u32 j=0; j<256; j++){
-		temp= MEM32(HIST_ADDR);
-		if (j!=0) xil_printf(",");
-		xil_printf("%d", temp);
-		xil_printf("\n%d\n", j);
+		temp = MEM32(HIST_ADDR);
+		xil_printf("Bin %d: %d,\n", j, temp);
 	}
 	print("\r\nHistogram finished!\n\n");
 }
@@ -130,17 +128,20 @@ unsigned char fir_filler() {
 			coeff_frac = ( (sign * coeff_frac) / 10);
 			coeff_frac = coeff_frac >> 16;
 
+
 			coeff = coeff << 8;
 			coeff = coeff & 0x0000ff00;
 			coeff_frac = coeff_frac & 0x000000ff;
 			coeff = coeff | coeff_frac;
 
 			MEM32(FIR_ADDR + (j<<2) ) = coeff;
-			xil_printf("\n%d\n", coeff);
+			//xil_printf("\n%d\n", coeff);
 			coeff_read_finish = 1;
+			no_int = 0;
+			no_frac = 0;
 		}
 	}
-	xil_printf("Constants are loaded.\n");
+	//xil_printf("Constants are loaded.\n");
 	return 0;
 }
 
@@ -324,7 +325,16 @@ int main() {
 
 F+1.0,+2.1,+3.2,+41.1,+100.0,+1.1,+2.2,+3.4,+41.2,+100.1,+1.2,+2.4,+3.6,+41.4,+100.2,+1.1,+2.2,+3.4,+41.2,+100.1,+1.0,+2.1,+3.2,+41.1,+100.0
 F-0.0,-0.1,+0.2,-0.1,-0.0,-0.1,+0.2,-0.4,+0.2,-0.1,+0.2,-0.4,+0.6,-0.4,+0.2,-0.1,+0.2,-0.4,+0.2,-0.1,-0.0,-0.1,+0.2,-0.1,-0.0
+F+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+1.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0
+F+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0
+F+0.0,+0.0,+0.0,+0.0,+1.1,+1.0,+1.0,+1.0,+1.0
+F+0.1,+0.1,+0.1,+0.1,+0.1,+0.1,+0.1,+0.1,+0.1
 
+F+1.0,+1.0,+1.0,+1.0,+1.0,+1.0,+1.0,+1.0,+1.0
+
+F+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0
+
+F+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0,+0.0
 
  */
 
