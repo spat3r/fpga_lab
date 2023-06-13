@@ -18,6 +18,10 @@
 #define FIR_ADDR XPAR_FIR_AXI_IF_0_BASEADDR
 #define MEM32(addr)   (*(volatile unsigned long *)(addr))
 
+unsigned char fir_temp[512] = {0};
+int max_pointer = 0;
+int curr_pointer = 0;
+
 
 //void led_disp_sub(XGpio* led_disp, XGpio* sw_btn) {
 //	unsigned long sw_data, btn_data, disp_data;
@@ -52,7 +56,8 @@ void hisztogram () {
 
 unsigned char fir_filler() {
 	print("FIR command received.\nLoading constants...\n");
-	char temp;
+	char temp = 0;
+	int no_coeff_inread = 0;
 	unsigned char integer_part [3] = {0};
 	unsigned char fraction_part [7] = {0};
 	unsigned char no_int = 0, no_frac = 0, coeff_read_finish = 0, state = 0;
@@ -60,6 +65,7 @@ unsigned char fir_filler() {
 	char* neg_sign = "-"; //
 	char* pos_sign = "+";
 	char* period = ".";
+	char* comma = ",";
 	char* zero_char = "0";
 	char* nine_char = "9";
 	char* LF = "\r";
@@ -71,16 +77,29 @@ unsigned char fir_filler() {
 // TODO: Az egyĂĽtthatĂłk s7.8, ennek megfelelĹ‘en kell trimmelni a DSP kimenetet.
 //TODO: EA8, 29. oldal: Address[7:0] = XXXXX00, ByteENable[0:3] = 0011, adatok fordĂ­tott sorrendben
 //TODO: kiderĂ­teni ennek a pontos mĹ±kĂ¶dĂ©sĂ©t
+	for(u8 j=0; j<25; j++)
+		while ( (temp != *LF) & (temp != *CR)) {
+			temp = getchar();
+			if (temp == *comma){
+				no_coeff_inread++;
+				break;
+			}
+			fir_temp[curr_pointer] = temp;
+			curr_pointer++;
+		}
+	max_pointer = curr_pointer;
+	curr_pointer = 0;
 	
-	temp = getchar();
+	temp = fir_temp[curr_pointer]; curr_pointer++;
 	if ( (temp == *LF) || (temp == *CR) ) return 1;
 	else if ( temp == *neg_sign ) { sign = -1;}
 	else if ( temp == *pos_sign ) { sign =  1;}
 
-	for(u8 j=0; j<3; j++){
+	for(u8 j=0; j<25; j++){
+		coeff_read_finish = 0;
 		while(!coeff_read_finish) {
 			coeff_read_finish = 0;
-			temp = getchar();
+			temp = fir_temp[curr_pointer]; curr_pointer++;
 			switch (state) {
 				case 0:
 					if ( (temp == *LF) || (temp == *CR) ) { return 1; }
@@ -101,25 +120,27 @@ unsigned char fir_filler() {
 			}
 
 			signed long int coeff = 0;
-			unsigned char minus_egy_temp = 0xFF;
+			signed long int coeff_frac = 0; // 0.1
+			signed long int egy_temp_24b = 0x01000000;// 1.0 on s1.24bits
+			//unsigned char minus_egy_temp = 0x19;
 
 			for(u8 i=0; i<no_int; i++) { coeff = (coeff * 10) + (sign * integer_part[i]); }
 
-			for(u8 i=0; i<no_frac; i++) { coeff = (coeff * 10) + (minus_egy_temp * integer_part[i]); }
+			for(u8 i=0; i<no_frac; i++) { coeff_frac = (coeff_frac / 10) + (egy_temp_24b * fraction_part[no_frac-i-1]); }
+			coeff_frac = ( (sign * coeff_frac) / 10);
+			coeff_frac = coeff_frac >> 16;
 
-			for(u8 i=0; i<2; i++)
-				if (no_frac>0){
-					coeff = coeff / 10;
-					coeff = coeff << 4;
-					no_frac--;
-				}
-
-			while (no_frac) { coeff = coeff / 10; }
+			coeff = coeff << 8;
+			coeff = coeff & 0x0000ff00;
+			coeff_frac = coeff_frac & 0x000000ff;
+			coeff = coeff | coeff_frac;
 
 			MEM32(FIR_ADDR + (j<<2) ) = coeff;
+			xil_printf("\n%d\n", coeff);
+			coeff_read_finish = 1;
 		}
 	}
-	print("Constants are loaded.\n");
+	xil_printf("Constants are loaded.\n");
 	return 0;
 }
 
@@ -144,22 +165,26 @@ unsigned char fir_controller_func () {
 					hisztogram ();
 				} else if (command == *(wordNFIR)){
 					fir_filler();
+					xil_printf("Constants are loaded.\n");
 				} else {
 					print("Your command was unrecognisable.\nYou typed: ");
 					putchar(command);
 					print(".\n");
+					print("flushing input:\n");
+					while (!XUartLite_IsReceiveEmpty(UART_BADDR)){
+						char c;
+						//XUartLite_ReadReg(UART_BADDR,XUL_RX_FIFO_OFFSET);
+						c = getchar();
+						putchar(c);
+					}
+					print("\n\n");
+					break;
 				}
 			}
+		}
+		return 0;
 
-			}
-			while (!XUartLite_IsReceiveEmpty(UART_BADDR)){
-				print("flushing\n");
-				char c;
-				c = getchar();
-				putchar(c);
-				print("\n");
-			}
-			return 0;
+
 //		}
 }
 //
@@ -295,5 +320,12 @@ int main() {
 	return 0;
 }
 
+/*
+
+F+1.0,+2.1,+3.2,+41.1,+100.0,+1.1,+2.2,+3.4,+41.2,+100.1,+1.2,+2.4,+3.6,+41.4,+100.2,+1.1,+2.2,+3.4,+41.2,+100.1,+1.0,+2.1,+3.2,+41.1,+100.0
+F-0.0,-0.1,+0.2,-0.1,-0.0,-0.1,+0.2,-0.4,+0.2,-0.1,+0.2,-0.4,+0.6,-0.4,+0.2,-0.1,+0.2,-0.4,+0.2,-0.1,-0.0,-0.1,+0.2,-0.1,-0.0
+
+
+ */
 
 

@@ -1,7 +1,7 @@
 module buffer #(
     parameter COLORDEPTH = 8,
     parameter SCREENWIDTH = 1600,
-    parameter BUF_DEPTH = 3
+    parameter BUF_DEPTH = 5
 ) (
     input  wire                   clk,
     input  wire                   rst,
@@ -15,11 +15,13 @@ module buffer #(
     output reg                    vs_o,
     output reg   [COLORDEPTH-1:0] buff_o_0,
     output wire   [COLORDEPTH-1:0] buff_o_1,
-    output wire   [COLORDEPTH-1:0] buff_o_2
+    output wire   [COLORDEPTH-1:0] buff_o_2,
+    output wire   [COLORDEPTH-1:0] buff_o_3,
+    output wire   [COLORDEPTH-1:0] buff_o_4
 );
 
 reg [10:0] addr;
-reg [COLORDEPTH-1:0] buff_o [1:0];
+reg [COLORDEPTH-1:0] buff_o [2:0];
 
 always @(posedge clk) begin
     if (rst) begin
@@ -59,8 +61,11 @@ generate
     end
 endgenerate
 
+assign buff_o_0 = buff_o[0];
 assign buff_o_1 = buff_o[1];
 assign buff_o_2 = buff_o[2];
+assign buff_o_3 = buff_o[3];
+assign buff_o_4 = buff_o[4];
 
 // TODO: the last row stays in the ram and it is transfered to the forst row of the next image
 

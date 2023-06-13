@@ -68,27 +68,32 @@ always @(posedge clk ) begin : fir_axi_metastable_filt
     end
 end
 
-wire axi_write_strobe, axi_wr_ack_d;
-assign axi_write_strobe = ~wr_strobe_q3 & wr_strobe_q2;
-assign axi_wr_ack_d = axi_wr_ack_o ^ axi_write_strobe;
+wire axi_write_strobe;
+assign axi_write_strobe = wr_strobe_q2;
 
 always @(posedge clk ) begin : read_load_fir_data
+// if reset, we reset the regs we control
     if (rst) begin
         fir_addr <= 0;
         axi_wr_ack_o <= 0;
-    end else if (~vs_blur) begin
+// else we update the matrix if picture is on 
+    end else if (vs_gb) begin
         coeff_input <= fir_filter_coef[fir_addr];
+        
         if (fir_addr < 25) begin
             fir_addr <= fir_addr + 1;
         end else begin
             fir_addr <= fir_addr;
         end
+
     end else begin
-        axi_wr_ack_o <= axi_wr_ack_d;
-    end
-    
-    if (axi_write_strobe) begin
-        fir_filter_coef[fir_addr_from_axi[7:2]] <= fir_coeff_from_axi[15:0];
+        if (axi_write_strobe) begin
+            axi_wr_ack_o <= 1;
+            fir_filter_coef[fir_addr_from_axi[7:2]] <= fir_coeff_from_axi[15:0];
+            fir_addr <= 0;
+        end else begin
+            axi_wr_ack_o <= 0;
+        end
     end
 end
 
@@ -122,6 +127,11 @@ always @(posedge clk) begin : read_load_hist_date
         IDLE:
             if (axi_read_strobe)
                 state <= WAIT_ON_VSYNC;
+            else begin
+                hist_addr <= 0;
+                axi_rd_ack_o <= 0;
+            end
+
 
         WAIT_ON_VSYNC: 
             if (vs_in)
@@ -206,7 +216,6 @@ buffer #(
     .buff_o_2       (gb_line_o[2])
 );
 
-// TODO: bekotni a coef reget.
 // gauss_blr_conv #(
 convolution #(
     .COLORDEPTH(COLORDEPTH),
@@ -230,46 +239,46 @@ convolution #(
 );
 
 // buffer #(
-//     .COLORDEPTH(COLORDEPTH),
-//     .SCREENWIDTH(SCREENWIDTH),
-//     .BUF_DEPTH(3)
-//     ) blr_buff_inst (
-//     .clk            (clk),
-//     .rst            (rst),
-//     .data_i         (blur_o),
-//     .dv_i           (dv_blur),
-//     .hs_i           (hs_blur),
-//     .vs_i           (vs_blur),
-//     .dv_o           (dv_bb),
-//     .hs_o           (hs_bb),
-//     .vs_o           (vs_bb),
-//     .line_end_i     (line_end_bb),
-//     .buff_o_0       (bb_line_o[0]),
-//     .buff_o_1       (bb_line_o[1]),
-//     .buff_o_2       (bb_line_o[2])
-// );
+    //     .COLORDEPTH(COLORDEPTH),
+    //     .SCREENWIDTH(SCREENWIDTH),
+    //     .BUF_DEPTH(3)
+    //     ) blr_buff_inst (
+    //     .clk            (clk),
+    //     .rst            (rst),
+    //     .data_i         (blur_o),
+    //     .dv_i           (dv_blur),
+    //     .hs_i           (hs_blur),
+    //     .vs_i           (vs_blur),
+    //     .dv_o           (dv_bb),
+    //     .hs_o           (hs_bb),
+    //     .vs_o           (vs_bb),
+    //     .line_end_i     (line_end_bb),
+    //     .buff_o_0       (bb_line_o[0]),
+    //     .buff_o_1       (bb_line_o[1]),
+    //     .buff_o_2       (bb_line_o[2])
+    // );
 
 // // sobel_conv #(
-// convolution #(
-//     .COLORDEPTH(COLORDEPTH),
-//     .M_WIDTH(3),
-//     .M_DEPTH(3)
-//     ) sob_inst (
-//     .clk            (clk),
-//     .rst            (rst),
-//     .vect_in_0      (bb_line_o[0]),
-//     .vect_in_1      (bb_line_o[1]),
-//     .vect_in_2      (bb_line_o[2]),
-//     .conv_o         (sob_o),
-//     .coeff_i        (8'h1),
-//     .dv_i           (dv_bb),
-//     .hs_i           (hs_bb),
-//     .vs_i           (vs_bb),
-//     .dv_o           (dv_sob),
-//     .hs_o           (hs_sob),
-//     .vs_o           (vs_sob),
-//     .line_end_o     ()
-// );
+    // convolution #(
+    //     .COLORDEPTH(COLORDEPTH),
+    //     .M_WIDTH(3),
+    //     .M_DEPTH(3)
+    //     ) sob_inst (
+    //     .clk            (clk),
+    //     .rst            (rst),
+    //     .vect_in_0      (bb_line_o[0]),
+    //     .vect_in_1      (bb_line_o[1]),
+    //     .vect_in_2      (bb_line_o[2]),
+    //     .conv_o         (sob_o),
+    //     .coeff_i        (8'h1),
+    //     .dv_i           (dv_bb),
+    //     .hs_i           (hs_bb),
+    //     .vs_i           (vs_bb),
+    //     .dv_o           (dv_sob),
+    //     .hs_o           (hs_sob),
+    //     .vs_o           (vs_sob),
+    //     .line_end_o     ()
+    // );
 
 always @ ( posedge clk ) begin : output_multiplexer
     case (sw)
