@@ -7,18 +7,22 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="244.24678mm"
-   height="265.24356mm"
-   viewBox="0 0 244.24678 265.24356"
+   width="582.83978mm"
+   height="369.67245mm"
+   viewBox="0 0 582.83978 369.67245"
    version="1.1"
    id="svg8"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
-   sodipodi:docname="block_diag.svg"
-   inkscape:export-filename="C:\Users\Später\OneDrive - Budapesti Műszaki és Gazdaságtudományi Egyetem\bme\8felev\fpgalabor\fpga_lab\hdmi_hf\dokumentacio\block_diag.png"
-   inkscape:export-xdpi="300"
-   inkscape:export-ydpi="300">
+   sodipodi:docname="system_bd.svg">
   <defs
-     id="defs2" />
+     id="defs2">
+    <rect
+       x="-310.095"
+       y="-31.365292"
+       width="33.141422"
+       height="20.579754"
+       id="rect2559" />
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -26,9 +30,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="557.33247"
-     inkscape:cy="471.62187"
+     inkscape:zoom="0.7"
+     inkscape:cx="455.3207"
+     inkscape:cy="979.68727"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -57,17 +61,154 @@
      inkscape:label="Réteg 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(45.286597,27.62352)">
+     transform="translate(365.03639,48.914452)">
+    <path
+       style="fill:#cae8c2;fill-opacity:0.358871;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -325.63965,-48.773341 H 255.21386 V 320.61688 H -325.63965 V -48.773341"
+       id="path7277-2-4-0-7-2-8-4-7-1-9-1-0-4-9-3-8-8"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:#deb7a7;fill-opacity:0.35887104;fill-rule:evenodd;stroke:#000000;stroke-width:0.282222;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -22.024462,-27.482409 H 189.36046 V 236.83043 H -22.024462 V -27.482409"
+       id="path7277-2-4-0-7-2-8-4-7-1-9-1-0-4-9-3-8"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:#c2e8e4;fill-opacity:0.35887095;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -46.595836,-45.966128 H -301.54568 V 125.06965 H -46.595836 V -45.966128"
+       id="path7277-2-4-0-7-2-8-4-7-1-9-1-0-4-9-3-8-1-7"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:#a7ded8;fill-opacity:0.35887101;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -48.2849,-27.529398 H -162.65097 V 123.19389 H -48.2849 V -27.529398"
+       id="path7277-2-4-0-7-2-8-4-7-1-9-1-0-4-9-3-8-1"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -217.68409,76.165906 h 11.90929 v -8.384277"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-3-9-2-3-8-1"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -78.453395,106.93399 h 2.82224"
+       id="path5114-7"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -266.16153,59.921068 h -2.82224"
+       id="path5114-7-3-5"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -266.103,110.27495 h -59.52493"
+       id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-1-1-0-5-3"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M -266.10338,105.2749 H -325.5812"
+       id="path5114-7-3"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.282222px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 130.90651,228.25873 H -22.326786"
+       d="m -266.13726,75.867228 h -35.7806"
+       id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-1-1-0-3-13-9-7"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282222px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -266.13811,80.867158 h -35.78065"
+       id="path5114-2-2-4-4"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -126.87225,77.825 h -17.938 V -8.6902111"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-3-6"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282001;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -55.940337,-2.4794901 h 7.4446"
+       id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-0-4-6-1-0-0-8-7"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282001;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -62.370665,77.399731 h 14.325557"
+       id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-0-4-6-1-0-6-45-8-2"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282001;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -78.453395,-8.6902116 h 7.4446"
+       id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-0-4-6-1-0-0-9"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282001;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -78.487735,1.3088651 h 7.4446"
+       id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-0-4-6-1-0-0-8"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M -48.327267,-18.132193 H -61.526285 V -6.1865762"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-7-5-7-2-3"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M -48.404842,-15.185858 H -59.231845 V -4.5431795"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-7-5-7-2"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282001;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -92.675755,77.489414 h 33.30346"
+       id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-0-4-6-1-0-6-45-8-2-0"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282222px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 200.45412,228.25873 H -22.326786"
        id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-1-1-0-3-5-3-3-75"
        inkscape:connector-curvature="0"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.282222px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 129.21315,233.25881 H -22.37328"
+       d="M 197.81583,233.25881 H -22.373281"
        id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-1-1-0-3-5-3-3-4"
        inkscape:connector-curvature="0"
        inkscape:export-xdpi="300"
@@ -224,14 +365,6 @@
        d="m 111.54646,82.536409 h 17.18311 v 77.135081"
        id="path128508-6-5-7-5-8-8-6-9-5-0-3"
        inkscape:connector-curvature="0"
-       inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300" />
-    <path
-       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M -22.104616,-27.482409 H 189.36044 V 237.47892 H -22.104616 V -27.482409"
-       id="path7277-2-4-0-7-2-8-4-7-1-9-1-0-4-9-3-8"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="D:\aeu_fpga.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <path
@@ -417,7 +550,7 @@
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <path
-       style="fill:#adebd4;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:0.999;fill:#adebd4;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M -6.8425423,161.92369 H 41.21801 v 63.10946 H -6.8425423 v -63.10946"
        id="path7277-2-4-0-7-2-8-4-7-1-9-1-0-4-9-4-4"
        inkscape:connector-curvature="0"
@@ -748,7 +881,7 @@
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <path
-       style="fill:#adebd4;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:0.999;fill:#adebd4;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 63.157027,161.92373 h 48.060553 v 63.10946 H 63.157027 v -63.10946"
        id="path7277-2-4-0-7-2-8-4-7-1-9-1-0-4-9-4-4-4"
        inkscape:connector-curvature="0"
@@ -842,6 +975,17 @@
          y="222.18225"
          style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
          id="tspan1005-3-7">buffer</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-3-5-9"
+       width="1.6933334"
+       height="0.91533333"
+       x="221.79916"
+       y="-63.267578"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-2-7"
@@ -1093,7 +1237,7 @@
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <path
-       style="fill:#adebd4;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:0.999;fill:#adebd4;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 133.15748,161.92373 h 48.06056 v 63.10946 h -48.06056 v -63.10946"
        id="path7277-2-4-0-7-2-8-4-7-1-9-1-0-4-9-4-4-4-1"
        inkscape:connector-curvature="0"
@@ -1139,6 +1283,17 @@
          y="223.25345"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
          id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-4-4-9-5-3-4-8-2">clk</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-7-1-3"
+       width="1.6933334"
+       height="0.91533333"
+       x="164.79916"
+       y="-133.26797"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
@@ -1176,6 +1331,28 @@
          y="222.18228"
          style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
          id="tspan1005-3-7-6">fir</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-3-5-9-7"
+       width="1.6933334"
+       height="0.91533333"
+       x="221.79919"
+       y="-133.26801"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-2-7-9"
+       width="1.6933334"
+       height="0.91533333"
+       x="169.79916"
+       y="-133.26797"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
@@ -1190,6 +1367,17 @@
          y="171.29041"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
          id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-7-5-2-6">vect_in_1</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-3-2-2-9"
+       width="1.6933334"
+       height="0.91533333"
+       x="174.79919"
+       y="-133.26797"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
@@ -1204,6 +1392,17 @@
          y="176.29044"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
          id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-7-3-4-9-1">vect_in_2</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-0-6-3-0"
+       width="1.6933334"
+       height="0.91533333"
+       x="179.79916"
+       y="-133.26797"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
@@ -1218,6 +1417,17 @@
          y="181.29041"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
          id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-3-8-7-6">vect_in_3</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-4-5-7-3"
+       width="1.6933334"
+       height="0.91533333"
+       x="184.79916"
+       y="-133.26797"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
@@ -1232,6 +1442,17 @@
          y="186.29044"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
          id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-7-9-3-0-4">vect_in_4</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-3-5-2-5-1"
+       width="1.6933334"
+       height="0.91533333"
+       x="189.79916"
+       y="-133.26797"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
@@ -1371,6 +1592,17 @@
        inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-3-2-2-9-0"
+       width="1.6933334"
+       height="0.91533333"
+       x="194.79919"
+       y="-133.26797"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
@@ -1385,6 +1617,17 @@
          y="196.29047"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
          id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-7-3-4-9-1-1">hs_i</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-0-6-3-0-8"
+       width="1.6933334"
+       height="0.91533333"
+       x="199.79919"
+       y="-133.26797"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
@@ -1399,6 +1642,17 @@
          y="201.29044"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
          id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-3-8-7-6-0">vs_i</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-4-5-7-3-2"
+       width="1.6933334"
+       height="0.91533333"
+       x="204.79919"
+       y="-133.26797"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
@@ -1413,6 +1667,17 @@
          y="206.29047"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
          id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-7-9-3-0-4-2">coeff_i</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-0-6-3-0-8-0"
+       width="1.6933334"
+       height="0.91533333"
+       x="216.79919"
+       y="-133.26801"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
@@ -1427,6 +1692,17 @@
          y="218.29044"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
          id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-3-8-7-6-0-1">rst</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-0-6-3-0-8-0-4"
+       width="1.6933334"
+       height="0.91533333"
+       x="216.79916"
+       y="-63.267578"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
@@ -1466,52 +1742,6 @@
          y="218.29037"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
          id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-3-8-7-6-0-1-5">rst</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
-       x="-35.557297"
-       y="233.93008"
-       id="text4974-7-1-5-8-4-9-7-9-2-3-0-3-0-4-2-0-3-7-5-0-4-0-9-7-5-2"
-       inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300"><tspan
-         sodipodi:role="line"
-         id="tspan4976-5-55-5-8-6-88-44-8-5-6-5-7-3-5-5-7-0-0-5-9-8-6-8-8-7-8"
-         x="-35.557297"
-         y="233.93008"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:0.282223">hdmi_clk</tspan></text>
-    <rect
-       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-5-9-8-7-5-3-5-9-3-4-77-9-5-3-8-3-09-5-2-3-8-2-1-0-8-3"
-       width="1.128889"
-       height="1.128889"
-       x="-22.854036"
-       y="232.77222"
-       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
-       inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
-       x="-27.768129"
-       y="228.82983"
-       id="text5118-5"
-       inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300"><tspan
-         sodipodi:role="line"
-         id="tspan5116-4"
-         x="-27.768129"
-         y="228.82983"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:0.282223">rst</tspan></text>
-    <rect
-       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect5120-5"
-       width="1.128889"
-       height="1.128889"
-       x="-22.854067"
-       y="227.77216"
-       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
-       inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 52.194665,180.26714 V 159.67149"
@@ -1949,7 +2179,7 @@
          x="65.245285"
          y="83.180962"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
-         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-58">axi_write_strobe</tspan></text>
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-58">axi_read_strobe</tspan></text>
     <rect
        style="opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.64444;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect9144-38-2-0-2"
@@ -2602,45 +2832,45 @@
        inkscape:export-ydpi="300" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
-       x="-41.524574"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-33.542267"
        y="83.041069"
        id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-4-5"
        inkscape:export-filename="D:\aeu_fpga.png"
        inkscape:export-xdpi="300.00327"
        inkscape:export-ydpi="300.00327"><tspan
          sodipodi:role="line"
-         x="-41.524574"
+         x="-33.542267"
          y="83.041069"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
-         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-58-3">axi_wr_strobe_i</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:center;text-anchor:middle;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-58-3">axi_wr_strobe</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
-       x="-44.6651"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-34.331161"
        y="88.041069"
        id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-7-07-7"
        inkscape:export-filename="D:\aeu_fpga.png"
        inkscape:export-xdpi="300.00327"
        inkscape:export-ydpi="300.00327"><tspan
          sodipodi:role="line"
-         x="-44.6651"
+         x="-34.331161"
          y="88.041069"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:center;text-anchor:middle;stroke-width:0.282223"
          id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-7-50-4">fir_addr_from_axi</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
-       x="-45.395462"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-34.696342"
        y="93.041077"
        id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-7-8-10-6"
        inkscape:export-filename="D:\aeu_fpga.png"
        inkscape:export-xdpi="300.00327"
        inkscape:export-ydpi="300.00327"><tspan
          sodipodi:role="line"
-         x="-45.395462"
+         x="-34.696342"
          y="93.041077"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:center;text-anchor:middle;stroke-width:0.282223"
          id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-7-3-5-8">fir_coeff_from_axi</tspan></text>
     <rect
        style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -2654,60 +2884,60 @@
        inkscape:export-ydpi="300" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
-       x="-39.141907"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-32.601719"
        y="78.041008"
        id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-4-5-9"
        inkscape:export-filename="D:\aeu_fpga.png"
        inkscape:export-xdpi="300.00327"
        inkscape:export-ydpi="300.00327"><tspan
          sodipodi:role="line"
-         x="-39.141907"
+         x="-32.601719"
          y="78.041008"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
-         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-58-3-0">axi_wr_ack_o</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:center;text-anchor:middle;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-58-3-0">axi_wr_ack</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
-       x="-23.391026"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-32.127811"
        y="-17.821825"
        id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-0-6"
        inkscape:export-filename="D:\aeu_fpga.png"
        inkscape:export-xdpi="300.00327"
        inkscape:export-ydpi="300.00327"><tspan
          sodipodi:role="line"
-         x="-23.391026"
+         x="-32.127811"
          y="-17.821825"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:end;text-anchor:end;stroke-width:0.282223"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:center;text-anchor:middle;stroke-width:0.282223"
          id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-1-0">hist_bin_to_axi</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
-       x="-23.391026"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-29.617708"
        y="-14.826803"
        id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-0-0-2"
        inkscape:export-filename="D:\aeu_fpga.png"
        inkscape:export-xdpi="300.00327"
        inkscape:export-ydpi="300.00327"><tspan
          sodipodi:role="line"
-         x="-23.391026"
+         x="-29.617708"
          y="-14.826803"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:end;text-anchor:end;stroke-width:0.282223"
-         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-1-5-5">axi_rd_ack_o</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:center;text-anchor:middle;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-1-5-5">axi_rd_ack</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
-       x="-23.457842"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-31.126646"
        y="-2.0646834"
        id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-0-0-4"
        inkscape:export-filename="D:\aeu_fpga.png"
        inkscape:export-xdpi="300.00327"
        inkscape:export-ydpi="300.00327"><tspan
          sodipodi:role="line"
-         x="-23.457842"
+         x="-31.126646"
          y="-2.0646834"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:end;text-anchor:end;stroke-width:0.282223"
-         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-1-5-45">axi_rd_strobe_i</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:center;text-anchor:middle;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-1-5-45">axi_rd_strobe</tspan></text>
     <path
        style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m -9.657945,227.69424 h 1.128882 v 1.12888 h -1.128882 z"
@@ -2801,147 +3031,2225 @@
          style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
          id="tspan2247">TOP</tspan></text>
     <rect
+       style="opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.64444;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect9144-38-2-0-9-4"
+       width="22.577778"
+       height="10"
+       x="232.63609"
+       y="-48.773342"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="243.88087"
+       y="-44.624279"
+       id="text3984-40-6-8-6-5-0-0-3-1-8-2-9-3-7-3-8-1-0-4-3-7-9-0"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         x="243.88087"
+         y="-44.624279"
+         style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
+         id="tspan2247-0">HDMI</tspan><tspan
+         sodipodi:role="line"
+         x="243.88087"
+         y="-41.096493"
+         style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
+         id="tspan1239">TOP</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282001;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -78.487735,-3.6906725 h 7.4446"
+       id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-0-4-6-1-0-0"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282001;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -62.428065,92.39976 H -48.10525"
+       id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-0-4-6-1-0-6-45-8"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282001;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -62.428065,87.39975 H -48.10525"
+       id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-0-4-6-1-0-6-4-0-5"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282001;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -62.428065,82.39976 H -48.10525"
+       id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-0-4-6-1-0-6-1-6-7"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282001;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -92.675755,92.48942 h 33.03565"
+       id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-0-4-6-1-0-6-6"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282001;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -92.675755,87.48941 h 33.03565"
+       id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-0-4-6-1-0-6-4-5"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282001;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -92.675755,82.48942 h 33.03565"
+       id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-0-4-6-1-0-6-1-7"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -78.453425,23.182535 h 2.82223"
+       id="path5114-3-0"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -78.453425,111.93404 h 2.82223"
+       id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-1-1-0-5"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:#b6adeb;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -78.800535,74.173978 H -126.8611 v 40.052912 h 48.060565 V 74.173978"
+       id="path7277-2-4-0-7-2-8-4-7-1-9-1-0-4-9-4-6-6"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-84.512138"
+       y="112.54159"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-31-4-6-8-8-96-0"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-84.512138"
+         y="112.54159"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-4-4-9-5-3-7-0">clk</tspan></text>
+    <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-7-1-3"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-1-0"
        width="1.6933334"
        height="0.91533333"
-       x="164.79916"
-       y="-133.26797"
+       x="81.679604"
+       y="-78.911018"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-99.499847"
+       y="83.17083"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-4-4"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-99.499847"
+         y="83.17083"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-58-8">axi_wr_strobe_o</tspan></text>
+    <rect
+       style="opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.64444;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect9144-38-2-0-2-2"
+       width="24.838432"
+       height="14"
+       x="102.02266"
+       y="100.3214"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-114.41982"
+       y="104.687"
+       id="text3984-40-6-8-6-5-0-0-3-1-8-2-9-3-7-3-8-1-0-4-3-7-0-7"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         x="-114.41982"
+         y="104.687"
+         style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
+         id="tspan5249-8">AXI4-Lite</tspan><tspan
+         sodipodi:role="line"
+         x="-114.41982"
+         y="108.29661"
+         style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
+         id="tspan2372">WRITE</tspan><tspan
+         sodipodi:role="line"
+         x="-114.41982"
+         y="111.82439"
+         style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
+         id="tspan2374">FSM</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-3-4-1"
+       width="1.6933334"
+       height="0.91533333"
+       x="111.08733"
+       y="-78.911041"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-9-3"
+       width="1.6933334"
+       height="0.91533333"
+       x="86.679604"
+       y="-78.911018"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-101.77441"
+       y="88.17083"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-7-07-1"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-101.77441"
+         y="88.17083"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-7-50-2">fir_addr_from_axi</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-3-6-5"
+       width="1.6933334"
+       height="0.91533333"
+       x="91.679604"
+       y="-78.911018"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-102.50478"
+       y="93.17083"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-7-8-10-0"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-102.50478"
+         y="93.17083"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-7-3-5-4">fir_coeff_from_axi</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-0-6-3-0-8-0-8-5"
+       width="1.6933334"
+       height="0.91533333"
+       x="106.0873"
+       y="-78.911041"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-83.733116"
+       y="107.57856"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-3-4-2-3-5-4-6-2"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-83.733116"
+         y="107.57856"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-3-8-7-6-0-1-2-0">rst</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282001;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -162.43043,-8.6902111 h 35.24036"
+       id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-0-4-6-10"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -78.453425,28.182555 h 2.82223"
+       id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-1-1-8"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:#b6adeb;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -78.800535,-12.412323 h -48.060555 v 42.887734 h 48.060555 v -42.887734"
+       id="path7277-2-4-0-7-2-8-4-7-1-9-1-0-4-9-4-64"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-124.59428"
+       y="-7.8551803"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-0-89"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-124.59428"
+         y="-7.8551803"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-1-6">axi_rd_if</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -126.87224,77.824999 h -17.93801 V -8.6902111"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-3-9"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-02-7-1-5"
+       width="1.6933334"
+       height="0.84666669"
+       x="-9.5368786"
+       y="-127.61334"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-84.512192"
+       y="28.790127"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-31-4-6-8-8-5"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-84.512192"
+         y="28.790127"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-4-4-9-5-3-45">clk</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-8"
+       width="1.6933334"
+       height="0.91533333"
+       x="-9.5368786"
+       y="-78.911072"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-98.932907"
+       y="-8.0456409"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-1"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-98.932907"
+         y="-8.0456409"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-33">axi_rd_strobe_o</tspan></text>
+    <rect
+       style="opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.64444;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect9144-38-2-0-8"
+       width="22.577778"
+       height="14.111112"
+       x="104.28331"
+       y="16.458805"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-115.42274"
+       y="21.093266"
+       id="text3984-40-6-8-6-5-0-0-3-1-8-2-9-3-7-3-8-1-0-4-3-7-4"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         x="-115.42274"
+         y="21.093266"
+         style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
+         id="tspan2362">AXI4-Lite</tspan><tspan
+         sodipodi:role="line"
+         x="-115.42274"
+         y="24.702877"
+         style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
+         id="tspan2368">READ</tspan><tspan
+         sodipodi:role="line"
+         x="-115.42274"
+         y="28.230663"
+         style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
+         id="tspan2364">FSM</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-3-9"
+       width="1.6933334"
+       height="0.91533333"
+       x="27.335888"
+       y="-78.911095"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-69.54097"
+       y="-47.813763"
+       id="text4974-7-1-5-8-4-9-7-9-2-3-0-3-0-4-2-0-3-7-5-0-4-0-9-7-7"
+       transform="rotate(-60)"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4976-5-55-5-8-6-88-44-8-5-6-5-7-3-5-5-7-0-0-5-9-8-6-8-8-0"
+         x="-69.54097"
+         y="-47.813763"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:0.282223">cpu_clk</tspan></text>
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-5-9-8-7-5-3-5-9-3-4-77-9-5-3-8-3-09-5-2-3-8-2-1-0-2"
+       width="1.128889"
+       height="1.128889"
+       x="75.066742"
+       y="27.61813"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-0-6-3-0-8-0-8-6-0"
+       width="1.6933334"
+       height="0.91533333"
+       x="22.335865"
+       y="-78.911095"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-83.733162"
+       y="23.827129"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-3-4-2-3-5-4-6-1-4"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-83.733162"
+         y="23.827129"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-3-8-7-6-0-1-2-4-0">rst</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-59.240982"
+       y="-50.272083"
+       id="text5118-9-8"
+       transform="rotate(-60)"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan5116-7-8"
+         x="-59.240982"
+         y="-50.272083"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:0.282223">rst</tspan></text>
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5120-7-4"
+       width="1.128889"
+       height="1.128889"
+       x="75.066711"
+       y="22.618076"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
+    <path
+       id="path1678-5-2"
+       style="fill:#fdffa5;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583;stroke-linecap:square;stroke-miterlimit:10;stroke-opacity:1;paint-order:stroke markers fill"
+       d="m -52.74925,-2.4794905 c 0.18917,-0.848446 -1.2732,-1.172094 -1.14071,-1.917969 0.10976,-1.268744 -1.1179,-2.308463 -2.37328,-3.006317 -1.2249,-2.078691 -4.317375,-3.1154105 -7.170525,-3.1582265 -1.31687,-0.0391 -2.62664,0.150298 -3.87784,0.453373 -1.50009,-0.172434 -3.14373,-0.378257 -4.51693,0.2666325 -1.16286,0.491609 -2.00545,1.376192 -2.32378,2.357394 -1.28926,0.982361 -1.5771,2.604761 -0.61312,3.793931 0.95581,0.695552 -0.97159,1.200657 -0.75964,2.0776611 -0.0877,1.00640097 0.99752,1.78345594 2.09049,2.19371694 0.9524,1.68884496 3.53041,2.40430296 5.79576,2.40127596 1.59561,0.0053 3.20373,-0.354759 4.49836,-1.075574 2.08759,0.03641 4.25625,0.07548 6.209325,-0.583004 1.05426,-0.34822596 2.23076,-0.94299896 2.32462,-1.90029793 0.89656,-0.413348 1.84848,-1.03532997 1.85727,-1.90259607 z"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.0846671;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-5-9-8-7-5-3-5-9-3-4-77-9-5-3-8-3-09-5-2-3-8-2-1-0-8-3-2-45-6"
+       width="0.64126074"
+       height="1.128889"
+       x="47.651722"
+       y="86.835403"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5120-5-1-97-7"
+       width="1.128889"
+       height="1.128889"
+       x="47.651691"
+       y="81.835342"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5120-5-60-5-2"
+       width="1.128889"
+       height="1.128889"
+       x="47.651722"
+       y="91.835373"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-5-9-8-7-5-3-5-9-3-4-77-9-5-3-8-3-09-5-2-3-8-2-1-0-8-3-2-45-4-0"
+       width="1.128889"
+       height="1.128889"
+       x="47.825062"
+       y="-15.737444"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5120-5-1-97-4-7"
+       width="1.128889"
+       height="1.128889"
+       x="47.778278"
+       y="-18.705276"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5120-5-60-5-0-4"
+       width="1.128889"
+       height="1.128889"
+       x="47.931293"
+       y="-3.0439346"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5120-5-1-97-3-1"
+       width="1.128889"
+       height="1.128889"
+       x="47.651661"
+       y="76.835281"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
+    <rect
+       style="opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.64444;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect9144-38-2-0-9-2"
+       width="22.577778"
+       height="10"
+       x="140.0732"
+       y="-27.529398"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-151.40617"
+       y="-23.380339"
+       id="text3984-40-6-8-6-5-0-0-3-1-8-2-9-3-7-3-8-1-0-4-3-7-9-1"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         x="-151.40617"
+         y="-23.380339"
+         style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
+         id="tspan2247-3">FIR_AXI</tspan><tspan
+         sodipodi:role="line"
+         x="-151.40617"
+         y="-19.852551"
+         style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
+         id="tspan2555">IF</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-1-0-1"
+       width="1.6933334"
+       height="0.91533333"
+       x="76.679604"
+       y="-78.911018"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-95.814575"
+       y="78.17083"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-4-4-9"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-95.814575"
+         y="78.17083"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-58-8-1">axi_wr_ack_i</tspan></text>
+    <path
+       id="path1678-5-1-6"
+       style="fill:#fdffa5;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.264582;stroke-linecap:square;stroke-miterlimit:10;stroke-opacity:1;paint-order:stroke markers fill"
+       d="m -50.735218,87.029552 c 0.152414,-1.199144 -1.025879,-1.656555 -0.919125,-2.710733 0.08843,-1.793154 -0.900743,-3.262626 -1.912246,-4.248936 -0.986962,-2.937884 -3.4787,-4.403116 -5.777606,-4.463621 -1.06106,-0.05526 -2.11639,0.212424 -3.12454,0.640763 -1.20868,-0.243701 -2.53304,-0.534608 -3.63948,0.376838 -0.93696,0.694809 -1.61588,1.945017 -1.87236,3.331794 -1.03882,1.388404 -1.27074,3.681398 -0.49402,5.362093 0.77013,0.983044 -0.78285,1.69692 -0.61207,2.936428 -0.0707,1.42238 0.80374,2.520612 1.68439,3.100446 0.76739,2.38691 2.8446,3.398094 4.66988,3.393812 1.28566,0.0071 2.58138,-0.501394 3.62453,-1.52014 1.682054,0.05145 3.429435,0.106707 5.003112,-0.823988 0.849461,-0.492152 1.797418,-1.332775 1.873054,-2.68576 0.722388,-0.584187 1.489396,-1.463267 1.496481,-2.688996 z"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-124.91592"
+       y="78.660042"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-0-0-5-3"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-124.91592"
+         y="78.660042"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-1-5-2-9">axi_wr_if</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-02-7-1-9-8-0"
+       width="1.6933334"
+       height="0.84666669"
+       x="76.978333"
+       y="-127.29558"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-80.945641"
+       y="-2.8556414"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-0-89-7"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-80.945641"
+         y="-2.8556414"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:end;text-anchor:end;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-1-6-1">hist_bin_to_axi</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-02-7-1-5-1"
+       width="1.6933334"
+       height="0.84666669"
+       x="-4.5373392"
+       y="78.0644"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-81.129128"
+       y="2.1439056"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-0-0-5-8"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-81.129128"
+         y="2.1439056"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:end;text-anchor:end;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-1-5-2-1">axi_rd_ack_i</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-02-7-1-9-8-1"
+       width="1.6933334"
+       height="0.84666669"
+       x="0.46219832"
+       y="78.0644"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       id="text2557"
+       style="font-size:3.52778px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;white-space:pre;shape-inside:url(#rect2559);" />
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5120-5-1-97-7-3"
+       width="1.128889"
+       height="1.128889"
+       x="47.407909"
+       y="86.835403"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5120-5-1-97-4-7-1"
+       width="1.128889"
+       height="1.128889"
+       x="162.1349"
+       y="-9.254653"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -145.37469,-9.2546511 h 1.12889 v 1.12888 h -1.12889 z"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-5-9-8-7-5-3-5-9-3-4-77-9-5-3-8-3-09-5-2-3-8-2-1-0-8-2-3-7-2-2-9-09-8-4-1-89-5-8"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282001;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -217.34811,-27.12694 h 7.4446"
+       id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-0-4-6-1-0-0-9-1"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -217.34814,4.7458092 h 2.82223"
+       id="path5114-3-0-5"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:#ebcead;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -265.75581,72.514873 h 48.06056 V 112.5678 h -48.06056 V 72.514873"
+       id="path7277-2-4-0-7-2-8-4-7-1-9-1-0-4-9-4-6-6-2"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-263.60507"
+       y="110.88249"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-31-4-6-8-8-96-0-9"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-263.60507"
+         y="110.88249"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-4-4-9-5-3-7-0-2">clk</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-1-0-7"
+       width="1.6933334"
+       height="0.91533333"
+       x="80.0205"
+       y="265.64532"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-260.08823"
+       y="81.511726"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-4-4-95"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-260.08823"
+         y="81.511726"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:end;text-anchor:end;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-58-8-8">rxd</tspan></text>
+    <rect
+       style="opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.64444;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect9144-38-2-0-2-2-1"
+       width="24.838432"
+       height="14"
+       x="217.69527"
+       y="98.662315"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-230.10071"
+       y="103.02789"
+       id="text3984-40-6-8-6-5-0-0-3-1-8-2-9-3-7-3-8-1-0-4-3-7-0-7-3"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         x="-230.10071"
+         y="103.02789"
+         style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
+         id="tspan2374-1">Xilinx</tspan><tspan
+         sodipodi:role="line"
+         x="-230.10071"
+         y="106.6375"
+         style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
+         id="tspan2989">UART</tspan><tspan
+         sodipodi:role="line"
+         x="-230.10071"
+         y="110.16529"
+         style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
+         id="tspan2987">LITE</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-3-4-1-3"
+       width="1.6933334"
+       height="0.91533333"
+       x="109.42825"
+       y="265.64532"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-336.07471"
+       y="110.97141"
+       id="text4974-7-1-5-8-4-9-7-9-2-3-0-3-0-4-2-0-3-7-5-0-4-0-9-7-5-21-7"
+       transform="rotate(0.00916307)"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4976-5-55-5-8-6-88-44-8-5-6-5-7-3-5-5-7-0-0-5-9-8-6-8-8-7-89-6"
+         x="-336.07471"
+         y="110.97141"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:0.282223">cpu_clk</tspan></text>
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-5-9-8-7-5-3-5-9-3-4-77-9-5-3-8-3-09-5-2-3-8-2-1-0-8-9-3"
+       width="1.128889"
+       height="1.128889"
+       x="-326.18607"
+       y="109.71046"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-0-6-3-0-8-0-8-5-2"
+       width="1.6933334"
+       height="0.91533333"
+       x="104.42822"
+       y="265.64532"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-263.66751"
+       y="105.91946"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-3-4-2-3-5-4-6-2-6"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-263.66751"
+         y="105.91946"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-3-8-7-6-0-1-2-0-6">rst</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -217.34814,9.7458282 h 2.82223"
+       id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-1-1-8-7"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:#d9ebad;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -217.69525,-30.849051 h -48.06055 v 42.887734 h 48.06055 v -42.887734"
+       id="path7277-2-4-0-7-2-8-4-7-1-9-1-0-4-9-4-64-9"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-02-7-1-5-4"
+       width="1.6933334"
+       height="0.84666669"
+       x="-27.973606"
+       y="-266.50806"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-223.40691"
+       y="10.353397"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-31-4-6-8-8-5-0"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-223.40691"
+         y="10.353397"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-4-4-9-5-3-45-2">clk</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-8-4"
+       width="1.6933334"
+       height="0.91533333"
+       x="-27.973606"
+       y="-217.80577"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-219.6857"
+       y="-26.482368"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-1-9"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-219.6857"
+         y="-26.482368"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:end;text-anchor:end;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-33-2">M_AXI</tspan></text>
+    <rect
+       style="opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.64444;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect9144-38-2-0-8-6"
+       width="22.577778"
+       height="14.111112"
+       x="243.17802"
+       y="-1.9779242"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-254.31743"
+       y="2.6565361"
+       id="text3984-40-6-8-6-5-0-0-3-1-8-2-9-3-7-3-8-1-0-4-3-7-4-4"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         x="-254.31743"
+         y="2.6565361"
+         style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
+         id="tspan2364-5">Microblaze</tspan><tspan
+         sodipodi:role="line"
+         x="-254.31743"
+         y="6.2661476"
+         style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
+         id="tspan2976">System</tspan><tspan
+         sodipodi:role="line"
+         x="-254.31743"
+         y="9.7939339"
+         style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
+         id="tspan2978">Core</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-3-9-6"
+       width="1.6933334"
+       height="0.91533333"
+       x="8.8991585"
+       y="-217.8058"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-331.48071"
+       y="101.43248"
+       id="text5118-4-0"
+       transform="rotate(-0.81055665)"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan5116-6-8"
+         x="-331.48071"
+         y="101.43248"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:0.282223">rst</tspan></text>
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5120-0-3"
+       width="1.128889"
+       height="1.128889"
+       x="325.05719"
+       y="104.71042"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-0-6-3-0-8-0-8-6-0-5"
+       width="1.6933334"
+       height="0.91533333"
+       x="3.8991356"
+       y="-217.8058"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-222.62788"
+       y="5.3904037"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-3-4-2-3-5-4-6-1-4-8"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-222.62788"
+         y="5.3904037"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-3-8-7-6-0-1-2-4-0-5">rst</tspan></text>
+    <rect
+       style="opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.64444;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect9144-38-2-0-9-2-7"
+       width="22.577778"
+       height="10"
+       x="278.96793"
+       y="-45.966125"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-290.3009"
+       y="-41.817066"
+       id="text3984-40-6-8-6-5-0-0-3-1-8-2-9-3-7-3-8-1-0-4-3-7-9-1-8"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         x="-290.3009"
+         y="-41.817066"
+         style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
+         id="tspan2555-2">CPU System</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-1-0-1-0"
+       width="1.6933334"
+       height="0.91533333"
+       x="75.020508"
+       y="265.64532"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-260.36005"
+       y="76.511726"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-4-4-9-8"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-260.36005"
+         y="76.511726"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:end;text-anchor:end;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-58-8-1-6">txd</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-225.66661"
+       y="77.000931"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-0-0-5-3-4"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-225.66661"
+         y="77.000931"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-1-5-2-9-5">s_axi</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-02-7-1-9-8-0-7"
+       width="1.6933334"
+       height="0.84666669"
+       x="75.319237"
+       y="217.26076"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5120-5-1-97-4-7-1-5"
+       width="1.128889"
+       height="1.128889"
+       x="301.02963"
+       y="-27.69138"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -266.1615,64.921118 h -2.82223"
+       id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-1-1-0-5-3-7"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:#ebadd3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -265.81439,27.16104 h 48.06056 v 40.052929 h -48.06056 V 27.16104"
+       id="path7277-2-4-0-7-2-8-4-7-1-9-1-0-4-9-4-6-6-2-7"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-263.66367"
+       y="65.528664"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-31-4-6-8-8-96-0-9-3"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-263.66367"
+         y="65.528664"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-4-4-9-5-3-7-0-2-0">clk</tspan></text>
+    <rect
+       style="opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.64444;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect9144-38-2-0-2-2-1-5"
+       width="24.838432"
+       height="14"
+       x="217.75383"
+       y="53.308479"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-230.15929"
+       y="57.674065"
+       id="text3984-40-6-8-6-5-0-0-3-1-8-2-9-3-7-3-8-1-0-4-3-7-0-7-3-9"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         x="-230.15929"
+         y="57.674065"
+         style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
+         id="tspan2374-1-9">Xilinx</tspan><tspan
+         sodipodi:role="line"
+         x="-230.15929"
+         y="61.283676"
+         style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
+         id="tspan2989-3">AXI</tspan><tspan
+         sodipodi:role="line"
+         x="-230.15929"
+         y="64.811462"
+         style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
+         id="tspan2987-6">Interconnect</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-3-4-1-3-1"
+       width="1.6933334"
+       height="0.91533333"
+       x="64.074425"
+       y="265.70392"
        transform="rotate(90)"
        inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-3-5-9-7"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-0-6-3-0-8-0-8-5-2-7"
        width="1.6933334"
        height="0.91533333"
-       x="221.79919"
-       y="-133.26801"
+       x="59.074387"
+       y="265.70392"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-263.7261"
+       y="60.56562"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-3-4-2-3-5-4-6-2-6-7"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-263.7261"
+         y="60.56562"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-3-8-7-6-0-1-2-0-6-3">rst</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-1-0-1-0-7"
+       width="1.6933334"
+       height="0.91533333"
+       x="29.666677"
+       y="265.70392"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-264.0043"
+       y="31.157896"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-4-4-9-8-6"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-264.0043"
+         y="31.157896"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-58-8-1-6-4">M_AXI</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-219.97461"
+       y="31.6471"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-0-0-5-3-4-7"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-219.97461"
+         y="31.6471"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:end;text-anchor:end;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-1-5-2-9-5-0">s_axi_0</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-02-7-1-9-8-0-7-9"
+       width="1.6933334"
+       height="0.84666669"
+       x="29.965406"
+       y="217.31932"
        transform="rotate(90)"
        inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-2-7-9"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-1-0-7-8-5"
        width="1.6933334"
        height="0.91533333"
-       x="169.79916"
-       y="-133.26797"
+       x="34.965401"
+       y="217.28499"
        transform="rotate(90)"
        inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-3-2-2-9"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-1-0-1-0-7-0"
        width="1.6933334"
        height="0.91533333"
-       x="174.79919"
-       y="-133.26797"
+       x="29.965406"
+       y="217.28499"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-220.00894"
+       y="36.647095"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-0-0-5-3-4-7-2"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-220.00894"
+         y="36.647095"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:end;text-anchor:end;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-1-5-2-9-5-0-4">s_axi_1</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-02-7-1-9-8-0-7-9-7"
+       width="1.6933334"
+       height="0.84666669"
+       x="34.965401"
+       y="217.35365"
        transform="rotate(90)"
        inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-0-6-3-0"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-1-0-1-0-7-0-8"
        width="1.6933334"
        height="0.91533333"
-       x="179.79916"
-       y="-133.26797"
+       x="34.965401"
+       y="217.31932"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -217.74266,30.812073 h 37.86019 V -8.6902084"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-3-6-1"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -162.69935,-8.6902084 h -17.18311 V 26.033955"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-3-9-2"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -242.97397,23.753356 h 37.86019 v -39.502283"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-3-6-1-3"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -217.34811,-27.12694 h 12.23433 v 11.378013"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-3-9-2-5"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -242.88023,23.700034 h -28.48731 v 2.779055"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-3-9-2-5-9"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -266.16159,30.513344 h -5.20595 v -4.034255"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-3-9-2-5-9-2"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-02-7-1-9-56-0-0-3"
+       width="1.6933334"
+       height="0.84666669"
+       x="75.020508"
+       y="-266.56067"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-02-7-1-3-6-9-7-8"
+       width="1.6933334"
+       height="0.84666669"
+       x="80.020508"
+       y="-266.56067"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-302.93665"
+       y="76.460663"
+       id="text4974-7-1-5-8-4-9-7-9-2-3-0-3-0-4-2-0-3-7-5-0-4-0-9-7-5-2-03-3-2"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4976-5-55-5-8-6-88-44-8-5-6-5-7-3-5-5-7-0-0-5-9-8-6-8-8-7-8-4-4-7"
+         x="-302.93665"
+         y="76.460663"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:end;text-anchor:end;stroke-width:0.282223">tx_0</tspan></text>
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-5-9-8-7-5-3-5-9-3-4-77-9-5-3-8-3-09-5-2-3-8-2-1-0-8-3-6-8-1"
+       width="1.128889"
+       height="1.128889"
+       x="-302.11609"
+       y="75.302795"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-305.12424"
+       y="81.360382"
+       id="text5118-5-85-6-0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan5116-4-46-0-3"
+         x="-304.77145"
+         y="81.360382"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:center;text-anchor:middle;stroke-width:0.282223">rx_0   </tspan></text>
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5120-5-03-5-9"
+       width="1.128889"
+       height="1.128889"
+       x="-302.11615"
+       y="80.302704"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -268.98372,64.921121 h -14.92826 v 45.353829"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-3-9-2-3"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -268.97052,59.921276 h -17.73459 v 45.487464"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-3-9-2-3-4"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -214.52591,9.7458278 h 4.93232 V 115.79311"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-3-9-2-3-6"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -214.52586,4.7457915 h 12.89406 V 120.7501"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-3-9-2-3-4-6"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -209.59359,115.79312 h -74.31839 v -5.51816"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-3-9-2-3-8"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -201.63181,120.7501 h -85.07331 v -15.34136"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-3-9-2-3-4-7"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -284.47642,109.71051 h 1.12889 v 1.12888 h -1.12889 z"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-5-9-8-7-5-3-5-9-3-4-77-9-5-3-8-3-09-5-2-3-8-2-1-0-8-2-3-7-2-2-9-09-8-4-1-89-5-8-4"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -287.26956,104.8443 h 1.12889 v 1.12888 h -1.12889 z"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-5-9-8-7-5-3-5-9-3-4-77-9-5-3-8-3-09-5-2-3-8-2-1-0-8-2-3-7-2-2-9-09-8-4-1-89-5-8-1"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -75.631195,111.93404 h 5.08897 v 3.85909"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-3-9-2-3-6-5"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -75.63116,106.93399 h 9.843347 v 13.81611"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-3-9-2-3-4-6-6"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -201.63181,120.7501 h -85.07331 v -15.34136"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-3-9-2-3-4-7-2"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M -65.787813,120.7501 H -201.63182"
+       id="path4998-1-3-18-44-3-1-5-8-0-8-1-4-0-97-7-5-2-98-6-9-1-1-0-5-3-1"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M -70.542225,115.79313 H -209.5936"
+       id="path5114-7-3-8"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -217.76309,35.791278 h 11.98829 v 31.990353"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-3-9-2-3-0"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="opacity:0.999;fill:#adebaf;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 201.98375,151.67096 h 48.06055 v 63.10946 h -48.06055 v -63.10946"
+       id="path7277-2-4-0-7-2-8-4-7-1-9-1-0-4-9-4-4-49"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="247.91533"
+       y="156.2281"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-0-9-8"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="247.91533"
+         y="156.2281"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:end;text-anchor:end;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-1-9-7">HDMI_o</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-02-7-1-6-7"
+       width="1.6933334"
+       height="0.84666669"
+       x="154.5464"
+       y="-250.7966"
        transform="rotate(90)"
        inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-4-5-7-3"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-7-16"
        width="1.6933334"
        height="0.91533333"
-       x="184.79916"
-       y="-133.26797"
+       x="154.5464"
+       y="-202.09427"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="204.07205"
+       y="156.03761"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-6-2"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="204.07205"
+         y="156.03761"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-9-5">red_i</tspan></text>
+    <rect
+       style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.64446;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect9144-38-2-0-1-7"
+       width="22.577778"
+       height="7"
+       x="227.46652"
+       y="207.78043"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="238.71683"
+       y="211.92953"
+       id="text3984-40-6-8-6-5-0-0-3-1-8-2-9-3-7-3-8-1-0-4-3-7-6-1"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         x="238.71683"
+         y="211.92953"
+         style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
+         id="tspan1005-3-1">HDMI TX</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-2-9"
+       width="1.6933334"
+       height="0.91533333"
+       x="159.5464"
+       y="-202.09427"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="204.07205"
+       y="161.03761"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-7-9-4"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="204.07205"
+         y="161.03761"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-7-5-3">green_i</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-3-2-3"
+       width="1.6933334"
+       height="0.91533333"
+       x="164.5464"
+       y="-202.09427"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="204.07205"
+       y="166.03761"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-7-8-9-1"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="204.07205"
+         y="166.03761"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-7-3-4-6">blue_i</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-0-6-0"
+       width="1.6933334"
+       height="0.91533333"
+       x="169.5464"
+       y="-202.09427"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="204.07205"
+       y="171.03761"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-3-4-8"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="204.07205"
+         y="171.03761"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-3-8-8">dv_i</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-4-5-5"
+       width="1.6933334"
+       height="0.91533333"
+       x="174.5464"
+       y="-202.09427"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="204.07205"
+       y="176.03761"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-7-0-8-6"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="204.07205"
+         y="176.03761"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-7-9-3-1">hs_i</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-3-5-2-0"
+       width="1.6933334"
+       height="0.91533333"
+       x="179.54642"
+       y="-202.09427"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="204.07205"
+       y="181.03763"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-7-8-4-3-1"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="204.07205"
+         y="181.03763"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-7-3-3-2-8">vs_i</tspan></text>
+    <path
+       style="opacity:0.999;fill:#adebaf;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -41.714456,161.92493 h -48.06055 v 63.10946 h 48.06055 v -63.10946"
+       id="path7277-2-4-0-7-2-8-4-7-1-9-1-0-4-9-4-4-49-6"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-47.426064"
+       y="223.25468"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-31-4-6-8-8-9-9-7"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-47.426064"
+         y="223.25468"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-4-4-9-5-3-4-3-0">clk</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-7-16-7"
+       width="1.6933334"
+       height="0.91533333"
+       x="164.80038"
+       y="-41.824959"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-50.148628"
+       y="166.2916"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-6-2-5"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-50.148628"
+         y="166.2916"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-9-5-7">red_o</tspan></text>
+    <rect
+       style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.64446;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect9144-38-2-0-1-7-6"
+       width="22.577778"
+       height="7"
+       x="67.197205"
+       y="218.03441"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-78.487518"
+       y="222.18352"
+       id="text3984-40-6-8-6-5-0-0-3-1-8-2-9-3-7-3-8-1-0-4-3-7-6-1-5"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         x="-78.487518"
+         y="222.18352"
+         style="font-weight:bold;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.282223"
+         id="tspan1005-3-1-5">HDMI RX</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-2-9-2"
+       width="1.6933334"
+       height="0.91533333"
+       x="169.80038"
+       y="-41.824959"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-52.878517"
+       y="171.2916"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-7-9-4-9"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-52.878517"
+         y="171.2916"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-7-5-3-3">green_o</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-3-2-3-3"
+       width="1.6933334"
+       height="0.91533333"
+       x="174.80038"
+       y="-41.824959"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-51.379219"
+       y="176.2916"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-7-8-9-1-4"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-51.379219"
+         y="176.2916"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-7-3-4-6-4">blue_o</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-0-6-0-6"
+       width="1.6933334"
+       height="0.91533333"
+       x="179.80038"
+       y="-41.824959"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-49.443062"
+       y="181.2916"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-3-4-8-9"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-49.443062"
+         y="181.2916"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-3-8-8-8">dv_o</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-4-5-5-8"
+       width="1.6933334"
+       height="0.91533333"
+       x="184.80038"
+       y="-41.824959"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-49.054459"
+       y="186.2916"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-7-0-8-6-3"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-49.054459"
+         y="186.2916"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-7-9-3-1-1">hs_o</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-3-5-2-0-3"
+       width="1.6933334"
+       height="0.91533333"
+       x="189.8004"
+       y="-41.824959"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-49.059967"
+       y="191.29161"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-7-8-4-3-1-8"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-49.059967"
+         y="191.29161"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-7-3-3-2-8-2">vs_o</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-46.647049"
+       y="218.29161"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-3-4-2-3-5-4-4-7-4"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-46.647049"
+         y="218.29161"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-3-8-7-6-0-1-5-0-5">rst</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-4-5-5-8-7"
+       width="1.6933334"
+       height="0.91533333"
+       x="189.8004"
+       y="-41.824959"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-3-5-2-0-3-0"
+       width="1.6933334"
+       height="0.91533333"
+       x="194.80042"
+       y="-41.824959"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-51.047104"
+       y="196.29163"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-7-8-4-3-1-8-2"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-51.047104"
+         y="196.29163"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-7-3-3-2-8-2-1">rx_clk</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -41.367313,217.64711 h 8.855445 v 4.73966"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-5-4"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -41.367289,195.64708 h 11.949196 v 20.32438"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-5-0-3"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282222px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M -22.203907,233.28016 H -32.51187 v -10.89339"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-5-6"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282222px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -22.326786,228.25874 h -7.091311 v -12.28728"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-5-0-2"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M -38.417565,228.2293 H -314.13877 V 110.20997"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-3-9-2-3-8-7"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -314.70386,109.64754 h 1.12889 v 1.12888 h -1.12889 z"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-5-9-8-7-5-3-5-9-3-4-77-9-5-3-8-3-09-5-2-3-8-2-1-0-8-2-3-7-2-2-9-09-8-4-1-89-5-8-4-9"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -317.497,104.78133 h 1.12889 v 1.12888 h -1.12889 z"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-5-9-8-7-5-3-5-9-3-4-77-9-5-3-8-3-09-5-2-3-8-2-1-0-8-2-3-7-2-2-9-09-8-4-1-89-5-8-1-3"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M -32.511869,233.28016 H -316.77563 V 104.80738"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-3-9-2-3-4-7-2-9"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -41.319889,222.40295 h 2.902325 v 5.82635"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-5-4-4"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-3-5-1-5"
+       width="1.6933334"
+       height="0.91533333"
+       x="221.80046"
+       y="-41.824982"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-0-6-3-0-8-0-2-3-9"
+       width="1.6933334"
+       height="0.91533333"
+       x="216.80046"
+       y="-41.824982"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282222px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M -89.967718,166.49371 H -325.60117"
+       id="path5114-7-3-86"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-340.31723"
+       y="162.53241"
+       id="text5118-4-0-5"
+       transform="rotate(-0.81055667)"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan5116-6-8-4"
+         x="-340.31723"
+         y="162.53241"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:0.282223">HDMI_in</tspan></text>
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5120-0-3-6"
+       width="1.128889"
+       height="1.128889"
+       x="325.07715"
+       y="165.92923"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="-77.904648"
+       y="167.33253"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-0-9-8-3"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="-77.904648"
+         y="167.33253"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:end;text-anchor:end;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-1-9-7-8">HDMI_i</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-02-7-1-6-7-6"
+       width="1.6933334"
+       height="0.84666669"
+       x="165.65083"
+       y="-90.527283"
+       transform="matrix(0,1,1,0,0,0)"
+       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 201.63664,207.39313 h -3.8208 v 25.86569"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-5-5-7"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 201.63663,212.39314 h -1.18251 v 15.86559"
+       id="path128508-6-5-7-5-8-8-6-9-5-0-5-0-5-0"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="204.13452"
+       y="213.0007"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-31-4-6-8-8-9-9"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="204.13452"
+         y="213.0007"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-4-4-9-5-3-4-3">clk</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-3-5-1"
+       width="1.6933334"
+       height="0.91533333"
+       x="211.54648"
+       y="-202.0943"
        transform="rotate(90)"
        inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-3-5-2-5-1"
+       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-0-6-3-0-8-0-2-3"
        width="1.6933334"
        height="0.91533333"
-       x="189.79916"
-       y="-133.26797"
+       x="206.54648"
+       y="-202.0943"
        transform="rotate(90)"
        inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="204.07208"
+       y="208.03763"
+       id="text5120-74-8-3-4-4-6-7-7-51-7-1-5-1-7-4-6-8-0-2-3-4-1-8-7-4-44-7-8-4-1-8-7-1-4-3-80-6-1-7-1-6-4-5-0-72-3-5-1-6-7-4-3-4-2-3-5-4-4-7"
+       inkscape:export-filename="D:\aeu_fpga.png"
+       inkscape:export-xdpi="300.00327"
+       inkscape:export-ydpi="300.00327"><tspan
+         sodipodi:role="line"
+         x="204.07208"
+         y="208.03763"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';text-align:start;text-anchor:start;stroke-width:0.282223"
+         id="tspan6495-1-8-0-2-2-0-6-9-8-7-1-9-6-1-2-4-76-8-4-3-9-3-5-6-63-5-8-3-8-7-6-0-1-5-0">rst</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.282223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 250.37327,155.39307 h 5.03102"
+       id="path5114-2-1-9-0-4-3"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.38667px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.282223"
+       x="256.63205"
+       y="155.88632"
+       id="text5118-5-30-6-7"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan5116-4-6-1-4"
+         x="256.63205"
+         y="155.88632"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:0.282223">HDMI_out</tspan></text>
     <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-3-2-2-9-0"
-       width="1.6933334"
-       height="0.91533333"
-       x="194.79919"
-       y="-133.26797"
-       transform="rotate(90)"
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5120-5-1-9-66"
+       width="1.128889"
+       height="1.128889"
+       x="-255.96873"
+       y="154.82864"
        inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
        inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300" />
-    <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-0-6-3-0-8"
-       width="1.6933334"
-       height="0.91533333"
-       x="199.79919"
-       y="-133.26797"
-       transform="rotate(90)"
-       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
-       inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300" />
-    <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-2-4-5-7-3-2"
-       width="1.6933334"
-       height="0.91533333"
-       x="204.79919"
-       y="-133.26797"
-       transform="rotate(90)"
-       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
-       inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300" />
-    <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-0-6-3-0-8-0"
-       width="1.6933334"
-       height="0.91533333"
-       x="216.79919"
-       y="-133.26801"
-       transform="rotate(90)"
-       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
-       inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300" />
-    <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-3-5-9"
-       width="1.6933334"
-       height="0.91533333"
-       x="221.79916"
-       y="-63.267578"
-       transform="rotate(90)"
-       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
-       inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300" />
-    <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0846667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect3779-0-8-9-4-0-1-0-0-9-7-7-6-4-4-9-0-6-4-04-9-4-0-0-2-2-1-8-99-3-5-0-7-2-15-7-2-80-1-2-79-4-6-5-1-3-7-9-6-8-11-0-8-279-3-6-7-7-2-1-2-8-7-8-62-7-9-0-0-6-3-0-8-0-4"
-       width="1.6933334"
-       height="0.91533333"
-       x="216.79916"
-       y="-63.267578"
-       transform="rotate(90)"
-       inkscape:export-filename="C:\tmp\path3911-1-27-1-4-98-7-8-7.png"
-       inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300" />
+       inkscape:export-ydpi="300"
+       transform="scale(-1,1)" />
   </g>
 </svg>
