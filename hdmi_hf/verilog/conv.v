@@ -12,7 +12,7 @@ module convolution #(
     input  wire  [COLORDEPTH-1:0] vect_in_2,
     input  wire  [COLORDEPTH-1:0] vect_in_3,
     input  wire  [COLORDEPTH-1:0] vect_in_4,
-    output wire  [COLORDEPTH-1:0] conv_o,
+    output reg   [COLORDEPTH-1:0] conv_o,
     input  wire            [15:0] coeff_i,
     input  wire                   dv_i,
     input  wire                   hs_i,
@@ -58,13 +58,13 @@ module convolution #(
 
     genvar i;
 for (i = 0; i < 26; i=i+1 ) begin
-    assign pi[i] = i ? po[i-1]>>8 : 47'b0;
+    assign pi[i] = i ? (po[i-1]>>8) : 47'b0;
 end
 
     genvar k;
 generate
     for (k = 0; k < M_DEPTH*M_WIDTH; k = k + 1) begin
-        // az els�' oszlopot nem szükséges eltárolni, mivel a buffer nem hoz be
+        // az els�' oszlopot nem szükséges eltárolni, mivel a buffer nem hoz be
         // oszlopkésleltetést, ergo, ha engedi a késleltetés:
         // d_in -> szorzás -> tárolás -> összeadások -> tárolás -> d_out
         // d_in -> szorzás -> tárolás -> soron belül -> tárolás 
@@ -82,22 +82,24 @@ generate
                 .a({{9{coeff_reg[15]}}, coeff_reg[k]}), // { 10*s7.8 }
                 .b({px_d[k]}),// { 10*s.8 }
                 .pci(pi[k]), // { 32*s7.8 }
-                .p(po[k])
+                .p(po[k]) //    { 24*s7.16}
         );
     end
 endgenerate
     
-    wire [47:0] temp_trunc;
-    assign temp_trunc = pi[25][47] ? ~pi[25]+1'b1 : pi[25][7:0];
-    assign conv_o = temp_trunc[7:0];
+    wire [47:0] temp_abs;
+    wire [7:0] temp_sat;
+    assign temp_abs = pi[25][47] ? ~pi[25]+1'b1 : pi[25];
+    assign temp_sat = (temp_abs[46:8] == 0) ? temp_abs[7:0] : 8'hFF;
+     always @( posedge clk ) conv_o <= temp_sat;
 
-    reg   [14:0] dv_shr;
-    reg   [14:0] hs_shr;
-    reg   [14:0] vs_shr;
+    reg   [28:0] dv_shr;
+    reg   [28:0] hs_shr;
+    reg   [28:0] vs_shr;
     wire  line_end_d = dv_shr[12] & ~dv_shr[11];
 
-    // dsp delay is 4 cycle, matrix size 3x3 => 9 cycle
-    // total delay 13 cycle, 12 shr delay + 1 _o write delay 
+    // dsp delay is 4 cycle, matrix size 5x5 => 29 cycle
+    // total delay 30 cycle, 29 shr delay + 1 _o write delay 
     always @(posedge clk) begin
         if (rst) begin
             dv_shr <= 0; dv_o <= 0;
