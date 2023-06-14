@@ -56,7 +56,6 @@ module hdmi_top(
    input  wire        hdmi_tx_scl,
    input  wire        hdmi_tx_sda
 
-   // TODO: add ports for axi registers
 );
 
 //******************************************************************************
@@ -178,8 +177,8 @@ cpu_system_wrapper cpu_inst(
    .hist_bin_to_axi_0    ( hist_bin_to_axi    )
 );
 
-sobel_top #(
-   ) sobel_top_inst (
+fir_top #(
+   ) fir_top_inst (
          .clk(rx_clk),
          .rst(sobel_rst),
          .sw(sw),
@@ -202,7 +201,6 @@ sobel_top #(
          .fir_addr_from_axi  ( fir_addr_from_axi  ),
          .fir_coeff_from_axi ( fir_coeff_from_axi ),
          .hist_bin_to_axi    ( hist_bin_to_axi    )
-         // TODO: add ports for axi registers
    );
 
 hdmi_tx hdmi_tx_0(

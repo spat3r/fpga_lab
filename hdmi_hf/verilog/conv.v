@@ -64,11 +64,11 @@ end
     genvar k;
 generate
     for (k = 0; k < M_DEPTH*M_WIDTH; k = k + 1) begin
-        // az elsĹ' oszlopot nem szĂĽksĂ©ges eltĂˇrolni, mivel a buffer nem hoz be
-        // oszlopkĂ©sleltetĂ©st, ergo, ha engedi a kĂ©sleltetĂ©s:
-        // d_in -> szorzĂˇs -> tĂˇrolĂˇs -> Ă¶sszeadĂˇsok -> tĂˇrolĂˇs -> d_out
-        // d_in -> szorzĂˇs -> tĂˇrolĂˇs -> soron belĂĽl -> tĂˇrolĂˇs 
-        //      -> sorok kĂ¶zĂ¶tt -> tĂˇrolĂˇs -> d_out
+        // az els�' oszlopot nem szükséges eltárolni, mivel a buffer nem hoz be
+        // oszlopkésleltetést, ergo, ha engedi a késleltetés:
+        // d_in -> szorzás -> tárolás -> összeadások -> tárolás -> d_out
+        // d_in -> szorzás -> tárolás -> soron belül -> tárolás 
+        //      -> sorok között -> tárolás -> d_out
 
         assign px_d[k] = ((k % M_DEPTH) == 0) ? {10'b0,vect_in[k/M_DEPTH]} : px_q[k-1];
 
@@ -105,8 +105,7 @@ endgenerate
             vs_shr <= 0; vs_o <= 0;
             hs_cnt <= 0;
         end else begin
-            // TODO: itt meg kell hatĂˇrozni, hogy mennyi a kĂ©sleltetĂ©s
-            // educated guess: M_DEPTH
+
             if (line_end_o & !hs_cnt[4]) hs_cnt <= hs_cnt + 1;
             else if (vs_i)               hs_cnt <= 0;
             dv_shr <= {dv_shr[13:0],dv_i};
@@ -115,7 +114,7 @@ endgenerate
             line_end_o <= line_end_d;
             dv_o <= dv_shr[12];
             hs_o <= hs_shr[12];
-            // TODO: Ăˇtgondolni ez itt M_DEPTH-e
+
             vs_o <= vs_shr[12];
         end
     end

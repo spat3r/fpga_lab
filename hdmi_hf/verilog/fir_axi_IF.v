@@ -127,11 +127,12 @@ begin
             if (s_axi_wvalid) begin
                 fir_coeff_from_axi <= s_axi_wdata;
                 axi_wr_strobe_o <= 1; 
+
                 wr_state <= WR_EXECUTE;
             end else begin
                 wr_state <= WR_DATA_WAIT;
             end
-            //Az irasi mûvelet vegrehajtasa.
+            //Az irasi m?velet vegrehajtasa.
             WR_EXECUTE  :
             if (axi_write_ack) begin
                 axi_wr_strobe_o <= 0; 
@@ -187,7 +188,7 @@ begin
                 rd_state <= RD_EXECUTE;
             end else rd_state <= RD_ADDR_WAIT;
             
-            //Az olvasasi mûvelet vegrehajtasa.
+            //Az olvasasi m?velet vegrehajtasa.
             RD_EXECUTE  : if (axi_read_ack) begin
                 axi_rd_strobe_o <= 0;
                 s_axi_rdata <= hist_bin_to_axi;
@@ -196,7 +197,6 @@ begin
             
             //A beolvasott adat elkuldese.
             RD_SEND_DATA: if (s_axi_rready) begin
-                //FIXME: check the documentation, copypasta
                 s_axi_rdata <= 0;
                 rd_state <= RD_ADDR_WAIT;
             end else rd_state <= RD_SEND_DATA;

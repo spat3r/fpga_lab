@@ -73,7 +73,6 @@ module fir_axi_if #(
     reg [7:0]  addr;
     reg [1:0] hist_bin_ready_shr;
 
-//TODO: a top modulben az infók átadásánál metastabil szűrés és handshake kell.
     always @(posedge s_axi_aclk) begin
         if (s_axi_aresetn) begin
             addr <= 0;
@@ -84,7 +83,4 @@ module fir_axi_if #(
             hist_bin_saved <= 0;
         end
     end
-    //TODO: implement fsm
-
-    //TODO implement fir writing, bin reading
 endmodule

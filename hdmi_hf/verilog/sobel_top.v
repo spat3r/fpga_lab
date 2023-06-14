@@ -1,4 +1,4 @@
-module sobel_top #(
+module fir_top #(
     parameter COLORDEPTH = 8,
     parameter SCREENWIDTH = 1600,
     parameter POL_VS = 1,
@@ -13,12 +13,12 @@ module sobel_top #(
     input  wire         dv_i,
     input  wire         hs_i,
     input  wire         vs_i,
-    output reg    [7:0] red_o,
+    (* mark_debug = "true" *) output reg    [7:0] red_o,
     output reg    [7:0] green_o,
     output reg    [7:0] blue_o,
-    output reg          dv_o,
-    output reg          hs_o,
-    output reg          vs_o,
+    (* mark_debug = "true" *)output reg          dv_o,
+    (* mark_debug = "true" *)output reg          hs_o,
+    (* mark_debug = "true" *)output reg          vs_o,
 
     input wire [7:0] fir_addr_from_axi,
     input wire [31:0] fir_coeff_from_axi,
@@ -51,7 +51,7 @@ reg wr_strobe_q1, wr_strobe_q2, wr_strobe_q3;
 reg [15:0] fir_filter_coef [4:0];
 reg [31:0] hist_bin [7:0];
 
-reg [15:0] coeff_input;
+(* mark_debug = "true" *) reg [15:0] coeff_input;
 (* mark_debug = "true" *) reg [7:0] fir_addr, hist_addr;
 
 always @(posedge clk ) begin : fir_axi_metastable_filt
@@ -216,6 +216,7 @@ buffer #(
     .buff_o_2       (gb_line_o[2])
 );
 
+// gauss_blr_conv #(
 convolution #(
     .COLORDEPTH(COLORDEPTH),
     .M_WIDTH(5),

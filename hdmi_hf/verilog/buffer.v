@@ -13,7 +13,7 @@ module buffer #(
     output reg                    dv_o,
     output reg                    hs_o,
     output reg                    vs_o,
-    output reg   [COLORDEPTH-1:0] buff_o_0,
+    output wire   [COLORDEPTH-1:0] buff_o_0,
     output wire   [COLORDEPTH-1:0] buff_o_1,
     output wire   [COLORDEPTH-1:0] buff_o_2,
     output wire   [COLORDEPTH-1:0] buff_o_3,
@@ -67,7 +67,7 @@ assign buff_o_2 = buff_o[2];
 assign buff_o_3 = buff_o[3];
 assign buff_o_4 = buff_o[4];
 
-// TODO: the last row stays in the ram and it is transfered to the forst row of the next image
+
 
     always @(posedge clk) begin
         if (rst) begin
