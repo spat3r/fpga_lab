@@ -24,7 +24,7 @@ module convolution #(
         
     );
 
-    wire [COLORDEPTH-1:0] vect_in [2:0];
+    wire [COLORDEPTH-1:0] vect_in [4:0];
 
     assign vect_in[0] = vect_in_0;
     assign vect_in[1] = vect_in_1;
@@ -33,7 +33,7 @@ module convolution #(
     assign vect_in[4] = vect_in_4;
 
     localparam VECLENGTH = COLORDEPTH+1;
-    reg   [15:0] coeff_reg [5:0];
+    reg   [15:0] coeff_reg [24:0];
     reg   [5:0] addr;
     reg   [5:0] hs_cnt;
 
@@ -51,10 +51,10 @@ module convolution #(
     //**************************
     //*                        *
     //**************************
-    wire  [47:0] pi [5:0];
-    wire  signed [47:0] po [5:0];
-    wire  [17:0] px_d [5:0];
-    reg   [17:0] px_q [5:0];
+    wire  [47:0] pi [25:0];
+    wire  signed [47:0] po [25:0];
+    wire  [17:0] px_d [25:0];
+    reg   [17:0] px_q [25:0];
 
     genvar i;
 for (i = 0; i < 26; i=i+1 ) begin
@@ -79,7 +79,7 @@ generate
                 .B_REG(k+1)
             ) DSpi (
                 .clk(clk),
-                .a({{9{coeff_reg[15]}}, coeff_reg[k]}), // { 10*s7.8 }
+                .a({{9{coeff_reg[k][15]}}, coeff_reg[k]}), // { 10*s7.8 }
                 .b({px_d[k]}),// { 10*s.8 }
                 .pci(pi[k]), // { 32*s7.8 }
                 .p(po[k]) //    { 24*s7.16}
@@ -89,7 +89,7 @@ endgenerate
     
     wire [47:0] temp_abs;
     wire [7:0] temp_sat;
-    assign temp_abs = pi[25][47] ? ~pi[25]+1'b1 : pi[25];
+    assign temp_abs = pi[25][47] ? (~pi[25]+1'b1) : pi[25];
     assign temp_sat = (temp_abs[46:8] == 0) ? temp_abs[7:0] : 8'hFF;
      always @( posedge clk ) conv_o <= temp_sat;
 

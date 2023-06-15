@@ -42,14 +42,14 @@ wire dv_bb, hs_bb, vs_bb;
 wire dv_sob, hs_sob, vs_sob;
 wire line_end_gb, line_end_bb;
 wire [7:0] gamma_o, blur_o, sob_o;
-wire [7:0] gb_line_o [2:0];
-wire [7:0] bb_line_o [2:0];
+wire [7:0] gb_line_o [4:0];
+wire [7:0] bb_line_o [4:0];
 
 reg rd_strobe_q1, rd_strobe_q2, rd_strobe_q3;
 reg wr_strobe_q1, wr_strobe_q2, wr_strobe_q3;
 
-reg [15:0] fir_filter_coef [4:0];
-reg [31:0] hist_bin [7:0];
+reg [15:0] fir_filter_coef [24:0];
+reg [31:0] hist_bin [255:0];
 
 (* mark_debug = "true" *) reg [15:0] coeff_input;
 (* mark_debug = "true" *) reg [7:0] fir_addr, hist_addr;
@@ -213,7 +213,9 @@ buffer #(
     .line_end_i     (line_end_gb),
     .buff_o_0       (gb_line_o[0]),
     .buff_o_1       (gb_line_o[1]),
-    .buff_o_2       (gb_line_o[2])
+    .buff_o_2       (gb_line_o[2]),
+    .buff_o_3       (gb_line_o[3]),
+    .buff_o_4       (gb_line_o[4])
 );
 
 // gauss_blr_conv #(
@@ -225,8 +227,10 @@ convolution #(
     .clk            (clk),
     .rst            (rst),
     .vect_in_0      (gb_line_o[0]),
-    .vect_in_1      (gb_line_o[1]),
-    .vect_in_2      (gb_line_o[2]),
+    .vect_in_1       (gb_line_o[1]),
+    .vect_in_2       (gb_line_o[2]),
+    .vect_in_3       (gb_line_o[3]),
+    .vect_in_4       (gb_line_o[4]),
     .conv_o         (blur_o),
     .coeff_i        (coeff_input),
     .dv_i           (dv_gb),
