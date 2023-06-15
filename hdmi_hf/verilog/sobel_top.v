@@ -168,7 +168,8 @@ always @(posedge clk) begin : read_load_hist_date
         end
 
         AXI_PROCESSING: begin
-            if (~axi_read_strobe) state <= HIST_SENDING;
+            if (~axi_read_strobe & (hist_addr==8'hFF)) state <= IDLE;
+            else if (~axi_read_strobe) state <= HIST_SENDING;
             else state <= AXI_PROCESSING;
         end
 

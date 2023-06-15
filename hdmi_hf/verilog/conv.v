@@ -58,7 +58,7 @@ module convolution #(
 
     genvar i;
 for (i = 0; i < 26; i=i+1 ) begin
-    assign pi[i] = i ? (po[i-1]>>8) : 47'b0;
+    assign pi[i] = i ? (po[i-1]) : 47'b0;
 end
 
     genvar k;
@@ -81,16 +81,18 @@ generate
                 .clk(clk),
                 .a({{9{coeff_reg[k][15]}}, coeff_reg[k]}), // { 10*s7.8 }
                 .b({px_d[k]}),// { 10*s.8 }
-                .pci(pi[k]), // { 32*s7.8 }
-                .p(po[k]) //    { 24*s7.16}
+                .pci(pi[k]), // { 24*s7.16 }
+                .p(po[k]) //    { 23*s8.16}
         );
     end
 endgenerate
     
     wire [47:0] temp_abs;
     wire [7:0] temp_sat;
+    //   pi25:  { 19*s12.16}
     assign temp_abs = pi[25][47] ? (~pi[25]+1'b1) : pi[25];
-    assign temp_sat = (temp_abs[46:8] == 0) ? temp_abs[7:0] : 8'hFF;
+    // temp_abs:  { 19{0},12.16}
+    assign temp_sat = (temp_abs[27:16] == 0) ? temp_abs[15:8] : 8'hFF;
      always @( posedge clk ) conv_o <= temp_sat;
 
     reg   [28:0] dv_shr;
